@@ -46,12 +46,12 @@ Performance captured on Android only via:
 ## Do NOT
 
 - Commit INSTRUCTIONS.md (in .gitignore).
-- Leak any "Coinbase"/internal brand terms into this repo. Use neutral names
+- Leak any internal/employer brand terms into this repo. Use neutral names
   (package `com.rnperf.systrace`, flag `ENABLE_COLD_START_SAMPLING` is generic).
 
 ## Progress
 
-- [x] Read instructions + reference tooling in ~/coinbase/mobile/scripts/perf_testing
+- [x] Read instructions + external reference tooling (outside this repo)
 - [x] Goal 1: Setup first example (Expo Router) — apps/expo-router-app, SDK 56
 - [x] Goal 2: First example end-to-end on Android (build, Maestro, CPU, Systrace, Flashlight)
     - [x] Release (profileable) build succeeds
