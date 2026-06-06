@@ -1,0 +1,520 @@
+{
+  "rnn": {
+    "package": "com.rnperf.rnn",
+    "hermes": {
+      "jsBusyMs": 169.0,
+      "distinctFiles": 43,
+      "distinctNodeModules": 4,
+      "blameByLibraryMs": [
+        [
+          "react-native-navigation",
+          57.3
+        ],
+        [
+          "Native",
+          46.4
+        ],
+        [
+          "@react-native",
+          16.3
+        ],
+        [
+          "react-native",
+          15.9
+        ],
+        [
+          "lodash",
+          13.1
+        ],
+        [
+          "JavaScript",
+          7.4
+        ],
+        [
+          "rn-perf-tooling",
+          6.2
+        ],
+        [
+          "@babel",
+          2.7
+        ],
+        [
+          "metro-runtime",
+          2.3
+        ],
+        [
+          "react",
+          1.2
+        ]
+      ],
+      "hottestFunctionsMs": [
+        [
+          "[HostFunction] getConstantsForViewManager",
+          30.0,
+          "Native"
+        ],
+        [
+          "[HostFunction] completeRoot",
+          29.6,
+          "Native"
+        ],
+        [
+          "[HostFunction] getConstants",
+          15.6,
+          "Native"
+        ],
+        [
+          "anonymous",
+          14.9,
+          "react-native"
+        ],
+        [
+          "[HostFunction] createNode",
+          10.5,
+          "Native"
+        ],
+        [
+          "isFunction",
+          6.6,
+          "lodash"
+        ],
+        [
+          "renderWithHooks",
+          5.9,
+          "react-native"
+        ],
+        [
+          "normalizeColor",
+          5.7,
+          "react-native"
+        ],
+        [
+          "getCellMetrics",
+          5.3,
+          "@react-native"
+        ],
+        [
+          "callModern",
+          5.3,
+          "@react-native"
+        ],
+        [
+          "_interopRequireWildcard",
+          4.0,
+          "react-native"
+        ],
+        [
+          "getEnforcing",
+          3.9,
+          "react-native"
+        ]
+      ]
+    },
+    "native": {
+      "app": "com.rnperf.rnn",
+      "rnMarkersMs": {
+        "RNMarker.REACT_BRIDGELESS_LOADING": 84.3,
+        "RNMarker.INIT_REACT_RUNTIME": 55.4,
+        "RNMarker.APP_STARTUP": 55.4,
+        "RNMarker.RUN_JS_BUNDLE": 55.4,
+        "RNMarker.CREATE_UI_MANAGER_MODULE_CONSTANTS": 10.8
+      },
+      "peakRssMb": 182.3,
+      "rssAnonMb": 61.7,
+      "rssFileMb": 119.5,
+      "gpuMemMb": 52.0,
+      "hwuiMb": 3.9,
+      "hadesThreads": 2,
+      "threads": 82
+    }
+  },
+  "react-navigation": {
+    "package": "com.rnperf.reactnavigation",
+    "hermes": {
+      "jsBusyMs": 219.0,
+      "distinctFiles": 36,
+      "distinctNodeModules": 8,
+      "blameByLibraryMs": [
+        [
+          "@expo",
+          81.6
+        ],
+        [
+          "Native",
+          57.5
+        ],
+        [
+          "expo-modules-core",
+          32.7
+        ],
+        [
+          "@react-navigation",
+          11.0
+        ],
+        [
+          "color-convert",
+          9.8
+        ],
+        [
+          "Metadata",
+          9.6
+        ],
+        [
+          "react-native",
+          7.0
+        ],
+        [
+          "expo",
+          3.9
+        ],
+        [
+          "color-string",
+          3.3
+        ],
+        [
+          "react-native-screens",
+          2.6
+        ]
+      ],
+      "hottestFunctionsMs": [
+        [
+          "[HostFunction] getConstants",
+          74.3,
+          "Native"
+        ],
+        [
+          "[HostFunction] completeRoot",
+          32.9,
+          "Native"
+        ],
+        [
+          "anonymous",
+          28.8,
+          "@react-navigation"
+        ],
+        [
+          "[HostFunction] getConstantsForViewManager",
+          22.5,
+          "Native"
+        ],
+        [
+          "[HostFunction] createNode",
+          14.1,
+          "Native"
+        ],
+        [
+          "[GC Young Gen]",
+          9.6,
+          "Metadata"
+        ],
+        [
+          "[Native] objectDefineProperty",
+          8.4,
+          "Native"
+        ],
+        [
+          "get",
+          7.5,
+          "react-native"
+        ],
+        [
+          "[HostFunction] appendChild",
+          5.7,
+          "Native"
+        ],
+        [
+          "TextImpl",
+          3.7,
+          "react-native"
+        ],
+        [
+          "[Native] hermesBuiltinCopyDataProperties",
+          3.4,
+          "Native"
+        ],
+        [
+          "[Native] stringPrototypeMatch",
+          3.3,
+          "Native"
+        ]
+      ]
+    },
+    "native": {
+      "app": "com.rnperf.reactnavigation",
+      "rnMarkersMs": {
+        "RNMarker.REACT_BRIDGELESS_LOADING": 376.7,
+        "RNMarker.RUN_JS_BUNDLE": 168.1,
+        "RNMarker.APP_STARTUP": 168.1,
+        "RNMarker.INIT_REACT_RUNTIME": 168.1,
+        "RNMarker.CREATE_UI_MANAGER_MODULE_CONSTANTS": 20.6,
+        "RNMarker.LOAD_REACT_NATIVE_SO_FILE": 4.0
+      },
+      "peakRssMb": 195.2,
+      "rssAnonMb": 70.0,
+      "rssFileMb": 124.1,
+      "gpuMemMb": 49.5,
+      "hwuiMb": 2.2,
+      "hadesThreads": 2,
+      "threads": 90
+    }
+  },
+  "navigation": {
+    "package": "com.rnperf.navigation",
+    "hermes": {
+      "jsBusyMs": 326.7,
+      "distinctFiles": 38,
+      "distinctNodeModules": 6,
+      "blameByLibraryMs": [
+        [
+          "@expo",
+          159.4
+        ],
+        [
+          "Native",
+          76.3
+        ],
+        [
+          "expo-modules-core",
+          25.8
+        ],
+        [
+          "react-native",
+          25.1
+        ],
+        [
+          "Metadata",
+          21.9
+        ],
+        [
+          "navigation-react-native",
+          10.1
+        ],
+        [
+          "@react-native",
+          4.2
+        ],
+        [
+          "abort-controller",
+          3.9
+        ],
+        [
+          "JavaScript",
+          0.0
+        ],
+        [
+          "expo",
+          0.0
+        ]
+      ],
+      "hottestFunctionsMs": [
+        [
+          "[HostFunction] getConstants",
+          140.6,
+          "Native"
+        ],
+        [
+          "[HostFunction] completeRoot",
+          57.1,
+          "Native"
+        ],
+        [
+          "[HostFunction] getConstantsForViewManager",
+          25.2,
+          "Native"
+        ],
+        [
+          "[GC Young Gen]",
+          21.9,
+          "Metadata"
+        ],
+        [
+          "[HostFunction] createNode",
+          12.4,
+          "Native"
+        ],
+        [
+          "get",
+          10.0,
+          "react-native"
+        ],
+        [
+          "addNestedProperty",
+          8.0,
+          "react-native"
+        ],
+        [
+          "render",
+          6.9,
+          "@react-native"
+        ],
+        [
+          "[Native] hermesBuiltinCopyDataProperties",
+          6.2,
+          "Native"
+        ],
+        [
+          "workLoopConcurrentByScheduler",
+          5.5,
+          "react-native"
+        ],
+        [
+          "anonymous",
+          5.2,
+          "react-native"
+        ],
+        [
+          "TabBarItem",
+          4.9,
+          "navigation-react-native"
+        ]
+      ]
+    },
+    "native": {
+      "app": "com.rnperf.navigation",
+      "rnMarkersMs": {
+        "RNMarker.REACT_BRIDGELESS_LOADING": 480.8,
+        "RNMarker.RUN_JS_BUNDLE": 266.5,
+        "RNMarker.INIT_REACT_RUNTIME": 266.3,
+        "RNMarker.APP_STARTUP": 266.3,
+        "RNMarker.CREATE_UI_MANAGER_MODULE_CONSTANTS": 67.7,
+        "RNMarker.LOAD_REACT_NATIVE_SO_FILE": 2.7
+      },
+      "peakRssMb": 218.0,
+      "rssAnonMb": 93.5,
+      "rssFileMb": 123.9,
+      "gpuMemMb": 49.6,
+      "hwuiMb": 2.2,
+      "hadesThreads": 1,
+      "threads": 77
+    }
+  },
+  "expo-router": {
+    "package": "com.rnperf.exporouter",
+    "hermes": {
+      "jsBusyMs": 460.7,
+      "distinctFiles": 106,
+      "distinctNodeModules": 9,
+      "blameByLibraryMs": [
+        [
+          "@expo",
+          163.2
+        ],
+        [
+          "react-native-worklets",
+          94.8
+        ],
+        [
+          "Native",
+          59.1
+        ],
+        [
+          "expo-modules-core",
+          52.6
+        ],
+        [
+          "react-native",
+          27.4
+        ],
+        [
+          "expo-router",
+          25.4
+        ],
+        [
+          "react-native-reanimated",
+          10.9
+        ],
+        [
+          "whatwg-fetch",
+          6.5
+        ],
+        [
+          "semver",
+          6.4
+        ],
+        [
+          "Metadata",
+          4.8
+        ]
+      ],
+      "hottestFunctionsMs": [
+        [
+          "[HostFunction] getConstants",
+          133.8,
+          "Native"
+        ],
+        [
+          "[HostFunction] runOnUISync",
+          70.4,
+          "Native"
+        ],
+        [
+          "anonymous",
+          39.8,
+          "react"
+        ],
+        [
+          "[HostFunction] completeRoot",
+          32.0,
+          "Native"
+        ],
+        [
+          "[HostFunction] getConstantsForViewManager",
+          27.6,
+          "Native"
+        ],
+        [
+          "requireNativeViewManager",
+          19.0,
+          "expo-modules-core"
+        ],
+        [
+          "[HostFunction] createNode",
+          18.9,
+          "Native"
+        ],
+        [
+          "[HostFunction] registerCustomSerializable",
+          10.4,
+          "Native"
+        ],
+        [
+          "[Native] hermesBuiltinCopyDataProperties",
+          8.9,
+          "Native"
+        ],
+        [
+          "[GC Young Gen]",
+          8.1,
+          "Metadata"
+        ],
+        [
+          "get",
+          7.6,
+          "react-native"
+        ],
+        [
+          "[HostFunction] installTurboModule",
+          6.6,
+          "Native"
+        ]
+      ]
+    },
+    "native": {
+      "app": "com.rnperf.exporouter",
+      "rnMarkersMs": {
+        "RNMarker.REACT_BRIDGELESS_LOADING": 447.2,
+        "RNMarker.RUN_JS_BUNDLE": 207.9,
+        "RNMarker.INIT_REACT_RUNTIME": 207.8,
+        "RNMarker.APP_STARTUP": 207.8,
+        "RNMarker.CREATE_UI_MANAGER_MODULE_CONSTANTS": 21.6
+      },
+      "peakRssMb": 326.0,
+      "rssAnonMb": 175.5,
+      "rssFileMb": 152.1,
+      "gpuMemMb": 65.9,
+      "hwuiMb": 13.7,
+      "hadesThreads": 3,
+      "threads": 63
+    }
+  }
+}

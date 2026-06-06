@@ -75,6 +75,35 @@ Performance captured on Android only via:
 
 See perf-results/comparison.md (regenerate with scripts/compare.py).
 
+## Deep-dive analysis (docs/cold-start-findings.html)
+
+Analyzed Hermes CPU profiles + Perfetto Systrace to explain the differences:
+- New analyzers in perf-tooling/scripts: analyze-hermes-profile.py (call-tree
+  self-time + library blame + distinct files/modules) and
+  analyze-perfetto-coldstart.py (RNMarker spans + RSS split + hades thread count).
+- Persisted numbers: perf-results/analysis-breakdown.json. Native traces are
+  gitignored; re-capture with perfetto-trace.sh --cold-launch into perf-results/_native.
+- Gotcha discovered: device's traced_probes service stops after many back-to-back
+  perfetto sessions -> sparse traces (no ftrace/atrace/RSS). Fix:
+  `adb shell 'setprop persist.traced.enable 0; sleep 1; setprop persist.traced.enable 1'`.
+
+Key findings:
+1. Expo Router cold start/RAM premium = Reanimated+Worklets second Hermes runtime
+   (3 hades GC threads vs 1-2; 8 extra .so; ~106ms JS via runOnUISync/worklets) +
+   2x HBC bundle (2.8MB) with 106 files evaluated at boot (vs ~36-43) + it IS
+   React Navigation plus a routing layer. RAM premium is mostly anon heap
+   (176MB vs 62-94MB).
+2. RNN leanest: native nav, RUN_JS_BUNDLE 55ms (JS only registers + setRoot).
+   React Navigation adds JS nav tree reconciliation + Expo runtime tax
+   (expo-modules-core getConstants ~115ms) + theme color processing -> +50ms JS,
+   +110ms RN bringup, +19MB. Caveat: RNN is bare RN (no Expo) so part of its lead
+   is "no expo-modules-core".
+3. Shared hot functions: getConstants / getConstantsForViewManager (bridge tax),
+   completeRoot/createNode/appendChild (Fabric commit), React reconciliation,
+   GC. Expo Router adds runOnUISync/registerCustomSerializable (worklets); the
+   navigation router has the heaviest getConstants (eager native view-manager
+   registration + Material3 constants at import).
+
 Notes / decisions:
 - RNN is incompatible with Expo's ExpoReactHostFactory (it owns the React host),
   so rnn_app is a BARE RN 0.85 app. RNN 8.8.7 supports RN 0.85 new arch

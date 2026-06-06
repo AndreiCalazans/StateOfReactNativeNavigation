@@ -34,3 +34,7 @@ perf-results/**/.*-displayed.txt
 .DS_Store
 npm-debug.*
 yarn-error.log
+
+# Python
+__pycache__/
+*.pyc

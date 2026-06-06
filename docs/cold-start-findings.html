@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Where React Native navigation libraries spend their cold start — a Systrace + Hermes deep dive</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --ink:#e6edf3; --muted:#8b949e;
+    --line:#30363d; --accent:#58a6ff; --good:#3fb950; --warn:#d29922; --bad:#f85149;
+    --rnn:#3fb950; --rnav:#58a6ff; --nav:#bc8cff; --expo:#f0883e;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 22px 96px}
+  header.hero{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:36px}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12.5px}
+  h1{font-size:33px;line-height:1.2;margin:.35em 0 .25em}
+  h2{font-size:24px;margin:52px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:30px 0 6px;color:var(--ink)}
+  p{color:#d6dee6}
+  .sub{color:var(--muted);font-size:15px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{background:#1f2630;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#e6edf3}
+  .lede{font-size:18.5px;color:#cdd6e0}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:20px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;margin:12px 0}
+  th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-weight:600;border-bottom:1px solid var(--line)}
+  tbody tr:hover{background:#1b2230}
+  .lib{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .d-rnn{background:var(--rnn)} .d-rnav{background:var(--rnav)} .d-nav{background:var(--nav)} .d-expo{background:var(--expo)}
+  .chart{margin:16px 0 6px}
+  .row{display:grid;grid-template-columns:150px 1fr 76px;align-items:center;gap:12px;margin:7px 0}
+  .row .name{font-size:13.5px;color:#cdd6e0}
+  .bar{height:18px;border-radius:5px;min-width:2px}
+  .row .val{font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+  .b-rnn{background:linear-gradient(90deg,#2ea043,#3fb950)}
+  .b-rnav{background:linear-gradient(90deg,#388bfd,#58a6ff)}
+  .b-nav{background:linear-gradient(90deg,#a371f7,#bc8cff)}
+  .b-expo{background:linear-gradient(90deg,#db6d28,#f0883e)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 2px;font-size:13px;color:var(--muted)}
+  .callout{border-left:3px solid var(--accent);background:#11212f;padding:12px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+  .callout.good{border-color:var(--good);background:#0f2417}
+  .callout.warn{border-color:var(--warn);background:#241f12}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr 64px}}
+  .small{font-size:13px;color:var(--muted)}
+  .tt{font-variant-numeric:tabular-nums}
+  hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+  .foot{color:var(--muted);font-size:13px;margin-top:50px;border-top:1px solid var(--line);padding-top:18px}
+  .win{color:var(--good);font-weight:600}.lose{color:var(--bad);font-weight:600}
+  ul{color:#d6dee6}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">React Native · June 2026 · Android</div>
+  <h1>Where do RN navigation libraries spend their cold start?</h1>
+  <p class="lede">Four navigation stacks, one identical app, profiled on a real device with
+  Perfetto Systrace and the Hermes sampling profiler. The headline numbers were surprising —
+  so I went into the traces to find <em>why</em> Expo Router costs 3× the cold start and RAM,
+  and what React&nbsp;Navigation adds on top of the leaner react-native-navigation.</p>
+  <div class="tags">
+    <span class="tag">Expo SDK 56 · RN 0.85</span>
+    <span class="tag">Hermes · New Architecture (bridgeless/Fabric)</span>
+    <span class="tag">Samsung Galaxy A16 · Android 14</span>
+    <span class="tag">release / profileable builds</span>
+  </div>
+</header>
+
+<p>Every app renders the <strong>exact same screens</strong> (a 30-row list → push Details →
+pop, plus a tab switch) from a shared UI package, so the only variable is the navigation
+library. Cold start is the OS <code>Displayed</code> metric (process fork → first frame);
+FPS/CPU/RAM come from <a href="https://github.com/bamlab/flashlight">Flashlight</a> driving a
+<a href="https://maestro.mobile.dev">Maestro</a> flow; the breakdowns below come from a Perfetto
+system trace (with our <code>ReactMarker → atrace</code> forwarder) and a source-mapped Hermes
+CPU profile per run.</p>
+
+<h2 id="headline">The headline numbers</h2>
+<div class="legend">
+  <span class="lib"><span class="dot d-rnn"></span>react-native-navigation (Wix)</span>
+  <span class="lib"><span class="dot d-rnav"></span>React Navigation v7</span>
+  <span class="lib"><span class="dot d-nav"></span>navigation (Graham Mendick)</span>
+  <span class="lib"><span class="dot d-expo"></span>Expo Router</span>
+</div>
+<table>
+  <thead><tr><th>Library</th><th>Cold start (median ms)</th><th>Avg FPS</th><th>Avg CPU %</th><th>Peak RAM (MB)</th></tr></thead>
+  <tbody>
+    <tr><td><span class="lib"><span class="dot d-rnn"></span>react-native-navigation</span></td><td class="tt win">316</td><td class="tt">59.8</td><td class="tt">31.2</td><td class="tt win">195</td></tr>
+    <tr><td><span class="lib"><span class="dot d-rnav"></span>React Navigation v7</span></td><td class="tt">358</td><td class="tt">59.9</td><td class="tt">37.8</td><td class="tt">214</td></tr>
+    <tr><td><span class="lib"><span class="dot d-nav"></span>navigation router</span></td><td class="tt">398</td><td class="tt">59.8</td><td class="tt">34.8</td><td class="tt">241</td></tr>
+    <tr><td><span class="lib"><span class="dot d-expo"></span>Expo Router</span></td><td class="tt lose">917</td><td class="tt">59.8</td><td class="tt">37.1</td><td class="tt lose">308</td></tr>
+  </tbody>
+</table>
+<p class="small">Cold start = median of 3 runs; RAM = Flashlight peak over the navigate flow.
+All four hold a steady ~60&nbsp;FPS on this simple UI — the interesting differences are in
+<strong>startup cost</strong> and <strong>memory</strong>.</p>
+
+<div class="chart">
+  <div class="small">Cold start — OS <code>Displayed</code> (lower is better)</div>
+  <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:34%"></div><span class="val">316 ms</span></div>
+  <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:39%"></div><span class="val">358 ms</span></div>
+  <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:43%"></div><span class="val">398 ms</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">917 ms</span></div>
+</div>
+
+<h2 id="q1">1 · Why does Expo Router add so much cold start and RAM?</h2>
+<p>Expo Router is ~2.6× the cold start and ~1.6× the peak RAM of the others. The traces point to
+<strong>three compounding causes</strong>, none of which is the file-based router’s routing logic
+itself.</p>
+
+<h3>① It ships a second runtime: Reanimated + Worklets</h3>
+<p>The Expo Router template pulls in <code>react-native-reanimated@4</code> and
+<code>react-native-worklets</code>. None of the other three apps do. That shows up everywhere:</p>
+<table>
+  <thead><tr><th>Evidence</th><th>Expo Router</th><th>The other three</th></tr></thead>
+  <tbody>
+    <tr><td>Reanimated/Worklets native libs in APK</td><td class="tt lose">8 <span class="small">.so</span></td><td class="tt">0</td></tr>
+    <tr><td>arm64 <code>.so</code> count (total)</td><td class="tt">20</td><td class="tt">11–18</td></tr>
+    <tr><td>Hermes GC (<code>hades</code>) threads <span class="small">≈ # of JS runtimes</span></td><td class="tt lose">3</td><td class="tt">1–2</td></tr>
+    <tr><td>JS CPU blamed to worklets+reanimated</td><td class="tt lose">~106 ms/run</td><td class="tt">0</td></tr>
+  </tbody>
+</table>
+<p>The Worklets package spins up a <strong>separate Hermes runtime</strong> for the UI thread
+(hence the extra <code>hades</code> GC thread), and the JS profile is full of its fingerprints at
+startup: <code class="mono">[HostFunction] runOnUISync</code> (~70 ms/run),
+<code class="mono">registerCustomSerializable</code>, <code class="mono">installTurboModule</code>.
+A whole second VM + its native libs is a large chunk of the anonymous memory below.</p>
+
+<h3>② The JS bundle is twice the size, and 2.6× the modules run at startup</h3>
+<div class="grid2">
+<div class="chart">
+  <div class="small">Hermes bytecode bundle (KB)</div>
+  <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:47%"></div><span class="val">1339</span></div>
+  <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:48%"></div><span class="val">1371</span></div>
+  <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:55%"></div><span class="val">1574</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">2877</span></div>
+</div>
+<div class="chart">
+  <div class="small">Distinct JS files executed during cold start</div>
+  <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:34%"></div><span class="val">36</span></div>
+  <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:36%"></div><span class="val">38</span></div>
+  <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:41%"></div><span class="val">43</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">106</span></div>
+</div>
+</div>
+<p>A 2.8&nbsp;MB Hermes bytecode file means more to mmap and more to evaluate. The profile shows
+Expo Router touches <strong>106 distinct source files</strong> before first frame vs ~36–43 for the
+others — it is React Navigation (Expo Router is built on top of it) <em>plus</em> the router layer
+(route tree construction, <code class="mono">getRoutes</code>, <code class="mono">getStateFromPath</code>,
+context navigators) <em>plus</em> Reanimated/Worklets/Screens.</p>
+
+<h3>③ Where the RAM actually goes</h3>
+<p>Peak RSS from the system trace, split by type. Expo Router’s premium is overwhelmingly
+<span class="lose">anonymous memory</span> (JS heaps + native allocations), with smaller bumps in
+mapped code, GPU and HWUI:</p>
+<table>
+  <thead><tr><th>Library</th><th>Peak RSS</th><th>anon (heap)</th><th>file (code)</th><th>GPU</th><th>HWUI</th></tr></thead>
+  <tbody>
+    <tr><td><span class="lib"><span class="dot d-rnn"></span>rn-navigation</span></td><td class="tt">182</td><td class="tt">62</td><td class="tt">120</td><td class="tt">52</td><td class="tt">3.9</td></tr>
+    <tr><td><span class="lib"><span class="dot d-rnav"></span>React Navigation</span></td><td class="tt">195</td><td class="tt">70</td><td class="tt">124</td><td class="tt">50</td><td class="tt">2.2</td></tr>
+    <tr><td><span class="lib"><span class="dot d-nav"></span>navigation</span></td><td class="tt">218</td><td class="tt">94</td><td class="tt">124</td><td class="tt">50</td><td class="tt">2.2</td></tr>
+    <tr><td><span class="lib"><span class="dot d-expo"></span>Expo Router</span></td><td class="tt lose">326</td><td class="tt lose">176</td><td class="tt">152</td><td class="tt">66</td><td class="tt">13.7</td></tr>
+  </tbody>
+</table>
+<div class="callout warn">
+  <strong>Takeaway for Q1:</strong> Expo Router’s extra ~600&nbsp;ms and ~110&nbsp;MB are not the
+  router’s routing code — they are (a) the Reanimated+Worklets second runtime the template enables,
+  (b) a 2× bigger bundle with 2.6× the modules evaluated at boot, and (c) the fact that Expo Router
+  <em>is</em> React Navigation plus a routing layer. A blank Expo Router app without Reanimated, or
+  with the route tree trimmed, would close a large part of the gap.
+</div>
+
+<h2 id="q2">2 · react-native-navigation is the leanest — what does React Navigation v7 add?</h2>
+<p>rn-navigation wins cold start (316 ms) and RAM (195 MB). The split between native- and JS-driven
+navigation explains most of it. The cleanest single view is the
+<code class="mono">RUN_JS_BUNDLE</code> marker — how long the JS entry takes to evaluate:</p>
+<div class="chart">
+  <div class="small"><code>RUN_JS_BUNDLE</code> — top-level bundle evaluation (ms, from Systrace)</div>
+  <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:21%"></div><span class="val">55 ms</span></div>
+  <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:63%"></div><span class="val">168 ms</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:78%"></div><span class="val">208 ms</span></div>
+  <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:100%"></div><span class="val">266 ms</span></div>
+</div>
+<p>rn-navigation evaluates its entry in <strong>55 ms</strong>: the JS just registers components and
+calls <code class="mono">Navigation.setRoot(...)</code>. The bottom tabs and the stack are built by
+<strong>native</strong> Kotlin views — there is almost no JS render tree to construct, so the JS
+thread does little and the native side draws the first frame quickly.</p>
+<p>React Navigation v7 is <strong>JS-driven</strong> navigation on top of
+<code>react-native-screens</code>. Compared to rn-navigation it adds, at startup:</p>
+<ul>
+  <li><strong>The Expo runtime tax.</strong> It’s an Expo app, so <code>expo-modules-core</code> and
+  the <code class="mono">@expo</code> NativeModules proxy initialize eagerly — ~115&nbsp;ms/run of JS
+  blamed to <code class="mono">@expo</code>/<code class="mono">expo-modules-core</code>, dominated by
+  synchronous <code class="mono">getConstants</code> calls. rn-navigation is a <em>bare</em> RN app
+  and skips this entirely.</li>
+  <li><strong>A real JS navigation tree.</strong> <code class="mono">NavigationContainer</code> →
+  navigators → screens are React components reconciled by Fabric on the JS thread; the profile shows
+  <code class="mono">@react-navigation</code> work plus React reconciliation
+  (<code class="mono">completeRoot</code>, <code class="mono">createNode</code>,
+  <code class="mono">appendChild</code>).</li>
+  <li><strong>Theme color processing.</strong> <code class="mono">color-convert</code>/
+  <code class="mono">color-string</code> show up resolving the default theme.</li>
+</ul>
+<p>Net effect: ~+50&nbsp;ms JS CPU, ~+110&nbsp;ms of RN bring-up
+(<code class="mono">REACT_BRIDGELESS_LOADING</code>: 84&nbsp;ms → 377&nbsp;ms), and ~+19&nbsp;MB RAM
+(mostly heap from the JS component tree).</p>
+<div class="callout good">
+  <strong>Takeaway for Q2:</strong> rn-navigation is lean because navigation is native — the JS
+  bundle barely runs at boot. React Navigation’s extra cost is real React work for the navigation
+  tree plus the Expo module-system init it happens to carry. The honest caveat: part of the gap is
+  “bare RN vs Expo app”, not navigation library alone (see caveats).
+</div>
+
+<p class="small">Aside — the <span class="lib"><span class="dot d-nav"></span>navigation router</span>
+is interesting: native tab bar yet the <em>slowest</em> bundle eval (266 ms) and the biggest
+<code class="mono">CREATE_UI_MANAGER_MODULE_CONSTANTS</code> (68 ms vs ~11–22 ms). It eagerly
+<code class="mono">requireNativeComponent</code>s ~two dozen native view managers (TabBar, TabLayout,
+NavigationBar…) and reads Material3 constants at import time — heavy module-load work that lands on
+the JS thread before first frame.</p>
+
+<h2 id="q3">3 · The typical hot functions during cold start</h2>
+<p>JS-thread self-time from the Hermes profile (averaged over 3 runs). Two patterns repeat across
+<em>all</em> libraries, plus a library-specific tail.</p>
+
+<h3>The shared cold-start tax (every library)</h3>
+<table>
+  <thead><tr><th>Hot function</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td class="mono" style="text-align:left">[HostFunction] getConstants</td><td style="text-align:left">Synchronous native-module constant loading over the JSI boundary — the single biggest leaf on the Expo apps</td></tr>
+    <tr><td class="mono" style="text-align:left">getConstantsForViewManager</td><td style="text-align:left">Per-view-manager config fetch (Fabric registering view types)</td></tr>
+    <tr><td class="mono" style="text-align:left">completeRoot / createNode / appendChild</td><td style="text-align:left">Fabric committing the first UI tree to the native shadow tree</td></tr>
+    <tr><td class="mono" style="text-align:left">renderWithHooks / beginWork / workLoop…</td><td style="text-align:left">React reconciliation of the initial render</td></tr>
+    <tr><td class="mono" style="text-align:left">[GC Young Gen] / hades</td><td style="text-align:left">Hermes garbage collection under allocation pressure at boot</td></tr>
+  </tbody>
+</table>
+
+<h3>Library-specific signatures</h3>
+<table>
+  <thead><tr><th>Library</th><th>JS busy<br><span class="small">ms/run</span></th><th>Top CPU is blamed to…</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><span class="lib"><span class="dot d-rnn"></span>rn-navigation</span></td>
+      <td class="tt win">169</td>
+      <td style="text-align:left"><code class="mono">react-native-navigation</code> (57) · <code class="mono">getConstantsForViewManager</code> · <code class="mono">requireNativeComponent</code> · a little <code class="mono">lodash</code></td>
+    </tr>
+    <tr>
+      <td><span class="lib"><span class="dot d-rnav"></span>React Navigation</span></td>
+      <td class="tt">219</td>
+      <td style="text-align:left"><code class="mono">@expo</code> (82) + <code class="mono">expo-modules-core</code> (33) · <code class="mono">getConstants</code> (74) · <code class="mono">@react-navigation</code> render (28) · <code class="mono">color-convert</code></td>
+    </tr>
+    <tr>
+      <td><span class="lib"><span class="dot d-nav"></span>navigation</span></td>
+      <td class="tt">327</td>
+      <td style="text-align:left"><code class="mono">getConstants</code> (141!) · native view-manager registration · <code class="mono">navigation-react-native</code> <code class="mono">TabBarItem</code></td>
+    </tr>
+    <tr>
+      <td><span class="lib"><span class="dot d-expo"></span>Expo Router</span></td>
+      <td class="tt lose">461</td>
+      <td style="text-align:left"><code class="mono">@expo</code> (163) · <code class="mono">react-native-worklets</code> (95) + <code class="mono">runOnUISync</code> (70) · <code class="mono">expo-modules-core</code> (53) · <code class="mono">expo-router</code> (25) · <code class="mono">reanimated</code></td>
+    </tr>
+  </tbody>
+</table>
+<p class="small">“JS busy” is non-idle JS-thread self-time during the ~9&nbsp;s capture window;
+because the app is interactive in &lt;1&nbsp;s, this is effectively the startup burst. Reading it:
+<code class="mono">getConstants</code> is the bridge tax (Expo apps pay it heavily, bare RNN barely),
+and only Expo Router carries a Worklets runtime on top.</p>
+
+<h2 id="caveats">Caveats &amp; method honesty</h2>
+<ul>
+  <li><strong>RNN is a bare RN app; the other three are Expo apps.</strong> Some of rn-navigation’s
+  lead is “no <code>expo-modules-core</code>” rather than navigation per se. RNN owns the React host,
+  which is incompatible with Expo’s host factory, so a bare app was the realistic setup.</li>
+  <li><strong>Constant profiling overhead.</strong> Every release build carries the same
+  instrumentation (Hermes sampler enabled in <code>onCreate</code> + a ReactMarker→atrace forwarder).
+  That inflates absolute numbers a little but is identical across apps, so relative comparisons hold.</li>
+  <li><strong>Hermes sampling is coarse</strong> (~400–1000 samples over the window); per-function ms
+  are indicative and were averaged over 3 runs. Cold-start medians are over 3 runs.</li>
+  <li><strong>The RNMarker/RSS breakdowns are single representative cold launches</strong> captured
+  with Perfetto callstack sampling attached, which adds overhead — so the <code>Displayed</code> in
+  those traces is a bit higher than the headline medians. The shape, not the absolute, is the point.</li>
+  <li><strong>One device, one UI.</strong> Samsung Galaxy A16 (Android 14), Hermes, New Architecture
+  (bridgeless + Fabric), Expo SDK 56 / RN 0.85. A trivial UI — heavier screens would change the FPS
+  story.</li>
+</ul>
+
+<div class="foot">
+  <p>Generated from <code>perf-results/</code> in this repo: source-mapped Hermes profiles
+  (<code>*-hermes.json</code>), Perfetto traces (<code>_native/*.perfetto-trace</code>, open at
+  <a href="https://ui.perfetto.dev">ui.perfetto.dev</a>), and Flashlight measures (<code>*.json</code>).
+  Reproduce with <code>scripts/measure.sh</code> and regenerate the table with
+  <code>scripts/compare.py</code>. Analysis tooling lives in <code>perf-tooling/</code>.</p>
+</div>
+
+</div>
+</body>
+</html>
