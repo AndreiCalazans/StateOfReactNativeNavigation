@@ -88,6 +88,24 @@ Analyzed Hermes CPU profiles + Perfetto Systrace to explain the differences:
   perfetto sessions -> sparse traces (no ftrace/atrace/RSS). Fix:
   `adb shell 'setprop persist.traced.enable 0; sleep 1; setprop persist.traced.enable 1'`.
 
+## Controlled experiment: apps/rnn_reanimated_app (RNN + Reanimated/Worklets only)
+
+Added ONLY react-native-reanimated@4.3.1 + react-native-worklets@0.8.3 (+ babel
+plugin react-native-worklets/plugin, + a 1px looping animation to exercise the
+UI runtime) to the lean RNN app; everything else identical. Result splits the
+hypothesis in two:
+- RAM: CONFIRMED. peak RAM 195 -> 320MB (Flashlight), RSS 182 -> 318MB, anon heap
+  62 -> 185MB (+123MB). Lands at/above expo-router (308MB) on its own. Same JS
+  signature as expo-router (react-native-worklets ~146ms, runOnUISync ~104ms).
+- Cold start: mostly NOT Reanimated. 316 -> 378ms (+62ms) = only ~10% of
+  expo-router's ~600ms gap. RUN_JS_BUNDLE 55 -> 128ms. So expo-router's slow cold
+  start is the 2x bundle + 106 modules at boot + router-on-react-navigation, not
+  the animation runtime. Corrected the blog accordingly.
+- CPU 31 -> 73% over navigate flow is an artifact of the continuous-loop probe
+  (worklet runtime busy while animating); not a cost of merely linking Reanimated.
+- Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
+  expo=3); removed that claim, rely on anon-RSS instead.
+
 Key findings:
 1. Expo Router cold start/RAM premium = Reanimated+Worklets second Hermes runtime
    (3 hades GC threads vs 1-2; 8 extra .so; ~106ms JS via runOnUISync/worklets) +

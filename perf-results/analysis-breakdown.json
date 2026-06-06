@@ -128,6 +128,136 @@
       "threads": 82
     }
   },
+  "rnn-reanimated": {
+    "package": "com.rnperf.rnnreanimated",
+    "hermes": {
+      "jsBusyMs": 329.8,
+      "distinctFiles": 56,
+      "distinctNodeModules": 4,
+      "blameByLibraryMs": [
+        [
+          "react-native-worklets",
+          145.7
+        ],
+        [
+          "Native",
+          76.5
+        ],
+        [
+          "react-native-navigation",
+          61.4
+        ],
+        [
+          "react-native-reanimated",
+          22.8
+        ],
+        [
+          "react-native",
+          6.0
+        ],
+        [
+          "lodash",
+          5.9
+        ],
+        [
+          "@babel",
+          4.9
+        ],
+        [
+          "shared-ui",
+          2.7
+        ],
+        [
+          "JavaScript",
+          2.2
+        ],
+        [
+          "@react-native",
+          1.6
+        ]
+      ],
+      "hottestFunctionsMs": [
+        [
+          "[HostFunction] runOnUISync",
+          103.7,
+          "Native"
+        ],
+        [
+          "[HostFunction] createNode",
+          37.5,
+          "Native"
+        ],
+        [
+          "[HostFunction] getConstantsForViewManager",
+          35.9,
+          "Native"
+        ],
+        [
+          "[HostFunction] completeRoot",
+          20.1,
+          "Native"
+        ],
+        [
+          "[HostFunction] installTurboModule",
+          19.0,
+          "Native"
+        ],
+        [
+          "[HostFunction] getConstants",
+          18.7,
+          "Native"
+        ],
+        [
+          "get",
+          17.6,
+          "react-native-reanimated"
+        ],
+        [
+          "anonymous",
+          10.5,
+          "react-native"
+        ],
+        [
+          "createSerializable",
+          7.3,
+          "react-native-worklets"
+        ],
+        [
+          "[HostFunction] createSerializableObject",
+          7.3,
+          "Native"
+        ],
+        [
+          "[Native] mapPrototypeSet",
+          7.3,
+          "Native"
+        ],
+        [
+          "finishClassComponent",
+          6.0,
+          "react-native"
+        ]
+      ]
+    },
+    "native": {
+      "app": "com.rnperf.rnnreanimated",
+      "rnMarkersMs": {
+        "RNMarker.REACT_BRIDGELESS_LOADING": 174.4,
+        "RNMarker.RUN_JS_BUNDLE": 127.9,
+        "RNMarker.INIT_REACT_RUNTIME": 127.8,
+        "RNMarker.APP_STARTUP": 127.8,
+        "RNMarker.CREATE_UI_MANAGER_MODULE_CONSTANTS": 8.8,
+        "RNMarker.LOAD_REACT_NATIVE_SO_FILE": 1.2
+      },
+      "peakRssMb": 317.5,
+      "rssAnonMb": 185.1,
+      "rssFileMb": 133.2,
+      "gpuMemMb": 54.5,
+      "hwuiMb": 3.9,
+      "hadesThreads": 2,
+      "threads": 55
+    }
+  },
   "react-navigation": {
     "package": "com.rnperf.reactnavigation",
     "hermes": {

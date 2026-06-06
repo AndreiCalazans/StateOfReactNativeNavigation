@@ -1,0 +1,31 @@
+# App-specific navigate flow for react-native-navigation (Wix).
+#
+# RNN renders a native bottom tab bar; its bottomTab `testID` is not surfaced
+# as an Android resource-id, but the tab titles are accessible, so tabs are
+# tapped by their unambiguous titles "Browse"/"Profile". Stack push/pop uses
+# the shared-ui testIDs, identical to every other example.
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+- assertVisible:
+    id: "home-screen"
+- repeat:
+    times: 5
+    commands:
+      - tapOn:
+          id: "open-details"
+      - assertVisible:
+          id: "details-screen"
+      - tapOn:
+          id: "details-back"
+      - assertVisible:
+          id: "home-screen"
+      - waitForAnimationToEnd:
+          timeout: 2000
+- tapOn: "Profile"
+- assertVisible:
+    id: "profile-screen"
+- tapOn: "Browse"
+- assertVisible:
+    id: "home-screen"

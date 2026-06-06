@@ -20,6 +20,16 @@
     "peakRamMb": 213.6
   },
   {
+    "app": "rnn-reanimated",
+    "medianDisplayedMs": 378,
+    "minDisplayedMs": 353,
+    "maxDisplayedMs": 381,
+    "coldRuns": 3,
+    "avgFps": 59.7,
+    "avgTotalCpuPct": 72.8,
+    "peakRamMb": 320.2
+  },
+  {
     "app": "navigation",
     "medianDisplayedMs": 398,
     "minDisplayedMs": 372,

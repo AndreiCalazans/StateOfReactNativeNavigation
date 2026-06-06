@@ -19,6 +19,11 @@ _native/
   <app>-native-*.perfetto-trace     full cold-launch system traces (~12 MB each)
 ```
 
+`rnn-reanimated/` is the controlled experiment from section 4 of the post:
+the lean `rnn` app with **only** Reanimated/Worklets added. Comparing `rnn` vs
+`rnn-reanimated` isolates the Reanimated/Worklets contribution (RAM: +125 MB;
+cold start: only +62 ms).
+
 ## Reproduce / validate
 
 ```bash

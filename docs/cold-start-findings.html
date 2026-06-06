@@ -58,6 +58,7 @@
   hr{border:0;border-top:1px solid var(--line);margin:40px 0}
   .foot{color:var(--muted);font-size:13px;margin-top:50px;border-top:1px solid var(--line);padding-top:18px}
   .win{color:var(--good);font-weight:600}.lose{color:var(--bad);font-weight:600}
+  .warn-c{color:var(--warn);font-weight:600}
   ul{color:#d6dee6}
   .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
 </style>
@@ -71,7 +72,9 @@
   <p class="lede">Four navigation stacks, one identical app, profiled on a real device with
   Perfetto Systrace and the Hermes sampling profiler. The headline numbers were surprising —
   so I went into the traces to find <em>why</em> Expo Router costs 3× the cold start and RAM,
-  and what React&nbsp;Navigation adds on top of the leaner react-native-navigation.</p>
+  and what React&nbsp;Navigation adds on top of the leaner react-native-navigation. Then I ran a
+  <a href="#experiment">controlled experiment</a> that splits the answer in two: Reanimated/Worklets
+  explains the <em>RAM</em>, but barely touches the <em>cold start</em>.</p>
   <div class="tags">
     <span class="tag">Expo SDK 56 · RN 0.85</span>
     <span class="tag">Hermes · New Architecture (bridgeless/Fabric)</span>
@@ -129,15 +132,15 @@ itself.</p>
   <tbody>
     <tr><td>Reanimated/Worklets native libs in APK</td><td class="tt lose">8 <span class="small">.so</span></td><td class="tt">0</td></tr>
     <tr><td>arm64 <code>.so</code> count (total)</td><td class="tt">20</td><td class="tt">11–18</td></tr>
-    <tr><td>Hermes GC (<code>hades</code>) threads <span class="small">≈ # of JS runtimes</span></td><td class="tt lose">3</td><td class="tt">1–2</td></tr>
     <tr><td>JS CPU blamed to worklets+reanimated</td><td class="tt lose">~106 ms/run</td><td class="tt">0</td></tr>
   </tbody>
 </table>
-<p>The Worklets package spins up a <strong>separate Hermes runtime</strong> for the UI thread
-(hence the extra <code>hades</code> GC thread), and the JS profile is full of its fingerprints at
-startup: <code class="mono">[HostFunction] runOnUISync</code> (~70 ms/run),
+<p>The Worklets package spins up a <strong>separate Worklets/Hermes runtime</strong> for the UI
+thread, and the JS profile is full of its fingerprints at startup:
+<code class="mono">[HostFunction] runOnUISync</code> (~70 ms/run),
 <code class="mono">registerCustomSerializable</code>, <code class="mono">installTurboModule</code>.
-A whole second VM + its native libs is a large chunk of the anonymous memory below.</p>
+That second VM plus its native allocations is, it turns out, the main driver of the RAM premium —
+I prove it with a controlled experiment in <a href="#experiment">section&nbsp;4</a>.</p>
 
 <h3>② The JS bundle is twice the size, and 2.6× the modules run at startup</h3>
 <div class="grid2">
@@ -176,11 +179,11 @@ mapped code, GPU and HWUI:</p>
   </tbody>
 </table>
 <div class="callout warn">
-  <strong>Takeaway for Q1:</strong> Expo Router’s extra ~600&nbsp;ms and ~110&nbsp;MB are not the
-  router’s routing code — they are (a) the Reanimated+Worklets second runtime the template enables,
-  (b) a 2× bigger bundle with 2.6× the modules evaluated at boot, and (c) the fact that Expo Router
-  <em>is</em> React Navigation plus a routing layer. A blank Expo Router app without Reanimated, or
-  with the route tree trimmed, would close a large part of the gap.
+  <strong>Takeaway for Q1 (refined by the experiment in <a href="#experiment">§4</a>):</strong>
+  the two axes have <em>different</em> causes. The <strong>RAM</strong> premium is almost entirely the
+  Reanimated/Worklets runtime. The <strong>cold-start</strong> premium is mostly the 2× bigger bundle
+  with 2.6× the modules evaluated at boot, plus the fact that Expo Router <em>is</em> React Navigation
+  with a routing layer on top — Reanimated accounts for only ~10% of it (~60 ms of ~600 ms).
 </div>
 
 <h2 id="q2">2 · react-native-navigation is the leanest — what does React Navigation v7 add?</h2>
@@ -277,6 +280,63 @@ the JS thread before first frame.</p>
 because the app is interactive in &lt;1&nbsp;s, this is effectively the startup burst. Reading it:
 <code class="mono">getConstants</code> is the bridge tax (Expo apps pay it heavily, bare RNN barely),
 and only Expo Router carries a Worklets runtime on top.</p>
+
+<h2 id="experiment">4 · Controlled experiment — how much was actually Reanimated?</h2>
+<p>The findings above are correlational: Expo Router differs from the others in many ways at once.
+To isolate Reanimated/Worklets I added <strong>only</strong> it to the leanest app
+(<code>react-native-navigation</code>) — same screens, same navigation, same everything else — and
+re-measured. (<code>apps/rnn_reanimated_app</code> in the repo.)</p>
+<div class="legend">
+  <span class="lib"><span class="dot d-rnn"></span>rn-navigation (baseline)</span>
+  <span class="lib"><span class="dot" style="background:#e3b341"></span>rn-navigation&nbsp;+&nbsp;Reanimated (experiment)</span>
+  <span class="lib"><span class="dot d-expo"></span>Expo Router</span>
+</div>
+<table>
+  <thead><tr><th>Metric</th><th>RNN baseline</th><th>RNN + Reanimated</th><th>Δ (Reanimated)</th><th>Expo Router</th></tr></thead>
+  <tbody>
+    <tr><td>Cold start (median ms)</td><td class="tt">316</td><td class="tt">378</td><td class="tt warn-c">+62</td><td class="tt">917</td></tr>
+    <tr><td>Peak RAM — Flashlight (MB)</td><td class="tt">195</td><td class="tt">320</td><td class="tt lose">+125</td><td class="tt">308</td></tr>
+    <tr><td>Peak RSS — trace (MB)</td><td class="tt">182</td><td class="tt">318</td><td class="tt lose">+136</td><td class="tt">326</td></tr>
+    <tr><td> of which anon heap (MB)</td><td class="tt">62</td><td class="tt">185</td><td class="tt lose">+123</td><td class="tt">176</td></tr>
+    <tr><td><code class="mono">RUN_JS_BUNDLE</code> (ms)</td><td class="tt">55</td><td class="tt">128</td><td class="tt warn-c">+73</td><td class="tt">208</td></tr>
+  </tbody>
+</table>
+<div class="grid2">
+<div class="chart">
+  <div class="small">Cold start (ms) — adding Reanimated barely moves it</div>
+  <div class="row"><span class="name">RNN</span><div class="bar b-rnn" style="width:34%"></div><span class="val">316</span></div>
+  <div class="row"><span class="name">RNN+Reanimated</span><div class="bar" style="width:41%;background:linear-gradient(90deg,#bb8a1a,#e3b341)"></div><span class="val">378</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">917</span></div>
+</div>
+<div class="chart">
+  <div class="small">Peak RAM (MB) — adding Reanimated reproduces it entirely</div>
+  <div class="row"><span class="name">RNN</span><div class="bar b-rnn" style="width:61%"></div><span class="val">195</span></div>
+  <div class="row"><span class="name">RNN+Reanimated</span><div class="bar" style="width:100%;background:linear-gradient(90deg,#bb8a1a,#e3b341)"></div><span class="val">320</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:96%"></div><span class="val">308</span></div>
+</div>
+</div>
+<p>The result splits the original hypothesis cleanly in two:</p>
+<div class="callout good">
+  <strong>RAM: confirmed.</strong> Bolting Reanimated/Worklets onto the lean app pushed peak RAM from
+  195&nbsp;MB to <strong>320&nbsp;MB</strong> — i.e. it lands at/above Expo Router’s 308&nbsp;MB on its
+  own. The jump is almost entirely <strong>anonymous heap</strong> (+123&nbsp;MB), exactly the
+  Worklets/Hermes UI runtime + native allocations. Its Hermes profile shows the identical signature
+  to Expo Router’s (<code class="mono">react-native-worklets</code> ~146&nbsp;ms,
+  <code class="mono">runOnUISync</code> ~104&nbsp;ms). <strong>Reanimated/Worklets is the cause of the
+  RAM premium.</strong>
+</div>
+<div class="callout warn">
+  <strong>Cold start: mostly <em>not</em> Reanimated.</strong> The same change added only
+  <strong>+62&nbsp;ms</strong> of cold start (316&nbsp;→&nbsp;378&nbsp;ms) — about 10% of Expo
+  Router’s ~600&nbsp;ms gap. So my first-pass write-up over-credited Reanimated for the slow boot.
+  The bulk of Expo Router’s cold start is the 2× bundle, the 106 modules evaluated at boot, and the
+  router-on-top-of-React-Navigation layering — not the animation runtime.
+</div>
+<p class="small">Footnote on CPU: the experiment’s average CPU over the navigate flow jumped to ~73%
+(vs ~31% baseline), but that’s an artifact of the tiny <em>continuously looping</em> Reanimated
+animation I added to force the runtime to do work — it is not a cost of merely linking Reanimated.
+At idle the runtime is cheap; while animating it is busy. RAM and cold start are unaffected by the
+probe (the runtime boots either way).</p>
 
 <h2 id="caveats">Caveats &amp; method honesty</h2>
 <ul>

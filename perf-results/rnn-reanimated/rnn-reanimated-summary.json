@@ -1,0 +1,22 @@
+{
+  "app": "com.rnperf.rnnreanimated",
+  "label": "rnn-reanimated",
+  "runs": 3,
+  "displayedMs": [
+    {
+      "run": 1,
+      "displayedMs": 353
+    },
+    {
+      "run": 2,
+      "displayedMs": 378
+    },
+    {
+      "run": 3,
+      "displayedMs": 381
+    }
+  ],
+  "medianDisplayedMs": 378,
+  "minDisplayedMs": 353,
+  "maxDisplayedMs": 381
+}
