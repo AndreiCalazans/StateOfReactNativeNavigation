@@ -1,18 +1,22 @@
 {
   "app": "com.rnperf.exporouter",
   "label": "expo-router",
-  "runs": 2,
+  "runs": 3,
   "displayedMs": [
     {
       "run": 1,
-      "displayedMs": 959
+      "displayedMs": 1087
     },
     {
       "run": 2,
-      "displayedMs": 901
+      "displayedMs": 917
+    },
+    {
+      "run": 3,
+      "displayedMs": 858
     }
   ],
-  "medianDisplayedMs": 930.0,
-  "minDisplayedMs": 901,
-  "maxDisplayedMs": 959
+  "medianDisplayedMs": 917,
+  "minDisplayedMs": 858,
+  "maxDisplayedMs": 1087
 }

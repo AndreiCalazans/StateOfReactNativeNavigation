@@ -1,0 +1,22 @@
+{
+  "app": "com.rnperf.rnn",
+  "label": "rnn",
+  "runs": 3,
+  "displayedMs": [
+    {
+      "run": 1,
+      "displayedMs": 313
+    },
+    {
+      "run": 2,
+      "displayedMs": 316
+    },
+    {
+      "run": 3,
+      "displayedMs": 321
+    }
+  ],
+  "medianDisplayedMs": 316,
+  "minDisplayedMs": 313,
+  "maxDisplayedMs": 321
+}

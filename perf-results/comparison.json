@@ -1,0 +1,42 @@
+[
+  {
+    "app": "rnn",
+    "medianDisplayedMs": 316,
+    "minDisplayedMs": 313,
+    "maxDisplayedMs": 321,
+    "coldRuns": 3,
+    "avgFps": 59.8,
+    "avgTotalCpuPct": 31.2,
+    "peakRamMb": 195.3
+  },
+  {
+    "app": "react-navigation",
+    "medianDisplayedMs": 358,
+    "minDisplayedMs": 338,
+    "maxDisplayedMs": 472,
+    "coldRuns": 3,
+    "avgFps": 59.9,
+    "avgTotalCpuPct": 37.8,
+    "peakRamMb": 213.6
+  },
+  {
+    "app": "navigation",
+    "medianDisplayedMs": 398,
+    "minDisplayedMs": 372,
+    "maxDisplayedMs": 412,
+    "coldRuns": 3,
+    "avgFps": 59.8,
+    "avgTotalCpuPct": 34.8,
+    "peakRamMb": 241.4
+  },
+  {
+    "app": "expo-router",
+    "medianDisplayedMs": 917,
+    "minDisplayedMs": 858,
+    "maxDisplayedMs": 1087,
+    "coldRuns": 3,
+    "avgFps": 59.8,
+    "avgTotalCpuPct": 37.1,
+    "peakRamMb": 307.9
+  }
+]

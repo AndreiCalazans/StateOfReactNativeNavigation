@@ -53,16 +53,40 @@ Performance captured on Android only via:
 
 - [x] Read instructions + reference tooling in ~/coinbase/mobile/scripts/perf_testing
 - [x] Goal 1: Setup first example (Expo Router) — apps/expo-router-app, SDK 56
-- [~] Goal 2: First example end-to-end on Android
+- [x] Goal 2: First example end-to-end on Android (build, Maestro, CPU, Systrace, Flashlight)
     - [x] Release (profileable) build succeeds
     - [x] Cold start launches; OS Displayed ~0.9-1.0s captured
     - [x] Hermes cpuprofile dumped + source-mapped (expo-router internals visible)
     - [x] Perfetto systrace captured incl. our RNMarker.* slices + native callstacks
-    - [ ] Maestro flow run (need maestro installed in-repo)
-    - [ ] Flashlight FPS/CPU/RAM (need flashlight installed in-repo)
-- [x] Goal 3: Automated perf capture tooling (coldstart-profile.sh end-to-end works)
+    - [x] Maestro flow run (Maestro 2.6 installed into .tools/)
+    - [x] Flashlight FPS/CPU/RAM (Flashlight installed into .tools/)
+- [x] Goal 3: Automated perf capture tooling (coldstart-profile.sh + flashlight + measure.sh + compare.py)
 - [x] Goal 4: Shareable perf tooling library (rn-perf-tooling + shared-ui)
-- [ ] Goal 5: Remaining navigation examples reusing tooling
+- [x] Goal 5: All 4 navigation examples built, run, and measured on device
+
+## Results (3 cold-start runs + 2 Flashlight iterations, SM-A165M / Android 14)
+
+| Library                 | Cold start median (ms) | Avg FPS | Avg CPU % | Peak RAM (MB) |
+|-------------------------|------------------------|---------|-----------|---------------|
+| react-native-navigation | 316                    | 59.8    | 31.2      | 195.3         |
+| react-navigation v7     | 358                    | 59.9    | 37.8      | 213.6         |
+| navigation router       | 398                    | 59.8    | 34.8      | 241.4         |
+| expo-router             | 917                    | 59.8    | 37.1      | 307.9         |
+
+See perf-results/comparison.md (regenerate with scripts/compare.py).
+
+Notes / decisions:
+- RNN is incompatible with Expo's ExpoReactHostFactory (it owns the React host),
+  so rnn_app is a BARE RN 0.85 app. RNN 8.8.7 supports RN 0.85 new arch
+  (ReactHost/createSurface). Perf tooling reused manually (no Expo plugin):
+  same forwarder .kt, ENABLE_COLD_START_SAMPLING, scripts.
+- navigation-react-native needs a Material3 app theme (app-local config plugin).
+- Native bottom tab bars (navigation router, RNN) don't expose testIDs to
+  Maestro; app-local flows tap tabs by title/point. Stack push/pop uses shared
+  testIDs everywhere. measure.sh auto-uses app-local .maestro/navigate.yaml.
+- Profiling overhead (Hermes sampling + ReactMarker forwarder) is present in
+  every release build, so it is constant across apps and the comparison stays
+  fair. Set EXPO_PUBLIC_PROFILING=0 to disable the JS-side dump.
 
 ## Log
 

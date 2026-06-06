@@ -1,0 +1,22 @@
+{
+  "app": "com.rnperf.reactnavigation",
+  "label": "react-navigation",
+  "runs": 3,
+  "displayedMs": [
+    {
+      "run": 1,
+      "displayedMs": 472
+    },
+    {
+      "run": 2,
+      "displayedMs": 358
+    },
+    {
+      "run": 3,
+      "displayedMs": 338
+    }
+  ],
+  "medianDisplayedMs": 358,
+  "minDisplayedMs": 338,
+  "maxDisplayedMs": 472
+}

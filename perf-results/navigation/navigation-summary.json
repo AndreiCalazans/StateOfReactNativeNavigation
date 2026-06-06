@@ -1,0 +1,22 @@
+{
+  "app": "com.rnperf.navigation",
+  "label": "navigation",
+  "runs": 3,
+  "displayedMs": [
+    {
+      "run": 1,
+      "displayedMs": 412
+    },
+    {
+      "run": 2,
+      "displayedMs": 398
+    },
+    {
+      "run": 3,
+      "displayedMs": 372
+    }
+  ],
+  "medianDisplayedMs": 398,
+  "minDisplayedMs": 372,
+  "maxDisplayedMs": 412
+}
