@@ -52,7 +52,7 @@ RESULTS="$OUT_DIR/${LABEL}.json"
 log "flashlight measure app=$APP flow=$FLOW iterations=$ITER"
 "$FLASHLIGHT_BIN" test \
   --bundleId "$APP" \
-  --testCommand "$MAESTRO_BIN --env APP_ID=$APP test $FLOW" \
+  --testCommand "$MAESTRO_BIN test --env APP_ID=$APP $FLOW" \
   --duration 0 \
   --iterationCount "$ITER" \
   --resultsTitle "$LABEL" \
