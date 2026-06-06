@@ -34,7 +34,8 @@ apps/
 shared-ui/                Navigation-agnostic screens shared by every app
 perf-tooling/             Shareable Android perf tooling (see perf-tooling/README.md)
 scripts/                  setup-tools.sh, env.sh, measure.sh, compare.py
-perf-results/             Captured results + comparison.md (raw traces gitignored)
+perf-results/             Captured results: comparison.md + committed raw data
+                          (Perfetto traces, Hermes profiles) for validation
 ```
 
 Every app renders the **same** screens (from `shared-ui`) and exposes the same

@@ -81,8 +81,9 @@ Analyzed Hermes CPU profiles + Perfetto Systrace to explain the differences:
 - New analyzers in perf-tooling/scripts: analyze-hermes-profile.py (call-tree
   self-time + library blame + distinct files/modules) and
   analyze-perfetto-coldstart.py (RNMarker spans + RSS split + hades thread count).
-- Persisted numbers: perf-results/analysis-breakdown.json. Native traces are
-  gitignored; re-capture with perfetto-trace.sh --cold-launch into perf-results/_native.
+- Persisted numbers: perf-results/analysis-breakdown.json. Raw data is committed
+  for validation (perf-results/_native/*.perfetto-trace + per-run Hermes profiles);
+  re-capture with perfetto-trace.sh --cold-launch into perf-results/_native.
 - Gotcha discovered: device's traced_probes service stops after many back-to-back
   perfetto sessions -> sparse traces (no ftrace/atrace/RSS). Fix:
   `adb shell 'setprop persist.traced.enable 0; sleep 1; setprop persist.traced.enable 1'`.
