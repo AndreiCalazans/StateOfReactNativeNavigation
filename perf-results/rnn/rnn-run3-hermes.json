@@ -1,0 +1,5661 @@
+[{
+    "ts": 1391773174354,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[root]",
+    "cat": "root",
+    "args": {
+        "name": "[root]",
+        "category": "root",
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "root",
+        "allocatedName": "[root]",
+        "node_module": "root"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "global",
+    "cat": "JavaScript",
+    "args": {
+        "name": "global",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "global",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 2,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 3,
+        "line": 183,
+        "column": 44,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 4,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 14,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/index.js",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "scheduleColdStartDump",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "scheduleColdStartDump",
+        "category": "JavaScript",
+        "parent": 6,
+        "line": 50,
+        "column": 31,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/rn-perf-tooling/js/coldStartProfiling.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "scheduleColdStartDump",
+        "node_module": "rn-perf-tooling"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadProfiler",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadProfiler",
+        "category": "JavaScript",
+        "parent": 7,
+        "line": 25,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/rn-perf-tooling/js/coldStartProfiling.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadProfiler",
+        "node_module": "rn-perf-tooling"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 8,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 9,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 10,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773208977,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 11,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 11,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 10,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 9,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 8,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadProfiler",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadProfiler",
+        "category": "JavaScript",
+        "parent": 7,
+        "line": 25,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/rn-perf-tooling/js/coldStartProfiling.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadProfiler",
+        "node_module": "rn-perf-tooling"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "scheduleColdStartDump",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "scheduleColdStartDump",
+        "category": "JavaScript",
+        "parent": 6,
+        "line": 50,
+        "column": 31,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/rn-perf-tooling/js/coldStartProfiling.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "scheduleColdStartDump",
+        "node_module": "rn-perf-tooling"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 14,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/index.js",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 41,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/index.js",
+        "params": "Navigation",
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 13,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 14,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 15,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 16,
+        "line": 4,
+        "column": 49,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "NavigationDelegate",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationDelegate",
+        "category": "JavaScript",
+        "parent": 17,
+        "line": 9,
+        "column": 59,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/NavigationDelegate.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationDelegate",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "createConcreteNavigation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "createConcreteNavigation",
+        "category": "JavaScript",
+        "parent": 18,
+        "line": 12,
+        "column": 29,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/NavigationDelegate.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "createConcreteNavigation",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "NavigationRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationRoot",
+        "category": "JavaScript",
+        "parent": 19,
+        "line": 26,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/Navigation.js",
+        "params": "TouchablePreview",
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 20,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 21,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 22,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 23,
+        "line": 23,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/adapters/TouchablePreview.js",
+        "params": "TouchableWithoutFeedback",
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "get TouchableWithoutFeedback",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get TouchableWithoutFeedback",
+        "category": "JavaScript",
+        "parent": 24,
+        "line": 145,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/index.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get TouchableWithoutFeedback",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 25,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 26,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 27,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 28,
+        "line": 20,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/Touchable/TouchableWithoutFeedback.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 29,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 30,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 31,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 32,
+        "line": 14,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/View/View.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 33,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 34,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 35,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 36,
+        "line": 14,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/View/ViewNativeComponent.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 37,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 38,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 39,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 40,
+        "line": 18,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/NativeComponent/NativeComponentRegistry.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 41,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 42,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 43,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 44,
+        "line": 23,
+        "column": 13,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 45,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 46,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 47,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 48,
+        "line": 37,
+        "column": 48,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773224919,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 49,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 49,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 48,
+        "line": 37,
+        "column": 48,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 47,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 46,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 45,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 44,
+        "line": 23,
+        "column": 13,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 44,
+        "line": 27,
+        "column": 40,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] hermesBuiltinCopyDataProperties",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] hermesBuiltinCopyDataProperties",
+        "category": "Native",
+        "parent": 51,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] hermesBuiltinCopyDataProperties",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "getValue",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getValue",
+        "category": "JavaScript",
+        "parent": 52,
+        "line": 43,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Utilities/defineLazyObjectProperty.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getValue",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "get",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get",
+        "category": "JavaScript",
+        "parent": 53,
+        "line": 408,
+        "column": 60,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "getConstantsForViewManager",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getConstantsForViewManager",
+        "category": "JavaScript",
+        "parent": 54,
+        "line": 170,
+        "column": 41,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getConstantsForViewManager",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773244631,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] getConstantsForViewManager",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstantsForViewManager",
+        "category": "Native",
+        "parent": 55,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstantsForViewManager",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] getConstantsForViewManager",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstantsForViewManager",
+        "category": "Native",
+        "parent": 55,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstantsForViewManager",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "getConstantsForViewManager",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getConstantsForViewManager",
+        "category": "JavaScript",
+        "parent": 54,
+        "line": 170,
+        "column": 41,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getConstantsForViewManager",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "get",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get",
+        "category": "JavaScript",
+        "parent": 53,
+        "line": 408,
+        "column": 60,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "getValue",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getValue",
+        "category": "JavaScript",
+        "parent": 52,
+        "line": 43,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Utilities/defineLazyObjectProperty.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getValue",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] hermesBuiltinCopyDataProperties",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] hermesBuiltinCopyDataProperties",
+        "category": "Native",
+        "parent": 51,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] hermesBuiltinCopyDataProperties",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 44,
+        "line": 27,
+        "column": 40,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 43,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 42,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 41,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 40,
+        "line": 18,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/NativeComponent/NativeComponentRegistry.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 39,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 38,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 37,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 36,
+        "line": 14,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/View/ViewNativeComponent.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 35,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 34,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 33,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 32,
+        "line": 14,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/View/View.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 31,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 30,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 29,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 28,
+        "line": 20,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/Touchable/TouchableWithoutFeedback.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 27,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 26,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 25,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "get TouchableWithoutFeedback",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get TouchableWithoutFeedback",
+        "category": "JavaScript",
+        "parent": 24,
+        "line": 145,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/index.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get TouchableWithoutFeedback",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 23,
+        "line": 23,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/adapters/TouchablePreview.js",
+        "params": "TouchableWithoutFeedback",
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 22,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 21,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 20,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "NavigationRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationRoot",
+        "category": "JavaScript",
+        "parent": 19,
+        "line": 26,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/Navigation.js",
+        "params": "TouchablePreview",
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "NavigationRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationRoot",
+        "category": "JavaScript",
+        "parent": 19,
+        "line": 39,
+        "column": 169,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/Navigation.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "Deprecations",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "Deprecations",
+        "category": "JavaScript",
+        "parent": 57,
+        "line": 10,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/Deprecations.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "Deprecations",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "once",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "once",
+        "category": "JavaScript",
+        "parent": 58,
+        "line": 22,
+        "column": 9,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/once.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "once",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "before",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "before",
+        "category": "JavaScript",
+        "parent": 59,
+        "line": 28,
+        "column": 6,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/before.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "before",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "toInteger",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "toInteger",
+        "category": "JavaScript",
+        "parent": 60,
+        "line": 30,
+        "column": 15,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/toInteger.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "toInteger",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 61,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773267203,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 62,
+        "line": 178,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 62,
+        "line": 178,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 61,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "toInteger",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "toInteger",
+        "category": "JavaScript",
+        "parent": 60,
+        "line": 30,
+        "column": 15,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/toInteger.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "toInteger",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "before",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "before",
+        "category": "JavaScript",
+        "parent": 59,
+        "line": 28,
+        "column": 6,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/before.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "before",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "once",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "once",
+        "category": "JavaScript",
+        "parent": 58,
+        "line": 22,
+        "column": 9,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/once.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "once",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "Deprecations",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "Deprecations",
+        "category": "JavaScript",
+        "parent": 57,
+        "line": 10,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/Deprecations.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "Deprecations",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "NavigationRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationRoot",
+        "category": "JavaScript",
+        "parent": 19,
+        "line": 39,
+        "column": 169,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/Navigation.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "createConcreteNavigation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "createConcreteNavigation",
+        "category": "JavaScript",
+        "parent": 18,
+        "line": 12,
+        "column": 29,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/NavigationDelegate.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "createConcreteNavigation",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "NavigationDelegate",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationDelegate",
+        "category": "JavaScript",
+        "parent": 17,
+        "line": 9,
+        "column": 59,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/NavigationDelegate.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationDelegate",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 16,
+        "line": 4,
+        "column": 49,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 15,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 14,
+        "line": 190,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 13,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 41,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/index.js",
+        "params": "Navigation",
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 4,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 3,
+        "line": 183,
+        "column": 44,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 2,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "global",
+    "cat": "JavaScript",
+    "args": {
+        "name": "global",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "global",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "emit",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "emit",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 34,
+        "column": 6,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "emit",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 64,
+        "line": 14,
+        "column": 58,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] functionPrototypeApply",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] functionPrototypeApply",
+        "category": "Native",
+        "parent": 65,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] functionPrototypeApply",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "emit",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "emit",
+        "category": "JavaScript",
+        "parent": 66,
+        "line": 129,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/vendor/emitter/EventEmitter.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "emit",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] functionPrototypeApply",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] functionPrototypeApply",
+        "category": "Native",
+        "parent": 67,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] functionPrototypeApply",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 68,
+        "line": 46,
+        "column": 20,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/index.js",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "setRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "setRoot",
+        "category": "JavaScript",
+        "parent": 69,
+        "line": 53,
+        "column": 42,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/NavigationDelegate.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "setRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "setRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "setRoot",
+        "category": "JavaScript",
+        "parent": 70,
+        "line": 89,
+        "column": 40,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/Navigation.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "setRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "setRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "setRoot",
+        "category": "JavaScript",
+        "parent": 71,
+        "line": 45,
+        "column": 32,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/Commands.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "setRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "crawl",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "crawl",
+        "category": "JavaScript",
+        "parent": 72,
+        "line": 16,
+        "column": 25,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/LayoutTreeCrawler.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "crawl",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] arrayPrototypeForEach",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] arrayPrototypeForEach",
+        "category": "Native",
+        "parent": 73,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] arrayPrototypeForEach",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 74,
+        "line": 16,
+        "column": 45,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/LayoutTreeCrawler.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "crawl",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "crawl",
+        "category": "JavaScript",
+        "parent": 75,
+        "line": 15,
+        "column": 40,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/LayoutTreeCrawler.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "crawl",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "processOptions",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "processOptions",
+        "category": "JavaScript",
+        "parent": 76,
+        "line": 23,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "processOptions",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "processObject",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "processObject",
+        "category": "JavaScript",
+        "parent": 77,
+        "line": 35,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "processObject",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "forEach",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "forEach",
+        "category": "JavaScript",
+        "parent": 78,
+        "line": 38,
+        "column": 13,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/forEach.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "forEach",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 79,
+        "line": 17,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/_createBaseEach.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "baseForOwn",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "baseForOwn",
+        "category": "JavaScript",
+        "parent": 80,
+        "line": 13,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/_baseForOwn.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "baseForOwn",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 81,
+        "line": 17,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/_createBaseFor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 82,
+        "line": 48,
+        "column": 15,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 83,
+        "line": 25,
+        "column": 51,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "checkForDeprecatedOptions",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "checkForDeprecatedOptions",
+        "category": "JavaScript",
+        "parent": 84,
+        "line": 35,
+        "column": 4,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/Deprecations.js",
+        "params": "each",
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "checkForDeprecatedOptions",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 85,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 86,
+        "line": 183,
+        "column": 44,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 87,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 88,
+        "line": 17259,
+        "column": 6,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 89,
+        "line": 17232,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "runInContext",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "runInContext",
+        "category": "JavaScript",
+        "parent": 90,
+        "line": 16989,
+        "column": 9,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "runInContext",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773275701,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "mixin",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "mixin",
+        "category": "JavaScript",
+        "parent": 91,
+        "line": 15828,
+        "column": 4,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "mixin",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "mixin",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "mixin",
+        "category": "JavaScript",
+        "parent": 91,
+        "line": 15828,
+        "column": 4,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "mixin",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "runInContext",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "runInContext",
+        "category": "JavaScript",
+        "parent": 90,
+        "line": 16989,
+        "column": 9,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "runInContext",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 89,
+        "line": 17232,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 88,
+        "line": 17259,
+        "column": 6,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/lodash.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 87,
+        "line": 285,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 86,
+        "line": 183,
+        "column": 44,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 85,
+        "line": 98,
+        "column": 23,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/metro-runtime/src/polyfills/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "metro-runtime"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "checkForDeprecatedOptions",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "checkForDeprecatedOptions",
+        "category": "JavaScript",
+        "parent": 84,
+        "line": 35,
+        "column": 4,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/Deprecations.js",
+        "params": "each",
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "checkForDeprecatedOptions",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 83,
+        "line": 25,
+        "column": 51,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 82,
+        "line": 48,
+        "column": 15,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 81,
+        "line": 17,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/_createBaseFor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "baseForOwn",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "baseForOwn",
+        "category": "JavaScript",
+        "parent": 80,
+        "line": 13,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/_baseForOwn.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "baseForOwn",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 79,
+        "line": 17,
+        "column": 21,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/_createBaseEach.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "forEach",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "forEach",
+        "category": "JavaScript",
+        "parent": 78,
+        "line": 38,
+        "column": 13,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/lodash/forEach.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "forEach",
+        "node_module": "lodash"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "processObject",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "processObject",
+        "category": "JavaScript",
+        "parent": 77,
+        "line": 35,
+        "column": 11,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "processObject",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "processOptions",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "processOptions",
+        "category": "JavaScript",
+        "parent": 76,
+        "line": 23,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/OptionsProcessor.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "processOptions",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "crawl",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "crawl",
+        "category": "JavaScript",
+        "parent": 75,
+        "line": 15,
+        "column": 40,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/LayoutTreeCrawler.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "crawl",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 74,
+        "line": 16,
+        "column": 45,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/LayoutTreeCrawler.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] arrayPrototypeForEach",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] arrayPrototypeForEach",
+        "category": "Native",
+        "parent": 73,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] arrayPrototypeForEach",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "crawl",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "crawl",
+        "category": "JavaScript",
+        "parent": 72,
+        "line": 16,
+        "column": 25,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/LayoutTreeCrawler.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "crawl",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "setRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "setRoot",
+        "category": "JavaScript",
+        "parent": 71,
+        "line": 45,
+        "column": 32,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/commands/Commands.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "setRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "setRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "setRoot",
+        "category": "JavaScript",
+        "parent": 70,
+        "line": 89,
+        "column": 40,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/Navigation.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "setRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "setRoot",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "setRoot",
+        "category": "JavaScript",
+        "parent": 69,
+        "line": 53,
+        "column": 42,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native-navigation/lib/module/NavigationDelegate.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "setRoot",
+        "node_module": "react-native-navigation"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 68,
+        "line": 46,
+        "column": 20,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/index.js",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] functionPrototypeApply",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] functionPrototypeApply",
+        "category": "Native",
+        "parent": 67,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] functionPrototypeApply",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "emit",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "emit",
+        "category": "JavaScript",
+        "parent": 66,
+        "line": 129,
+        "column": 35,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/vendor/emitter/EventEmitter.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "emit",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] functionPrototypeApply",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] functionPrototypeApply",
+        "category": "Native",
+        "parent": 65,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] functionPrototypeApply",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 64,
+        "line": 14,
+        "column": 58,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773286899,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "emit",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "emit",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 34,
+        "column": 6,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "emit",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773320979,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773320979,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 8968,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773320979,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 9359,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773320979,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9499,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773320979,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7104,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773320979,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] createNode",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] createNode",
+        "category": "Native",
+        "parent": 97,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] createNode",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] createNode",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] createNode",
+        "category": "Native",
+        "parent": 97,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] createNode",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7104,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9499,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 9359,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 8968,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 9136,
+        "column": 12,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 9715,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 9734,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 8102,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773332831,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 102,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773352253,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 102,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773352253,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 8102,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773352253,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 9734,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773352253,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 9715,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773352253,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 9136,
+        "column": 12,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773352253,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 8968,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 9359,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9497,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "beginWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "beginWork",
+        "category": "JavaScript",
+        "parent": 104,
+        "line": 6515,
+        "column": 28,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "beginWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "updateClassComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateClassComponent",
+        "category": "JavaScript",
+        "parent": 105,
+        "line": 5833,
+        "column": 29,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateClassComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "finishClassComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "finishClassComponent",
+        "category": "JavaScript",
+        "parent": 106,
+        "line": 5858,
+        "column": 27,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "finishClassComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "render",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "render",
+        "category": "JavaScript",
+        "parent": 107,
+        "line": 1688,
+        "column": 37,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "render",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "toArray",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "toArray",
+        "category": "JavaScript",
+        "parent": 108,
+        "line": 259,
+        "column": 14,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react/cjs/react.production.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "toArray",
+        "node_module": "react"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "mapIntoArray",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "mapIntoArray",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 103,
+        "column": 15,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react/cjs/react.production.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "mapIntoArray",
+        "node_module": "react"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] stringPrototypeReplace",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] stringPrototypeReplace",
+        "category": "Native",
+        "parent": 110,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] stringPrototypeReplace",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] regExpPrototypeSymbolReplace",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] regExpPrototypeSymbolReplace",
+        "category": "Native",
+        "parent": 111,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] regExpPrototypeSymbolReplace",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773435388,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] regExpPrototypeExec",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] regExpPrototypeExec",
+        "category": "Native",
+        "parent": 112,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] regExpPrototypeExec",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] regExpPrototypeExec",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] regExpPrototypeExec",
+        "category": "Native",
+        "parent": 112,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] regExpPrototypeExec",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] regExpPrototypeSymbolReplace",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] regExpPrototypeSymbolReplace",
+        "category": "Native",
+        "parent": 111,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] regExpPrototypeSymbolReplace",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] stringPrototypeReplace",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] stringPrototypeReplace",
+        "category": "Native",
+        "parent": 110,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] stringPrototypeReplace",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "mapIntoArray",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "mapIntoArray",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 103,
+        "column": 15,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react/cjs/react.production.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "mapIntoArray",
+        "node_module": "react"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "toArray",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "toArray",
+        "category": "JavaScript",
+        "parent": 108,
+        "line": 259,
+        "column": 14,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react/cjs/react.production.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "toArray",
+        "node_module": "react"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "render",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "render",
+        "category": "JavaScript",
+        "parent": 107,
+        "line": 1688,
+        "column": 37,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "render",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "finishClassComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "finishClassComponent",
+        "category": "JavaScript",
+        "parent": 106,
+        "line": 5858,
+        "column": 27,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "finishClassComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "updateClassComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateClassComponent",
+        "category": "JavaScript",
+        "parent": 105,
+        "line": 5833,
+        "column": 29,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateClassComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "beginWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "beginWork",
+        "category": "JavaScript",
+        "parent": 104,
+        "line": 6515,
+        "column": 28,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "beginWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9497,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9499,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7099,
+        "column": 78,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "create",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "create",
+        "category": "JavaScript",
+        "parent": 114,
+        "line": 497,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "create",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 115,
+        "line": 475,
+        "column": 31,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 116,
+        "line": 424,
+        "column": 33,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 117,
+        "line": 452,
+        "column": 42,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "processColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "processColor",
+        "category": "JavaScript",
+        "parent": 118,
+        "line": 26,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/processColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "processColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "normalizeColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 119,
+        "line": 30,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/normalizeColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "normalizeColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773437889,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "normalizeColor",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 120,
+        "line": 15,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/@react-native/normalize-colors/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "normalizeColor",
+        "node_module": "@react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "normalizeColor",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 120,
+        "line": 15,
+        "column": 0,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/@react-native/normalize-colors/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "normalizeColor",
+        "node_module": "@react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "normalizeColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 119,
+        "line": 30,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/normalizeColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "normalizeColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "processColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "processColor",
+        "category": "JavaScript",
+        "parent": 118,
+        "line": 26,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/processColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "processColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 117,
+        "line": 452,
+        "column": 42,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 116,
+        "line": 424,
+        "column": 33,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 115,
+        "line": 475,
+        "column": 31,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "create",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "create",
+        "category": "JavaScript",
+        "parent": 114,
+        "line": 497,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "create",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7099,
+        "column": 78,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9499,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 9359,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 8968,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 9136,
+        "column": 12,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 9715,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 9734,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 8102,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773455059,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 102,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773470917,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 102,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773470917,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 8102,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773470917,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 9734,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773470917,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 9715,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773470917,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 9136,
+        "column": 12,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773470917,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 8968,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 9359,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9499,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7099,
+        "column": 78,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "create",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "create",
+        "category": "JavaScript",
+        "parent": 114,
+        "line": 497,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "create",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 115,
+        "line": 475,
+        "column": 31,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 116,
+        "line": 452,
+        "column": 42,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "processColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "processColor",
+        "category": "JavaScript",
+        "parent": 122,
+        "line": 26,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/processColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "processColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "normalizeColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 123,
+        "line": 30,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/normalizeColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "normalizeColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "normalizeColor",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 124,
+        "line": 31,
+        "column": 33,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/@react-native/normalize-colors/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "normalizeColor",
+        "node_module": "@react-native"
+    }
+},{
+    "ts": 1391773517583,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[Native] regExpPrototypeExec",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] regExpPrototypeExec",
+        "category": "Native",
+        "parent": 125,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] regExpPrototypeExec",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[Native] regExpPrototypeExec",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] regExpPrototypeExec",
+        "category": "Native",
+        "parent": 125,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] regExpPrototypeExec",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "normalizeColor",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 124,
+        "line": 31,
+        "column": 33,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/@react-native/normalize-colors/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "normalizeColor",
+        "node_module": "@react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "normalizeColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "normalizeColor",
+        "category": "JavaScript",
+        "parent": 123,
+        "line": 30,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/normalizeColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "normalizeColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "processColor",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "processColor",
+        "category": "JavaScript",
+        "parent": 122,
+        "line": 26,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/StyleSheet/processColor.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "processColor",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 116,
+        "line": 452,
+        "column": 42,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "addNestedProperty",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "addNestedProperty",
+        "category": "JavaScript",
+        "parent": 115,
+        "line": 475,
+        "column": 31,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "addNestedProperty",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "create",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "create",
+        "category": "JavaScript",
+        "parent": 114,
+        "line": 497,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "create",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7099,
+        "column": 78,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7104,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773525684,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] createNode",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] createNode",
+        "category": "Native",
+        "parent": 97,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] createNode",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] createNode",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] createNode",
+        "category": "Native",
+        "parent": 97,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] createNode",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 7104,
+        "column": 26,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 9499,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 9359,
+        "column": 18,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 8968,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 9136,
+        "column": 12,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 9715,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 9734,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 8102,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773531513,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "B",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 102,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773546047,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 102,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391773546047,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 8102,
+        "column": 22,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773546047,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 9734,
+        "column": 36,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773546047,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 9715,
+        "column": 24,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773546047,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 9136,
+        "column": 12,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391773546047,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/Users/andreicalazans/dev/StateOfReactNativeNavigation/apps/rnn_app/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391782214304,
+    "pid": 31675,
+    "tid": 31759,
+    "ph": "E",
+    "name": "[root]",
+    "cat": "root",
+    "args": {
+        "name": "[root]",
+        "category": "root",
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "root",
+        "allocatedName": "[root]",
+        "node_module": "root"
+    }
+}]

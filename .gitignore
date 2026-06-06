@@ -21,13 +21,8 @@ web-build/
 *.keystore
 !debug.keystore
 
-# Perf results: ignore large raw artifacts, keep JSON summaries.
-perf-results/**/*.perfetto-trace
-perf-results/**/*.cpuprofile
-perf-results/**/*.cpuprofile.txt
-perf-results/**/*-hermes.json
-perf-results/**/.*-convert.log
-perf-results/**/.*-displayed.txt
+# Perf results: raw data is committed so anyone can validate the analysis
+# (Perfetto traces, Hermes cpuprofiles, source-mapped profiles, Flashlight JSON).
 
 # Logs / misc
 *.log

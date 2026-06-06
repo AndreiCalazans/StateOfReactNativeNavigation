@@ -1,0 +1,5661 @@
+[{
+    "ts": 1391671858822,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[root]",
+    "cat": "root",
+    "args": {
+        "name": "[root]",
+        "category": "root",
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "root",
+        "allocatedName": "[root]",
+        "node_module": "root"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "global",
+    "cat": "JavaScript",
+    "args": {
+        "name": "global",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "global",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 2,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 3,
+        "line": 156,
+        "column": 50,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 4,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 1,
+        "column": 0,
+        "url": "/index.ts",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 6,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 7,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 8,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 9,
+        "line": 1,
+        "column": 0,
+        "url": "/node_modules/expo/src/Expo.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 10,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 11,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 12,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 13,
+        "line": 4,
+        "column": 0,
+        "url": "/node_modules/expo/src/Expo.fx.tsx",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 14,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 15,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 16,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 17,
+        "line": 1,
+        "column": 0,
+        "url": "/node_modules/expo-asset/build/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-asset"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 18,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 19,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 20,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 21,
+        "line": 1,
+        "column": 0,
+        "url": "/node_modules/expo-asset/build/Asset.fx.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-asset"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 22,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 23,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 24,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 25,
+        "line": 2,
+        "column": 0,
+        "url": "/node_modules/expo-asset/build/Asset.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-asset"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 26,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 27,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 28,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 29,
+        "line": 2,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/index.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 30,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 31,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 32,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 33,
+        "line": 2,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/sweet/setUpJsLogger.fx.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 34,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 35,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 36,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 37,
+        "line": 3,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/requireNativeModule.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 38,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 39,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 40,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671940643,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 41,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391671950420,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 41,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391671950420,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 41,
+        "line": 28,
+        "column": 25,
+        "url": "/node_modules/expo-modules-core/src/NativeModulesProxy.native.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671950420,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 43,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 43,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 41,
+        "line": 28,
+        "column": 25,
+        "url": "/node_modules/expo-modules-core/src/NativeModulesProxy.native.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 40,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 39,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 38,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 37,
+        "line": 3,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/requireNativeModule.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 36,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 35,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 34,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 33,
+        "line": 2,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/sweet/setUpJsLogger.fx.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 32,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 31,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 30,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 29,
+        "line": 2,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/index.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 29,
+        "line": 16,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/index.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 45,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 46,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 47,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 48,
+        "line": 9,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/NativeViewManagerAdapter.native.tsx",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 49,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 50,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 51,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 52,
+        "line": 17,
+        "column": 0,
+        "url": "/node_modules/react-native/Libraries/NativeComponent/NativeComponentRegistry.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 53,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 54,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 55,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 56,
+        "line": 33,
+        "column": 25,
+        "url": "/node_modules/react-native/Libraries/ReactNative/getNativeComponentAttributes.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 57,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 58,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 59,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 60,
+        "line": 23,
+        "column": 13,
+        "url": "/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 61,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 62,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 63,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 64,
+        "line": 37,
+        "column": 48,
+        "url": "/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391671968531,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 65,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 65,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 64,
+        "line": 37,
+        "column": 48,
+        "url": "/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 63,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 62,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 61,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 60,
+        "line": 23,
+        "column": 13,
+        "url": "/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 60,
+        "line": 27,
+        "column": 40,
+        "url": "/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[Native] hermesBuiltinCopyDataProperties",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] hermesBuiltinCopyDataProperties",
+        "category": "Native",
+        "parent": 67,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] hermesBuiltinCopyDataProperties",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "getValue",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getValue",
+        "category": "JavaScript",
+        "parent": 68,
+        "line": 43,
+        "column": 18,
+        "url": "/node_modules/react-native/Libraries/Utilities/defineLazyObjectProperty.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getValue",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "get",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get",
+        "category": "JavaScript",
+        "parent": 69,
+        "line": 408,
+        "column": 60,
+        "url": "/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "getConstantsForViewManager",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getConstantsForViewManager",
+        "category": "JavaScript",
+        "parent": 70,
+        "line": 170,
+        "column": 41,
+        "url": "/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getConstantsForViewManager",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672013087,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] getConstantsForViewManager",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstantsForViewManager",
+        "category": "Native",
+        "parent": 71,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstantsForViewManager",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] getConstantsForViewManager",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstantsForViewManager",
+        "category": "Native",
+        "parent": 71,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstantsForViewManager",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "getConstantsForViewManager",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getConstantsForViewManager",
+        "category": "JavaScript",
+        "parent": 70,
+        "line": 170,
+        "column": 41,
+        "url": "/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getConstantsForViewManager",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "get",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get",
+        "category": "JavaScript",
+        "parent": 69,
+        "line": 408,
+        "column": 60,
+        "url": "/node_modules/react-native/Libraries/ReactNative/BridgelessUIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "getValue",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getValue",
+        "category": "JavaScript",
+        "parent": 68,
+        "line": 43,
+        "column": 18,
+        "url": "/node_modules/react-native/Libraries/Utilities/defineLazyObjectProperty.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getValue",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[Native] hermesBuiltinCopyDataProperties",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] hermesBuiltinCopyDataProperties",
+        "category": "Native",
+        "parent": 67,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] hermesBuiltinCopyDataProperties",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 60,
+        "line": 27,
+        "column": 40,
+        "url": "/node_modules/react-native/Libraries/ReactNative/UIManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 59,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 58,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 57,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 56,
+        "line": 33,
+        "column": 25,
+        "url": "/node_modules/react-native/Libraries/ReactNative/getNativeComponentAttributes.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 55,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 54,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 53,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 52,
+        "line": 17,
+        "column": 0,
+        "url": "/node_modules/react-native/Libraries/NativeComponent/NativeComponentRegistry.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 51,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 50,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 49,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 48,
+        "line": 9,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/NativeViewManagerAdapter.native.tsx",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 47,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 46,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 45,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 29,
+        "line": 16,
+        "column": 0,
+        "url": "/node_modules/expo-modules-core/src/index.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-modules-core"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 28,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 27,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 26,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 25,
+        "line": 2,
+        "column": 0,
+        "url": "/node_modules/expo-asset/build/Asset.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-asset"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 24,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 23,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 22,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 21,
+        "line": 1,
+        "column": 0,
+        "url": "/node_modules/expo-asset/build/Asset.fx.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-asset"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 20,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 19,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 18,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 17,
+        "line": 1,
+        "column": 0,
+        "url": "/node_modules/expo-asset/build/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo-asset"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 16,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 15,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 14,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 13,
+        "line": 4,
+        "column": 0,
+        "url": "/node_modules/expo/src/Expo.fx.tsx",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 12,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 11,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 10,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 9,
+        "line": 1,
+        "column": 0,
+        "url": "/node_modules/expo/src/Expo.ts",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 8,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 7,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 6,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 1,
+        "column": 0,
+        "url": "/index.ts",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 5,
+        "column": 0,
+        "url": "/index.ts",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 73,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 74,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 75,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 76,
+        "line": 2,
+        "column": 0,
+        "url": "/App.tsx",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 77,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 78,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 79,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 80,
+        "line": 6,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/native-stack/lib/module/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 81,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 82,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 83,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 84,
+        "line": 5,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/native-stack/lib/module/navigators/createNativeStackNavigator.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 85,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 86,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 87,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 88,
+        "line": 3,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/native-stack/lib/module/views/NativeStackView.native.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 89,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 90,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 91,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 92,
+        "line": 9,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/elements/lib/module/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 4,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/elements/lib/module/Badge.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 97,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 98,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 2,
+        "column": 23,
+        "url": "/node_modules/color/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 102,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 103,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 104,
+        "line": 64,
+        "column": 14,
+        "url": "/node_modules/color-convert/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color-convert"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[Native] arrayPrototypeForEach",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] arrayPrototypeForEach",
+        "category": "Native",
+        "parent": 105,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] arrayPrototypeForEach",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 106,
+        "line": 70,
+        "column": 21,
+        "url": "/node_modules/color-convert/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color-convert"
+    }
+},{
+    "ts": 1391672039534,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 107,
+        "line": 78,
+        "column": 17,
+        "url": "/node_modules/color-convert/route.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color-convert"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 107,
+        "line": 78,
+        "column": 17,
+        "url": "/node_modules/color-convert/route.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color-convert"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 106,
+        "line": 70,
+        "column": 21,
+        "url": "/node_modules/color-convert/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color-convert"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[Native] arrayPrototypeForEach",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] arrayPrototypeForEach",
+        "category": "Native",
+        "parent": 105,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] arrayPrototypeForEach",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 104,
+        "line": 64,
+        "column": 14,
+        "url": "/node_modules/color-convert/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color-convert"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 103,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 102,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 101,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 100,
+        "line": 2,
+        "column": 23,
+        "url": "/node_modules/color/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "color"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 99,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 98,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 97,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 96,
+        "line": 4,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/elements/lib/module/Badge.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 95,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 94,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 93,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 92,
+        "line": 9,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/elements/lib/module/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 91,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 90,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 89,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 88,
+        "line": 3,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/native-stack/lib/module/views/NativeStackView.native.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 87,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 86,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 85,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 84,
+        "line": 5,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/native-stack/lib/module/navigators/createNativeStackNavigator.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 83,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 82,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 81,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 80,
+        "line": 6,
+        "column": 0,
+        "url": "/node_modules/@react-navigation/native-stack/lib/module/index.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "anonymous",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 79,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 78,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 77,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 76,
+        "line": 2,
+        "column": 0,
+        "url": "/App.tsx",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 75,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 74,
+        "line": 163,
+        "column": 39,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 73,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "JavaScript",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 5,
+        "line": 5,
+        "column": 0,
+        "url": "/index.ts",
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "anonymous",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 4,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 3,
+        "line": 156,
+        "column": 50,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 2,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "global",
+    "cat": "JavaScript",
+    "args": {
+        "name": "global",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": null,
+        "column": null,
+        "url": null,
+        "params": null,
+        "allocatedCategory": "JavaScript",
+        "allocatedName": "global",
+        "node_module": "JavaScript"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 8968,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 110,
+        "line": 9359,
+        "column": 18,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 111,
+        "line": 9497,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "beginWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "beginWork",
+        "category": "JavaScript",
+        "parent": 112,
+        "line": 6600,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "beginWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "updateForwardRef",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateForwardRef",
+        "category": "JavaScript",
+        "parent": 113,
+        "line": 5349,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateForwardRef",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "renderWithHooks",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderWithHooks",
+        "category": "JavaScript",
+        "parent": 114,
+        "line": 3636,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderWithHooks",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "NavigationContainerInner",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationContainerInner",
+        "category": "JavaScript",
+        "parent": 115,
+        "line": 18,
+        "column": 25,
+        "url": "/node_modules/@react-navigation/native/lib/module/NavigationContainer.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationContainerInner",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "get I18nManager",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get I18nManager",
+        "category": "JavaScript",
+        "parent": 116,
+        "line": 230,
+        "column": 18,
+        "url": "/node_modules/react-native/index.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get I18nManager",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 117,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 118,
+        "line": 156,
+        "column": 50,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 119,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 120,
+        "line": 20,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/ReactNative/I18nManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672052191,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 121,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] getConstants",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] getConstants",
+        "category": "Native",
+        "parent": 121,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] getConstants",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "anonymous",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "anonymous",
+        "category": "JavaScript",
+        "parent": 120,
+        "line": 20,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/ReactNative/I18nManager.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "anonymous",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "loadModuleImplementation",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "loadModuleImplementation",
+        "category": "JavaScript",
+        "parent": 119,
+        "line": 248,
+        "column": 42,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "loadModuleImplementation",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "guardedLoadModule",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "guardedLoadModule",
+        "category": "JavaScript",
+        "parent": 118,
+        "line": 156,
+        "column": 50,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "guardedLoadModule",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "metroRequire",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "metroRequire",
+        "category": "JavaScript",
+        "parent": 117,
+        "line": 74,
+        "column": 91,
+        "url": "/node_modules/@expo/cli/build/metro-require/require.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "metroRequire",
+        "node_module": "@expo"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "get I18nManager",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "get I18nManager",
+        "category": "JavaScript",
+        "parent": 116,
+        "line": 230,
+        "column": 18,
+        "url": "/node_modules/react-native/index.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "get I18nManager",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "NavigationContainerInner",
+    "cat": "other_node_modules",
+    "args": {
+        "name": "NavigationContainerInner",
+        "category": "JavaScript",
+        "parent": 115,
+        "line": 18,
+        "column": 25,
+        "url": "/node_modules/@react-navigation/native/lib/module/NavigationContainer.js",
+        "params": null,
+        "allocatedCategory": "other_node_modules",
+        "allocatedName": "NavigationContainerInner",
+        "node_module": "@react-navigation"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "renderWithHooks",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderWithHooks",
+        "category": "JavaScript",
+        "parent": 114,
+        "line": 3636,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderWithHooks",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "updateForwardRef",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateForwardRef",
+        "category": "JavaScript",
+        "parent": 113,
+        "line": 5349,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateForwardRef",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "beginWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "beginWork",
+        "category": "JavaScript",
+        "parent": 112,
+        "line": 6600,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "beginWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 111,
+        "line": 9497,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 111,
+        "line": 9499,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 123,
+        "line": 7104,
+        "column": 26,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672064679,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] createNode",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] createNode",
+        "category": "Native",
+        "parent": 124,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] createNode",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672070081,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[GC Young Gen]",
+    "cat": "Metadata",
+    "args": {
+        "name": "[GC Young Gen]",
+        "category": "Metadata",
+        "parent": 125,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Metadata",
+        "allocatedName": "[GC Young Gen]",
+        "node_module": "Metadata"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[GC Young Gen]",
+    "cat": "Metadata",
+    "args": {
+        "name": "[GC Young Gen]",
+        "category": "Metadata",
+        "parent": 125,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Metadata",
+        "allocatedName": "[GC Young Gen]",
+        "node_module": "Metadata"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] createNode",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] createNode",
+        "category": "Native",
+        "parent": 124,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] createNode",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "completeUnitOfWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "completeUnitOfWork",
+        "category": "JavaScript",
+        "parent": 123,
+        "line": 7104,
+        "column": 26,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "completeUnitOfWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 111,
+        "line": 9499,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 110,
+        "line": 9359,
+        "column": 18,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 8968,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 9136,
+        "column": 12,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 127,
+        "line": 9715,
+        "column": 24,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 128,
+        "line": 9734,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 129,
+        "line": 8102,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672078361,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 130,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672112047,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 130,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672112047,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 129,
+        "line": 8102,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672112047,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 128,
+        "line": 9734,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672112047,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 127,
+        "line": 9715,
+        "column": 24,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672112047,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 9136,
+        "column": 12,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672112047,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 8968,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 110,
+        "line": 9359,
+        "column": 18,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 111,
+        "line": 9497,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "beginWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "beginWork",
+        "category": "JavaScript",
+        "parent": 112,
+        "line": 6661,
+        "column": 32,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "beginWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "updateMemoComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateMemoComponent",
+        "category": "JavaScript",
+        "parent": 132,
+        "line": 5384,
+        "column": 33,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateMemoComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "updateSimpleMemoComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateSimpleMemoComponent",
+        "category": "JavaScript",
+        "parent": 133,
+        "line": 5606,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateSimpleMemoComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "renderWithHooks",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderWithHooks",
+        "category": "JavaScript",
+        "parent": 134,
+        "line": 3636,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderWithHooks",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "Pressable",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "Pressable",
+        "category": "JavaScript",
+        "parent": 135,
+        "line": 332,
+        "column": 39,
+        "url": "/node_modules/react-native/Libraries/Components/Pressable/Pressable.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "Pressable",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "usePressability",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "usePressability",
+        "category": "JavaScript",
+        "parent": 136,
+        "line": 59,
+        "column": 68,
+        "url": "/node_modules/react-native/Libraries/Pressability/usePressability.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "usePressability",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "getEventHandlers",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getEventHandlers",
+        "category": "JavaScript",
+        "parent": 137,
+        "line": 422,
+        "column": 53,
+        "url": "/node_modules/react-native/Libraries/Pressability/Pressability.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getEventHandlers",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "_createEventHandlers",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "_createEventHandlers",
+        "category": "JavaScript",
+        "parent": 138,
+        "line": 655,
+        "column": 13,
+        "url": "/node_modules/react-native/Libraries/Pressability/Pressability.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "_createEventHandlers",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672176114,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[Native] hermesBuiltinCopyDataProperties",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] hermesBuiltinCopyDataProperties",
+        "category": "Native",
+        "parent": 139,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] hermesBuiltinCopyDataProperties",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[Native] hermesBuiltinCopyDataProperties",
+    "cat": "Native",
+    "args": {
+        "name": "[Native] hermesBuiltinCopyDataProperties",
+        "category": "Native",
+        "parent": 139,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[Native] hermesBuiltinCopyDataProperties",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "_createEventHandlers",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "_createEventHandlers",
+        "category": "JavaScript",
+        "parent": 138,
+        "line": 655,
+        "column": 13,
+        "url": "/node_modules/react-native/Libraries/Pressability/Pressability.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "_createEventHandlers",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "getEventHandlers",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "getEventHandlers",
+        "category": "JavaScript",
+        "parent": 137,
+        "line": 422,
+        "column": 53,
+        "url": "/node_modules/react-native/Libraries/Pressability/Pressability.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "getEventHandlers",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "usePressability",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "usePressability",
+        "category": "JavaScript",
+        "parent": 136,
+        "line": 59,
+        "column": 68,
+        "url": "/node_modules/react-native/Libraries/Pressability/usePressability.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "usePressability",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "Pressable",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "Pressable",
+        "category": "JavaScript",
+        "parent": 135,
+        "line": 332,
+        "column": 39,
+        "url": "/node_modules/react-native/Libraries/Components/Pressable/Pressable.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "Pressable",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "renderWithHooks",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderWithHooks",
+        "category": "JavaScript",
+        "parent": 134,
+        "line": 3636,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderWithHooks",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "updateSimpleMemoComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateSimpleMemoComponent",
+        "category": "JavaScript",
+        "parent": 133,
+        "line": 5606,
+        "column": 29,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateSimpleMemoComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "updateMemoComponent",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "updateMemoComponent",
+        "category": "JavaScript",
+        "parent": 132,
+        "line": 5384,
+        "column": 33,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "updateMemoComponent",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "beginWork",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "beginWork",
+        "category": "JavaScript",
+        "parent": 112,
+        "line": 6661,
+        "column": 32,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "beginWork",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "workLoopSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "workLoopSync",
+        "category": "JavaScript",
+        "parent": 111,
+        "line": 9497,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "workLoopSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "renderRootSync",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "renderRootSync",
+        "category": "JavaScript",
+        "parent": 110,
+        "line": 9359,
+        "column": 18,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "renderRootSync",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 8968,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 9136,
+        "column": 12,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 127,
+        "line": 9715,
+        "column": 24,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 128,
+        "line": 9734,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 129,
+        "line": 8102,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672186301,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "B",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 130,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672196194,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[HostFunction] completeRoot",
+    "cat": "Native",
+    "args": {
+        "name": "[HostFunction] completeRoot",
+        "category": "Native",
+        "parent": 130,
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "Native",
+        "allocatedName": "[HostFunction] completeRoot",
+        "node_module": "Native"
+    }
+},{
+    "ts": 1391672196194,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "commitMutationEffectsOnFiber",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitMutationEffectsOnFiber",
+        "category": "JavaScript",
+        "parent": 129,
+        "line": 8102,
+        "column": 22,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitMutationEffectsOnFiber",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672196194,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "flushMutationEffects",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "flushMutationEffects",
+        "category": "JavaScript",
+        "parent": 128,
+        "line": 9734,
+        "column": 36,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "flushMutationEffects",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672196194,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "commitRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "commitRoot",
+        "category": "JavaScript",
+        "parent": 127,
+        "line": 9715,
+        "column": 24,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "commitRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672196194,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "performWorkOnRoot",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRoot",
+        "category": "JavaScript",
+        "parent": 109,
+        "line": 9136,
+        "column": 12,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRoot",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391672196194,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "performWorkOnRootViaSchedulerTask",
+    "cat": "react-native-internals",
+    "args": {
+        "name": "performWorkOnRootViaSchedulerTask",
+        "category": "JavaScript",
+        "parent": 1,
+        "line": 2232,
+        "column": 19,
+        "url": "/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-prod.js",
+        "params": null,
+        "allocatedCategory": "react-native-internals",
+        "allocatedName": "performWorkOnRootViaSchedulerTask",
+        "node_module": "react-native"
+    }
+},{
+    "ts": 1391681059669,
+    "pid": 30454,
+    "tid": 30496,
+    "ph": "E",
+    "name": "[root]",
+    "cat": "root",
+    "args": {
+        "name": "[root]",
+        "category": "root",
+        "url": null,
+        "line": null,
+        "column": null,
+        "params": null,
+        "allocatedCategory": "root",
+        "allocatedName": "[root]",
+        "node_module": "root"
+    }
+}]
