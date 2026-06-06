@@ -52,14 +52,29 @@ Performance captured on Android only via:
 ## Progress
 
 - [x] Read instructions + reference tooling in ~/coinbase/mobile/scripts/perf_testing
-- [ ] Goal 1: Setup first example (Expo Router)
-- [ ] Goal 2: First example end-to-end on Android (build, Maestro run, pull CPU+Systrace)
-- [ ] Goal 3: Automated perf capture tooling
-- [ ] Goal 4: Shareable perf tooling library
+- [x] Goal 1: Setup first example (Expo Router) — apps/expo-router-app, SDK 56
+- [~] Goal 2: First example end-to-end on Android
+    - [x] Release (profileable) build succeeds
+    - [x] Cold start launches; OS Displayed ~0.9-1.0s captured
+    - [x] Hermes cpuprofile dumped + source-mapped (expo-router internals visible)
+    - [x] Perfetto systrace captured incl. our RNMarker.* slices + native callstacks
+    - [ ] Maestro flow run (need maestro installed in-repo)
+    - [ ] Flashlight FPS/CPU/RAM (need flashlight installed in-repo)
+- [x] Goal 3: Automated perf capture tooling (coldstart-profile.sh end-to-end works)
+- [x] Goal 4: Shareable perf tooling library (rn-perf-tooling + shared-ui)
 - [ ] Goal 5: Remaining navigation examples reusing tooling
 
 ## Log
 
+- Built rn-perf-tooling config plugin; verified it injects profileable, buildConfigField,
+  MainApplication.onCreate hooks, and copies the forwarder. Re-implemented the Hermes
+  cpuprofile converter standalone (convert-hermes-profile.js) because the
+  react-native-release-profiler CLI hard-depends on @react-native-community/cli-tools
+  which Expo apps don't ship.
+- coldstart-profile.sh validated on device: 2 runs -> perfetto traces, symbolicated
+  hermes profiles, Displayed median ~930ms.
+- shared-ui package gives every app identical screens (Home/Details/Profile) so the
+  comparison isolates the navigation library.
 - (start) Reviewed reference scripts: perfetto-trace.sh, perfetto-coldstart.cfg.txtproto,
   coldstart-profile.sh, ReleaseProfilerModule.kt, ReactMarkerSystraceForwarder.kt.
   The forwarder is generic; will re-implement under neutral package.

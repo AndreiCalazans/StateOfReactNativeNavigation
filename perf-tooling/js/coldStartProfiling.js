@@ -19,24 +19,17 @@ const DEFAULT_WINDOW_MS = 9000;
 
 let scheduled = false;
 
-type ReleaseProfiler = {
-  startProfiling?: () => boolean;
-  stopProfiling: (saveToDownloads: boolean) => Promise<string>;
-};
-
-function loadProfiler(): ReleaseProfiler | null {
+function loadProfiler() {
   try {
     // Lazy require so dev bundles / web don't choke on the native module.
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    return require('react-native-release-profiler') as ReleaseProfiler;
-  } catch {
+    return require('react-native-release-profiler');
+  } catch (e) {
     return null;
   }
 }
 
-export function isProfilingEnabled(): boolean {
+function isProfilingEnabled() {
   // Release bundle only. EXPO_PUBLIC_PROFILING=0 explicitly disables.
-  // eslint-disable-next-line no-undef
   const dev = typeof __DEV__ !== 'undefined' && __DEV__;
   if (dev) return false;
   if (process.env.EXPO_PUBLIC_PROFILING === '0') return false;
@@ -47,7 +40,8 @@ export function isProfilingEnabled(): boolean {
  * Schedule the cold-start profile dump. Call once, as early as possible in
  * the JS entry point. Idempotent.
  */
-export function scheduleColdStartDump(windowMs: number = DEFAULT_WINDOW_MS): void {
+function scheduleColdStartDump(windowMs) {
+  if (windowMs == null) windowMs = DEFAULT_WINDOW_MS;
   if (scheduled) return;
   scheduled = true;
 
@@ -69,3 +63,5 @@ export function scheduleColdStartDump(windowMs: number = DEFAULT_WINDOW_MS): voi
       });
   }, windowMs);
 }
+
+module.exports = { scheduleColdStartDump, isProfilingEnabled };

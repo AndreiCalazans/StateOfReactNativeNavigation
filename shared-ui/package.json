@@ -1,0 +1,7 @@
+{
+  "name": "shared-ui",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "description": "Navigation-agnostic screens shared by every example so the comparison isolates the navigation library."
+}

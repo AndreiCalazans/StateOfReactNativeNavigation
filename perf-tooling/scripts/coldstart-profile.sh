@@ -141,19 +141,25 @@ run_one() {
     return 0
   fi
 
-  local sm_args=()
-  [ -n "$SOURCEMAP" ] && [ -f "$SOURCEMAP" ] && sm_args=(--sourcemap-path "$SOURCEMAP")
-  ( cd "$APP_DIR" && npx --yes react-native-release-profiler \
-      --fromDownload --appId "$APP" "${sm_args[@]}" ) \
-      >"$OUT_DIR/.${LABEL}-run${idx}-convert.log" 2>&1 \
-    || { warn "run $idx: cpuprofile conversion failed (see $OUT_DIR/.${LABEL}-run${idx}-convert.log)"; return 0; }
+  # Pull the raw cpuprofile off the device, then convert it locally with our
+  # standalone converter (avoids the release-profiler CLI's hard dependency
+  # on @react-native-community/cli-tools, which Expo apps don't ship).
+  local raw_out="$OUT_DIR/${LABEL}-run${idx}-raw.cpuprofile.txt"
+  "${ADB[@]}" shell "cat /sdcard/Download/${prof}" > "$raw_out" 2>/dev/null || true
+  if [ ! -s "$raw_out" ]; then
+    warn "run $idx: failed to pull cpuprofile $prof"
+    return 0
+  fi
 
-  # The CLI writes <file>-converted.json into the app dir cwd.
-  local converted
-  converted="$(ls -t "$APP_DIR"/*-converted.json 2>/dev/null | head -1 || true)"
-  if [ -n "$converted" ]; then
-    mv "$converted" "$OUT_DIR/${LABEL}-run${idx}-hermes.json"
+  local sm_args=()
+  [ -n "$SOURCEMAP" ] && [ -f "$SOURCEMAP" ] && sm_args=(--sourcemap "$SOURCEMAP")
+  if node "$SCRIPT_DIR/convert-hermes-profile.js" \
+        --in "$raw_out" --out "$OUT_DIR/${LABEL}-run${idx}-hermes.json" \
+        --app-dir "$APP_DIR" "${sm_args[@]}" \
+        >"$OUT_DIR/.${LABEL}-run${idx}-convert.log" 2>&1; then
     log "  hermes  -> $OUT_DIR/${LABEL}-run${idx}-hermes.json"
+  else
+    warn "run $idx: cpuprofile conversion failed (see $OUT_DIR/.${LABEL}-run${idx}-convert.log)"
   fi
 
   local disp_str="${disp_ms:-n/a}"
