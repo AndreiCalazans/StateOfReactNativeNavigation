@@ -32,10 +32,14 @@ apps/
   navigation-app/         navigation router (Graham Mendick)  -> com.rnperf.navigation
   rnn_app/                react-native-navigation (Wix, bare) -> com.rnperf.rnn
 shared-ui/                Navigation-agnostic screens shared by every app
+experiments/              Controlled experiments (bare_min, expo_min) for the Expo-cost study
 perf-tooling/             Shareable Android perf tooling (see perf-tooling/README.md)
 scripts/                  setup-tools.sh, env.sh, measure.sh, compare.py
 perf-results/             Captured results: comparison.md + committed raw data
                           (Perfetto traces, Hermes profiles) for validation
+docs/                     Write-ups (open in a browser):
+                            cold-start-findings.html  cold start + RAM deep dive
+                            expo-cost.html            the cost of Expo / expo-modules-core
 ```
 
 Every app renders the **same** screens (from `shared-ui`) and exposes the same

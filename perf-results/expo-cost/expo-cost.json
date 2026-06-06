@@ -1,0 +1,267 @@
+{
+  "device": "Samsung SM-A165M / Android 14",
+  "metric": "OS Displayed (cold start) + dumpsys meminfo TOTAL PSS at Home, vanilla release builds (no profiling instrumentation), median of 5 runs after 1 warmup",
+  "baselines": {
+    "bare-min": {
+      "coldMs": 293,
+      "pssMb": 67.0,
+      "apkMb": 49.5,
+      "expoModules": 0
+    },
+    "expo-min": {
+      "coldMs": 329,
+      "pssMb": 79.6,
+      "apkMb": 65.7,
+      "expoModules": 10
+    },
+    "expoCoreTax": {
+      "coldMs": 36,
+      "pssMb": 12.6,
+      "apkMb": 16.2
+    }
+  },
+  "commonModules": [
+    "@expo/dom-webview",
+    "@expo/log-box",
+    "expo",
+    "expo-asset",
+    "expo-constants",
+    "expo-file-system",
+    "expo-font",
+    "expo-keep-awake",
+    "expo-modules-core",
+    "expo-status-bar"
+  ],
+  "perModuleSweep": [
+    {
+      "label": "expo-min (baseline)",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 329,
+      "medianPssMb": 79.6,
+      "displayedMs": [
+        339,
+        350,
+        329,
+        307,
+        314
+      ],
+      "pssKb": [
+        81912,
+        81293,
+        81495,
+        81521,
+        81545
+      ],
+      "module": "<baseline>",
+      "autolinkCount": 10
+    },
+    {
+      "label": "expo-device",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 332,
+      "medianPssMb": 79.6,
+      "displayedMs": [
+        341,
+        332,
+        301,
+        348,
+        314
+      ],
+      "pssKb": [
+        81584,
+        81509,
+        81559,
+        81883,
+        81737
+      ],
+      "module": "expo-device",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-haptics",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 332,
+      "medianPssMb": 79.6,
+      "displayedMs": [
+        329,
+        332,
+        318,
+        345,
+        335
+      ],
+      "pssKb": [
+        81464,
+        81575,
+        81496,
+        81738,
+        81518
+      ],
+      "module": "expo-haptics",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-clipboard",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 329,
+      "medianPssMb": 79.8,
+      "displayedMs": [
+        329,
+        314,
+        332,
+        411,
+        325
+      ],
+      "pssKb": [
+        82009,
+        81814,
+        81710,
+        81762,
+        81601
+      ],
+      "module": "expo-clipboard",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-linear-gradient",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 328,
+      "medianPssMb": 79.8,
+      "displayedMs": [
+        338,
+        328,
+        310,
+        397,
+        324
+      ],
+      "pssKb": [
+        81697,
+        81765,
+        81976,
+        81784,
+        81832
+      ],
+      "module": "expo-linear-gradient",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-image",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 322,
+      "medianPssMb": 81.3,
+      "displayedMs": [
+        324,
+        321,
+        318,
+        322,
+        332
+      ],
+      "pssKb": [
+        83060,
+        83111,
+        83259,
+        83495,
+        83274
+      ],
+      "module": "expo-image",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-blur",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 341,
+      "medianPssMb": 80.1,
+      "displayedMs": [
+        341,
+        326,
+        351,
+        315,
+        343
+      ],
+      "pssKb": [
+        81922,
+        82064,
+        82191,
+        81949,
+        82212
+      ],
+      "module": "expo-blur",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-camera",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 354,
+      "medianPssMb": 84.7,
+      "displayedMs": [
+        354,
+        451,
+        318,
+        415,
+        340
+      ],
+      "pssKb": [
+        86795,
+        86798,
+        86997,
+        86577,
+        86845
+      ],
+      "module": "expo-camera",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-video",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 345,
+      "medianPssMb": 85.5,
+      "displayedMs": [
+        335,
+        350,
+        314,
+        345,
+        350
+      ],
+      "pssKb": [
+        87614,
+        87593,
+        87737,
+        87663,
+        87533
+      ],
+      "module": "expo-video",
+      "autolinkCount": 11
+    },
+    {
+      "label": "expo-notifications",
+      "app": "com.rnperf.expomin",
+      "runs": 5,
+      "medianDisplayedMs": 340,
+      "medianPssMb": 82.3,
+      "displayedMs": [
+        349,
+        334,
+        332,
+        350,
+        340
+      ],
+      "pssKb": [
+        84521,
+        84275,
+        84332,
+        84173,
+        84375
+      ],
+      "module": "expo-notifications",
+      "autolinkCount": 12
+    }
+  ]
+}

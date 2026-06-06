@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The cost of Expo & expo-modules-core — measured on a real device</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --ink:#e6edf3; --muted:#8b949e;
+    --line:#30363d; --accent:#58a6ff; --good:#3fb950; --warn:#d29922; --bad:#f85149;
+    --rnn:#3fb950; --rnav:#58a6ff; --nav:#bc8cff; --expo:#f0883e;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 22px 96px}
+  header.hero{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:36px}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12.5px}
+  h1{font-size:33px;line-height:1.2;margin:.35em 0 .25em}
+  h2{font-size:24px;margin:52px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:30px 0 6px;color:var(--ink)}
+  p{color:#d6dee6}
+  .sub{color:var(--muted);font-size:15px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{background:#1f2630;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#e6edf3}
+  .lede{font-size:18.5px;color:#cdd6e0}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:20px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;margin:12px 0}
+  th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-weight:600;border-bottom:1px solid var(--line)}
+  tbody tr:hover{background:#1b2230}
+  .chart{margin:16px 0 6px}
+  .row{display:grid;grid-template-columns:170px 1fr 92px;align-items:center;gap:12px;margin:7px 0}
+  .row .name{font-size:13.5px;color:#cdd6e0}
+  .bar{height:18px;border-radius:5px;min-width:2px}
+  .row .val{font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+  .b-bare{background:linear-gradient(90deg,#2ea043,#3fb950)}
+  .b-expo{background:linear-gradient(90deg,#db6d28,#f0883e)}
+  .b-mod{background:linear-gradient(90deg,#bb8a1a,#e3b341)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 2px;font-size:13px;color:var(--muted)}
+  .lib{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .d-bare{background:var(--good)} .d-expo{background:var(--expo)}
+  .callout{border-left:3px solid var(--accent);background:#11212f;padding:12px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+  .callout.good{border-color:var(--good);background:#0f2417}
+  .callout.warn{border-color:var(--warn);background:#241f12}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}.row{grid-template-columns:120px 1fr 72px}}
+  .small{font-size:13px;color:var(--muted)}
+  .tt{font-variant-numeric:tabular-nums}
+  .foot{color:var(--muted);font-size:13px;margin-top:50px;border-top:1px solid var(--line);padding-top:18px}
+  .win{color:var(--good);font-weight:600}.lose{color:var(--bad);font-weight:600}.warn-c{color:var(--warn);font-weight:600}
+  ul{color:#d6dee6}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+  .cols{columns:2;column-gap:26px}
+  @media(max-width:680px){.cols{columns:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">React Native · June 2026 · Android</div>
+  <h1>The cost of Expo &amp; <code>expo-modules-core</code></h1>
+  <p class="lede">A companion to the <a href="cold-start-findings.html">cold-start deep dive</a>.
+  This repo happens to contain a perfect control: two <strong>bare React Native</strong> apps (no Expo
+  at all) next to three <strong>Expo</strong> apps. So I measured the actual price of adopting Expo —
+  and then the marginal price of every extra Expo module you bolt on.</p>
+  <div class="tags">
+    <span class="tag">Expo SDK 56 · RN 0.85 · Hermes · New Architecture</span>
+    <span class="tag">Samsung Galaxy A16 · Android 14</span>
+    <span class="tag">vanilla release builds (no profiling instrumentation)</span>
+  </div>
+</header>
+
+<p>To keep it fair I built two minimal apps that render the <strong>identical</strong> Home screen
+(from the shared UI package) and nothing else — no navigation, no instrumentation:</p>
+<ul>
+  <li><span class="lib"><span class="dot d-bare"></span><code>bare-min</code></span> — a bare RN 0.85 app, <em>zero</em> Expo packages.</li>
+  <li><span class="lib"><span class="dot d-expo"></span><code>expo-min</code></span> — an Expo SDK 56 blank app.</li>
+</ul>
+<p>Metrics are deliberately instrumentation-free so they’re comparable across bare and Expo builds:
+the OS <code>Displayed</code> time (cold start) and <code>dumpsys meminfo</code> TOTAL PSS once the
+app is on Home. Median of 5 runs after a warm-up. (<code>experiments/</code> in the repo.)</p>
+
+<h2 id="common">1 · What every Expo app ships, whether you ask for it or not</h2>
+<p>Even <code>expo-min</code> — a blank app whose only Expo dependency is <code>expo</code> itself —
+autolinks <strong>10 native modules</strong>. I confirmed these exact 10 appear in <em>all three</em>
+real Expo apps in the comparison (React Navigation, the navigation router, and Expo Router); the
+heavier apps just add more on top.</p>
+<div class="panel">
+  <div class="small" style="margin-bottom:8px">The Expo baseline — present in <strong>every</strong> Expo app:</div>
+  <div class="cols mono">
+    expo<br>expo-modules-core<br>expo-asset<br>expo-constants<br>expo-file-system<br>
+    expo-font<br>expo-keep-awake<br>expo-status-bar<br>@expo/dom-webview<br>@expo/log-box
+  </div>
+</div>
+<table>
+  <thead><tr><th>App</th><th>Expo deps you declared</th><th>Native Expo modules autolinked</th></tr></thead>
+  <tbody>
+    <tr><td><code>expo-min</code> (blank)</td><td class="tt">1</td><td class="tt">10</td></tr>
+    <tr><td>React Navigation</td><td class="tt">2</td><td class="tt">10</td></tr>
+    <tr><td>navigation router</td><td class="tt">2</td><td class="tt">10</td></tr>
+    <tr><td>Expo Router</td><td class="tt">9</td><td class="tt">15</td></tr>
+    <tr><td>bare RN apps</td><td class="tt">0</td><td class="tt">0</td></tr>
+  </tbody>
+</table>
+<p class="small"><code>expo-modules-core</code> is the runtime that registers and bridges all of these;
+it is the thing you’re really “paying for” when you adopt Expo. The question is: how much?</p>
+
+<h2 id="tax">2 · The Expo core tax (bare-min → expo-min)</h2>
+<p>Same screen, same RN, the only difference is Expo. Adopting it costs:</p>
+<table>
+  <thead><tr><th>Metric</th><th>bare-min (no Expo)</th><th>expo-min (Expo core)</th><th>Expo tax</th></tr></thead>
+  <tbody>
+    <tr><td>Cold start — <code>Displayed</code> (ms)</td><td class="tt">293</td><td class="tt">329</td><td class="tt warn-c">+36</td></tr>
+    <tr><td>RAM — PSS at Home (MB)</td><td class="tt">67.0</td><td class="tt">79.6</td><td class="tt warn-c">+12.6</td></tr>
+    <tr><td>APK size (MB)</td><td class="tt">49.5</td><td class="tt">65.7</td><td class="tt warn-c">+16.2</td></tr>
+  </tbody>
+</table>
+<div class="grid2">
+  <div class="chart">
+    <div class="small">Cold start (ms)</div>
+    <div class="row"><span class="name">bare-min</span><div class="bar b-bare" style="width:81%"></div><span class="val">293</span></div>
+    <div class="row"><span class="name">expo-min</span><div class="bar b-expo" style="width:91%"></div><span class="val">329</span></div>
+  </div>
+  <div class="chart">
+    <div class="small">RAM — PSS at Home (MB)</div>
+    <div class="row"><span class="name">bare-min</span><div class="bar b-bare" style="width:74%"></div><span class="val">67.0</span></div>
+    <div class="row"><span class="name">expo-min</span><div class="bar b-expo" style="width:88%"></div><span class="val">79.6</span></div>
+  </div>
+</div>
+<div class="callout">
+  <strong>The fixed Expo tax is small:</strong> ~<strong>36 ms</strong> of cold start, ~<strong>13 MB</strong>
+  of RAM, ~<strong>16 MB</strong> of APK. That buys <code>expo-modules-core</code> plus the 10 baseline
+  modules. For most apps that is a very reasonable price — Expo is <em>not</em> where the cold-start
+  budget goes (the <a href="cold-start-findings.html">navigation/Reanimated analysis</a> dwarfs this).
+</div>
+
+<h2 id="permodule">3 · The cost of each extra Expo module you add</h2>
+<p>Starting from <code>expo-min</code> I added one module at a time, rebuilt, and re-measured —
+<strong>present-but-unused</strong> (just installed + autolinked + initialized, not actually rendered
+or called). This is the “I added it to my <code>package.json</code>” cost.</p>
+<table>
+  <thead><tr><th>Added module</th><th>Δ cold start (ms)</th><th>Δ RAM PSS (MB)</th><th>Class</th></tr></thead>
+  <tbody>
+    <tr><td><code>expo-device</code></td><td class="tt">+3</td><td class="tt">~0</td><td class="small">constants only</td></tr>
+    <tr><td><code>expo-haptics</code></td><td class="tt">+3</td><td class="tt">~0</td><td class="small">methods only</td></tr>
+    <tr><td><code>expo-clipboard</code></td><td class="tt">0</td><td class="tt">+0.2</td><td class="small">methods only</td></tr>
+    <tr><td><code>expo-linear-gradient</code></td><td class="tt">~0</td><td class="tt">+0.2</td><td class="small">native view</td></tr>
+    <tr><td><code>expo-image</code></td><td class="tt">~0</td><td class="tt">+1.7</td><td class="small">native view + Glide</td></tr>
+    <tr><td><code>expo-blur</code></td><td class="tt">+12</td><td class="tt">+0.5</td><td class="small">native view</td></tr>
+    <tr><td><code>expo-notifications</code></td><td class="tt">+11</td><td class="tt">+2.7</td><td class="small">+1 transitive module</td></tr>
+    <tr><td><code>expo-video</code></td><td class="tt">+16</td><td class="tt lose">+5.9</td><td class="small">media3 SDK</td></tr>
+    <tr><td><code>expo-camera</code></td><td class="tt">+25</td><td class="tt lose">+5.1</td><td class="small">CameraX SDK</td></tr>
+  </tbody>
+</table>
+<div class="chart">
+  <div class="small">Marginal RAM cost of adding a module (PSS, MB) — the cleanest signal</div>
+  <div class="row"><span class="name">expo-device</span><div class="bar b-mod" style="width:1%"></div><span class="val">~0</span></div>
+  <div class="row"><span class="name">expo-haptics</span><div class="bar b-mod" style="width:1%"></div><span class="val">~0</span></div>
+  <div class="row"><span class="name">expo-clipboard</span><div class="bar b-mod" style="width:3%"></div><span class="val">0.2</span></div>
+  <div class="row"><span class="name">linear-gradient</span><div class="bar b-mod" style="width:3%"></div><span class="val">0.2</span></div>
+  <div class="row"><span class="name">expo-blur</span><div class="bar b-mod" style="width:8%"></div><span class="val">0.5</span></div>
+  <div class="row"><span class="name">expo-image</span><div class="bar b-mod" style="width:29%"></div><span class="val">1.7</span></div>
+  <div class="row"><span class="name">expo-notifications</span><div class="bar b-mod" style="width:46%"></div><span class="val">2.7</span></div>
+  <div class="row"><span class="name">expo-camera</span><div class="bar b-mod" style="width:86%"></div><span class="val">5.1</span></div>
+  <div class="row"><span class="name">expo-video</span><div class="bar b-mod" style="width:100%"></div><span class="val">5.9</span></div>
+</div>
+<div class="callout good">
+  <strong>Adding an Expo module is cheap until you use it.</strong> Pure-JS/“methods &amp; constants”
+  modules (device, haptics, clipboard) are essentially free at startup. Even native-view modules
+  (image, blur, gradient) add ~0–2 MB and no measurable cold start. Only heavy native SDKs that link a
+  big library — <code>expo-camera</code> (CameraX), <code>expo-video</code> (media3) — show up, and even
+  then it’s ~15–25 ms and ~5–6 MB <em>while unused</em>. expo-modules-core initializes modules lazily,
+  so the registry itself is cheap.
+</div>
+<p class="small">Caveat: the cold-start deltas for the light modules are inside run-to-run noise
+(±~15 ms on this device), so treat “+3” / “+12” as “≈ 0”. The PSS deltas are the reliable signal.
+And this is the <em>idle</em> cost — actually decoding an image, opening the camera, or playing video
+adds real CPU/RAM on top, on demand.</p>
+
+<h2 id="reconcile">4 · “But the profiler blamed 100–240 ms on <code>@expo</code>!”</h2>
+<p>The <a href="cold-start-findings.html">instrumented deep-dive</a> attributed a lot of JS-thread CPU
+to <code>@expo</code> / <code>expo-modules-core</code> at cold start:</p>
+<table>
+  <thead><tr><th>App</th><th>JS CPU blamed to @expo + expo-modules-core</th><th>but Expo’s share of <code>Displayed</code> is…</th></tr></thead>
+  <tbody>
+    <tr><td>React Navigation</td><td class="tt">~118 ms</td><td class="tt" rowspan="3" style="vertical-align:middle">a fixed <span class="win">~36 ms</span><br><span class="small">(bare→expo, measured)</span></td></tr>
+    <tr><td>navigation router</td><td class="tt">~185 ms</td></tr>
+    <tr><td>Expo Router</td><td class="tt">~241 ms</td></tr>
+  </tbody>
+</table>
+<p>These two facts are not in conflict. In an Expo app, <strong>every</strong> native-module call is
+routed through <code>expo-modules-core</code>’s module registry, so the profiler labels the app’s own
+native access (UIManager, view-manager <code class="mono">getConstants</code>, device info, …) as
+<code>@expo</code>. That number therefore <strong>scales with how much the app drives native modules</strong>
+(118 → 185 → 241 ms tracks each app’s total JS work), not with a fixed Expo overhead. The same calls
+in a bare RN app are simply relabeled <code>react-native</code>/<code>Native</code>.</p>
+<p>The apples-to-apples control — identical screen, bare vs Expo — isolates the part that is truly
+<em>extra</em>: the registry/proxy indirection, and it costs ~36 ms. So:</p>
+<div class="callout">
+  <strong>Bottom line.</strong> The price of Expo itself is a roughly <em>fixed</em> ~36 ms /
+  ~13 MB / ~16 MB APK, plus a small, mostly-lazy per-module cost that only becomes significant for
+  heavy native SDKs or when you actually <em>use</em> the module. The large <code>@expo</code> numbers
+  in a CPU profile are mostly your app’s own native traffic wearing an Expo name tag.
+</div>
+
+<h2 id="caveats">Caveats</h2>
+<ul>
+  <li><strong>Metrics chosen for fairness, not for matching the other post.</strong> These are vanilla
+  release builds measured with <code>Displayed</code> + <code>dumpsys</code> PSS at Home (no Hermes
+  sampler, no Perfetto). Absolute numbers differ from the instrumented post (which measured peak RAM
+  during a navigate flow, ~3× higher) — compare deltas within this page, not across pages.</li>
+  <li><strong>Per-module = present but unused.</strong> Each module was installed + autolinked, not
+  exercised. Real usage (render/call) adds on-demand cost not captured here.</li>
+  <li><strong>Cold-start noise.</strong> ±~15 ms run-to-run on this device; light-module cold deltas
+  are within it. PSS is the more reliable per-module signal.</li>
+  <li><strong>One device / one screen.</strong> Samsung Galaxy A16, Android 14, Hermes, New
+  Architecture, Expo SDK 56 / RN 0.85. APK size is universal “arm64 + others” release output.</li>
+</ul>
+
+<div class="foot">
+  <p>Data: <code>perf-results/expo-cost/</code> (<code>expo-cost.json</code>, <code>sweep.jsonl</code>);
+  apps in <code>experiments/bare_min</code>, <code>experiments/expo_min</code>. Reproduce a variant with
+  <code>perf-tooling/scripts/quick-coldstart.sh --app &lt;pkg&gt;</code>. Common-module set verified with
+  <code>expo-modules-autolinking resolve -p android</code>. Companion post:
+  <a href="cold-start-findings.html">Where do RN navigation libraries spend their cold start?</a></p>
+</div>
+
+</div>
+</body>
+</html>

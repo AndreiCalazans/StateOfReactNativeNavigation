@@ -1,0 +1,19 @@
+{
+  "name": "expo_min",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "expo": "~56.0.9",
+    "expo-status-bar": "~56.0.4",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "shared-ui": "file:../../shared-ui"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "private": true
+}

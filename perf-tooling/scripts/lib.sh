@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Shared helpers for the rn-perf-tooling capture scripts.
 
-log()  { printf '[perf] %s\n' "$*"; }
+log()  { printf '[perf] %s\n' "$*" >&2; }
 warn() { printf '[perf] WARNING: %s\n' "$*" >&2; }
 fail() { printf '[perf] ERROR: %s\n' "$*" >&2; exit 1; }
 

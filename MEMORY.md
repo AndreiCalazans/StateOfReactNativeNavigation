@@ -106,6 +106,29 @@ hypothesis in two:
 - Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
   expo=3); removed that claim, rely on anon-RSS instead.
 
+## Expo cost study (docs/expo-cost.html, experiments/bare_min + expo_min)
+
+Control: 2 bare RN apps (no Expo) vs 3 Expo apps. Built minimal bare-min vs
+expo-min (same Home, no nav, vanilla release) measured with quick-coldstart.sh
+(Displayed + dumpsys PSS, median of 5 + warmup). Added a per-module sweep.
+Findings:
+- Every Expo app autolinks the SAME 10 core modules (expo, expo-modules-core,
+  expo-asset, expo-constants, expo-file-system, expo-font, expo-keep-awake,
+  expo-status-bar, @expo/dom-webview, @expo/log-box). Verified via
+  expo-modules-autolinking resolve across all 3 real Expo apps.
+- Fixed Expo core tax (bare-min->expo-min): +36ms cold start, +12.6MB PSS,
+  +16.2MB APK. Small.
+- Per added module (present but UNUSED): light (device/haptics/clipboard) ~0;
+  native-view (image/blur/gradient) ~0-2MB; heavy SDK (camera +5.1MB/+25ms,
+  video +5.9MB/+16ms, notifications +2.7MB). expo-modules-core inits lazily.
+- Reconciliation: instrumented apps showed @expo+expo-modules-core JS-CPU blame
+  of 118/185/241ms (react-navigation/navigation/expo-router) but the fixed
+  Displayed tax is only ~36ms. That blame = the app's OWN native-module calls
+  routed through expo-modules-core (scales with usage), not extra Expo work.
+  Softened the cold-start doc's "~115ms Expo tax" wording accordingly.
+- Tooling: quick-coldstart.sh (instrumentation-free Displayed+PSS) added;
+  lib.sh log()/warn() now go to stderr so JSON stdout stays clean.
+
 Key findings:
 1. Expo Router cold start/RAM premium = Reanimated+Worklets second Hermes runtime
    (3 hades GC threads vs 1-2; 8 extra .so; ~106ms JS via runOnUISync/worklets) +

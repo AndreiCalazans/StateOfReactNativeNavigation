@@ -204,11 +204,13 @@ thread does little and the native side draws the first frame quickly.</p>
 <p>React Navigation v7 is <strong>JS-driven</strong> navigation on top of
 <code>react-native-screens</code>. Compared to rn-navigation it adds, at startup:</p>
 <ul>
-  <li><strong>The Expo runtime tax.</strong> It’s an Expo app, so <code>expo-modules-core</code> and
-  the <code class="mono">@expo</code> NativeModules proxy initialize eagerly — ~115&nbsp;ms/run of JS
-  blamed to <code class="mono">@expo</code>/<code class="mono">expo-modules-core</code>, dominated by
-  synchronous <code class="mono">getConstants</code> calls. rn-navigation is a <em>bare</em> RN app
-  and skips this entirely.</li>
+  <li><strong>The Expo module layer.</strong> It’s an Expo app, so its native-module calls run through
+  <code>expo-modules-core</code> — ~115&nbsp;ms/run of JS gets <em>labeled</em>
+  <code class="mono">@expo</code>/<code class="mono">expo-modules-core</code> (mostly synchronous
+  <code class="mono">getConstants</code>), which rn-navigation’s bare setup doesn’t show. But careful:
+  a follow-up control (<a href="expo-cost.html">The cost of Expo</a>) shows the <em>fixed</em> Expo
+  cold-start tax is only ~36&nbsp;ms — that 115&nbsp;ms is largely the app’s own native traffic wearing
+  an Expo name tag, not extra Expo work.</li>
   <li><strong>A real JS navigation tree.</strong> <code class="mono">NavigationContainer</code> →
   navigators → screens are React components reconciled by Fabric on the JS thread; the profile shows
   <code class="mono">@react-navigation</code> work plus React reconciliation
