@@ -56,9 +56,15 @@ if [ "$COLD" -eq 1 ]; then
 fi
 
 if [ "$FLASH" -eq 1 ]; then
-  echo "--- Flashlight FPS/CPU/RAM ($ITER iterations) ---"
+  # Prefer an app-specific navigate flow (some libraries need bespoke tab
+  # selectors); fall back to the shared template.
+  FLOW="$REPO_ROOT/perf-tooling/maestro/navigate.yaml"
+  if [ -f "$APP_DIR/.maestro/navigate.yaml" ]; then
+    FLOW="$APP_DIR/.maestro/navigate.yaml"
+  fi
+  echo "--- Flashlight FPS/CPU/RAM ($ITER iterations, flow=$FLOW) ---"
   "$REPO_ROOT/perf-tooling/scripts/flashlight-measure.sh" \
-    --app "$APP" --flow "$REPO_ROOT/perf-tooling/maestro/navigate.yaml" \
+    --app "$APP" --flow "$FLOW" \
     --label "$LABEL" --out "$OUT" --iterations "$ITER"
 fi
 

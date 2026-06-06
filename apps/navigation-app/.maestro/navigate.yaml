@@ -1,0 +1,32 @@
+# App-specific navigate flow for the `navigation` router.
+#
+# Its native Material3 bottom TabBar items are drawn near the bottom gesture
+# zone; their accessibility node center falls outside the effective touch
+# target, so Maestro selects them by screen-relative point instead (Browse =
+# left half, Profile = right half of the bottom bar). Stack push/pop uses the
+# shared-ui testIDs, identical to every other example.
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+- assertVisible:
+    id: "home-screen"
+- repeat:
+    times: 5
+    commands:
+      - tapOn:
+          id: "open-details"
+      - assertVisible:
+          id: "details-screen"
+      - tapOn:
+          id: "details-back"
+      - assertVisible:
+          id: "home-screen"
+- tapOn:
+    point: "72%,92%"
+- assertVisible:
+    id: "profile-screen"
+- tapOn:
+    point: "28%,92%"
+- assertVisible:
+    id: "home-screen"
