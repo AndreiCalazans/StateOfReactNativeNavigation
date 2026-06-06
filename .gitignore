@@ -1,0 +1,33 @@
+# Never commit the private instructions
+INSTRUCTIONS.md
+
+# Local tools installed into the repo
+.tools/
+
+# Node
+node_modules/
+.expo/
+dist/
+web-build/
+
+# Native build artifacts
+**/android/.gradle/
+**/android/build/
+**/android/app/build/
+**/android/app/.cxx/
+**/android/.kotlin/
+**/ios/Pods/
+**/ios/build/
+*.keystore
+!debug.keystore
+
+# Perf results (large binary traces). Keep summaries, ignore raw traces.
+perf-results/**/*.perfetto-trace
+perf-results/**/*.cpuprofile
+perf-results/**/*.cpuprofile.txt
+
+# Logs / misc
+*.log
+.DS_Store
+npm-debug.*
+yarn-error.log
