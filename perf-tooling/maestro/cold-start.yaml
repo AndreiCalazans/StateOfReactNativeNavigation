@@ -1,0 +1,15 @@
+# Cold-start flow (shared template).
+#
+# Pass the package id via Maestro env, e.g.:
+#   maestro --env APP_ID=com.rnperf.exporouter test cold-start.yaml
+#
+# Used by Flashlight (`flashlight test`) and by the capture scripts to drive a
+# deterministic cold start that lands on the Home screen.
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+- assertVisible:
+    id: "home-screen"
+- assertVisible:
+    id: "home-row-0"

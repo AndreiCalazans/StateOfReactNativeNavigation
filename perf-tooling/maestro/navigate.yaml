@@ -1,0 +1,33 @@
+# Navigation stress flow (shared template).
+#
+#   maestro --env APP_ID=com.rnperf.exporouter test navigate.yaml
+#
+# Exercises the perf-relevant interactions identically across every app:
+#   - stack push (Home -> Details) and pop, repeated
+#   - tab switch (Home <-> Profile)
+# Flashlight measures FPS / CPU / RAM across this flow.
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+- assertVisible:
+    id: "home-screen"
+- repeat:
+    times: 5
+    commands:
+      - tapOn:
+          id: "open-details"
+      - assertVisible:
+          id: "details-screen"
+      - tapOn:
+          id: "details-back"
+      - assertVisible:
+          id: "home-screen"
+- tapOn:
+    id: "tab-profile"
+- assertVisible:
+    id: "profile-screen"
+- tapOn:
+    id: "tab-home"
+- assertVisible:
+    id: "home-screen"
