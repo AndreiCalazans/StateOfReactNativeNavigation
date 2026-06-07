@@ -1,11 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen, DetailsScreen, ProfileScreen } from 'shared-ui';
+import { HomeScreen, DetailsScreen, HeavyDetailsScreen, ProfileScreen } from 'shared-ui';
 
 type HomeStackParamList = {
   Home: undefined;
   Details: { id: number };
+  Heavy: { id: number };
 };
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
@@ -18,7 +19,13 @@ function HomeStack() {
         {({ navigation }) => (
           <HomeScreen
             onOpenDetails={(id: number) => navigation.navigate('Details', { id })}
+            onOpenHeavy={(id: number) => navigation.navigate('Heavy', { id })}
           />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="Heavy">
+        {({ route, navigation }) => (
+          <HeavyDetailsScreen id={route.params?.id ?? 0} onBack={() => navigation.goBack()} />
         )}
       </Stack.Screen>
       <Stack.Screen name="Details">

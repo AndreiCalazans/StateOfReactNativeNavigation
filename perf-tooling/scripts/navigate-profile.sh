@@ -12,13 +12,14 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/lib.sh"
 
-APP="" APP_DIR="" LABEL="" OUT="./perf-results" TAP_DELAY=3.5 DUR=9000 SOURCEMAP=""
+APP="" APP_DIR="" LABEL="" OUT="./perf-results" TAP_DELAY=3.5 DUR=9000 SOURCEMAP="" BUTTON="open-details"
 while [ $# -gt 0 ]; do
   case "$1" in
     --app) APP="${2:?}"; shift 2;;
     --app-dir) APP_DIR="${2:?}"; shift 2;;
     --label) LABEL="${2:?}"; shift 2;;
     --out) OUT="${2:?}"; shift 2;;
+    --button-id) BUTTON="${2:?}"; shift 2;;
     --tap-delay-s) TAP_DELAY="${2:?}"; shift 2;;
     --duration-ms) DUR="${2:?}"; shift 2;;
     --sourcemap) SOURCEMAP="${2:?}"; shift 2;;
@@ -53,14 +54,14 @@ sleep "$TAP_DELAY"
 # Resolve the shared open-details button center (same layout in every app).
 "${ADB[@]}" shell uiautomator dump /sdcard/ud.xml >/dev/null 2>&1 || true
 bounds="$("${ADB[@]}" shell cat /sdcard/ud.xml 2>/dev/null | tr '>' '\n' \
-  | grep -i 'open-details' | grep -oE 'bounds="[^"]*"' | head -1 | grep -oE '[0-9]+' || true)"
+  | grep -i "$BUTTON" | grep -oE 'bounds="[^"]*"' | head -1 | grep -oE '[0-9]+' || true)"
 set -- $bounds
 if [ $# -eq 4 ]; then
   cx=$(( ($1 + $3) / 2 )); cy=$(( ($2 + $4) / 2 ))
 else
-  warn "could not read open-details bounds; falling back to (540,427)"; cx=540; cy=427
+  warn "could not read $BUTTON bounds; falling back to (540,520)"; cx=540; cy=520
 fi
-log "tapping open-details at ($cx,$cy)"
+log "tapping $BUTTON at ($cx,$cy)"
 "${ADB[@]}" shell input tap "$cx" "$cy"
 
 # Wait for the trace to finish + the Hermes dump (~9 s after JS entry).

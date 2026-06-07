@@ -106,6 +106,30 @@ hypothesis in two:
 - Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
   expo=3); removed that claim, rely on anon-RSS instead.
 
+## Heavy-screen navigation (docs/navigation-heavy.html, perf-results/_nav/*-heavy*)
+
+Added HeavyDetailsScreen (24-row FlatList, initialNumToRender=24, ~264 nodes,
+~11/row) + open-heavy button to shared-ui; wired a heavy route into all 4 apps;
+rebuilt + reinstalled all 4; captured nav to heavy (navigate-profile.sh
+--button-id open-heavy). Data: perf-results/_nav/nav-heavy-analysis.json.
+Trivial -> heavy:
+- JS mount jumped for all (completeRoot / Fabric commit of 264 nodes ~50-60ms
+  dominates): rnn 19.5->86.7, react-navigation 79.8->113.6, navigation
+  11.8->123.7 (lean-JS edge GONE), expo-router 47.8->134.2. Router overhead is a
+  shrinking slice; content is React/Fabric regardless of router.
+- press->first frame splits by architecture: rnn 44->61ms (starts the native
+  transition before content is ready -> then a 221ms 'App Deadline Missed' stall
+  frame while the tree commits); the content-gated routers scale with mount:
+  navigation 243, react-navigation 299, expo-router 322ms.
+- press->settled: rnn ~320ms (same wall time but via dropped frames, 4/8 janky);
+  content-gated grew ~200ms (526-749ms) but animate smoother (navigation jank
+  15/25 trivial -> 3/24 heavy: cost moved out of the animation window).
+- Trade-off: rn-navigation = time-to-first-pixel + stutter; React Navigation /
+  Expo Router / navigation router = render-before-present (slower start, smooth).
+- Propagating shared-ui: file: deps are COPIED at install, so after editing
+  shared-ui I copied index.js into each app's node_modules/shared-ui before build.
+- navigate-profile.sh now takes --button-id (open-details | open-heavy).
+
 ## Navigation cost study (docs/navigation-cost.html, perf-results/_nav/)
 
 Cold-start captures had no taps, so captured fresh per-app traces with

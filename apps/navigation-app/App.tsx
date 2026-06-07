@@ -7,11 +7,12 @@ import {
   TabBar,
   TabBarItem,
 } from 'navigation-react-native';
-import { HomeScreen, DetailsScreen, ProfileScreen } from 'shared-ui';
+import { HomeScreen, DetailsScreen, HeavyDetailsScreen, ProfileScreen } from 'shared-ui';
 
 const homeNavigator = new StateNavigator([
   { key: 'home' },
   { key: 'details', trackCrumbTrail: true },
+  { key: 'heavy', trackCrumbTrail: true },
 ]);
 const profileNavigator = new StateNavigator([{ key: 'profile' }]);
 
@@ -20,7 +21,15 @@ function Home() {
   return (
     <HomeScreen
       onOpenDetails={(id: number) => stateNavigator.navigate('details', { id })}
+      onOpenHeavy={(id: number) => stateNavigator.navigate('heavy', { id })}
     />
+  );
+}
+
+function Heavy() {
+  const { stateNavigator, data } = useContext(NavigationContext);
+  return (
+    <HeavyDetailsScreen id={data?.id ?? 0} onBack={() => stateNavigator.navigateBack(1)} />
   );
 }
 
@@ -43,6 +52,9 @@ function HomeTab() {
         </Scene>
         <Scene stateKey="details">
           <Details />
+        </Scene>
+        <Scene stateKey="heavy">
+          <Heavy />
         </Scene>
       </NavigationStack>
     </NavigationHandler>

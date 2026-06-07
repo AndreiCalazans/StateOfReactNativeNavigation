@@ -41,6 +41,7 @@ docs/                     Write-ups (open in a browser):
                             cold-start-findings.html  cold start + RAM deep dive
                             expo-cost.html            the cost of Expo / expo-modules-core
                             navigation-cost.html      press -> painted, per library
+                            navigation-heavy.html     busier JS thread (heavy screen)
 ```
 
 Every app renders the **same** screens (from `shared-ui`) and exposes the same

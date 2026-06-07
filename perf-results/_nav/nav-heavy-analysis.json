@@ -1,0 +1,122 @@
+{
+  "rnn": {
+    "package": "com.rnperf.rnn",
+    "trivial": {
+      "pressToFirstFrameMs": 44.1,
+      "pressToSettledMs": 335.3,
+      "transitionFrames": 26,
+      "jankyFrames": 2,
+      "jsMountMs": 19.5
+    },
+    "heavy": {
+      "pressToFirstFrameMs": 60.6,
+      "pressToSettledMs": 319.1,
+      "transitionFrames": 8,
+      "jankyFrames": 4,
+      "jsMountMs": 86.7,
+      "hermesBlame": [
+        [
+          "Native",
+          66278
+        ],
+        [
+          "react-native",
+          20447
+        ]
+      ]
+    }
+  },
+  "react-navigation": {
+    "package": "com.rnperf.reactnavigation",
+    "trivial": {
+      "pressToFirstFrameMs": 61.5,
+      "pressToSettledMs": 522.2,
+      "transitionFrames": 43,
+      "jankyFrames": 7,
+      "jsMountMs": 79.8
+    },
+    "heavy": {
+      "pressToFirstFrameMs": 298.6,
+      "pressToSettledMs": 723.8,
+      "transitionFrames": 40,
+      "jankyFrames": 4,
+      "jsMountMs": 113.6,
+      "hermesBlame": [
+        [
+          "Native",
+          75966
+        ],
+        [
+          "react-native",
+          28087
+        ],
+        [
+          "use-sync-external-store",
+          9538
+        ],
+        [
+          "@react-navigation",
+          0
+        ]
+      ]
+    }
+  },
+  "navigation": {
+    "package": "com.rnperf.navigation",
+    "trivial": {
+      "pressToFirstFrameMs": 50.9,
+      "pressToSettledMs": 329.9,
+      "transitionFrames": 25,
+      "jankyFrames": 15,
+      "jsMountMs": 11.8
+    },
+    "heavy": {
+      "pressToFirstFrameMs": 243.4,
+      "pressToSettledMs": 525.8,
+      "transitionFrames": 24,
+      "jankyFrames": 3,
+      "jsMountMs": 123.7,
+      "hermesBlame": [
+        [
+          "react-native",
+          64839
+        ],
+        [
+          "Native",
+          58859
+        ]
+      ]
+    }
+  },
+  "expo-router": {
+    "package": "com.rnperf.exporouter",
+    "trivial": {
+      "pressToFirstFrameMs": 61.3,
+      "pressToSettledMs": 520.2,
+      "transitionFrames": 43,
+      "jankyFrames": 8,
+      "jsMountMs": 47.8
+    },
+    "heavy": {
+      "pressToFirstFrameMs": 321.6,
+      "pressToSettledMs": 749.3,
+      "transitionFrames": 39,
+      "jankyFrames": 3,
+      "jsMountMs": 134.2,
+      "hermesBlame": [
+        [
+          "Native",
+          93507
+        ],
+        [
+          "react-native",
+          29679
+        ],
+        [
+          "react",
+          11012
+        ]
+      ]
+    }
+  }
+}
