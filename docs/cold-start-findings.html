@@ -119,6 +119,33 @@ All four hold a steady ~60&nbsp;FPS on this simple UI — the interesting differ
   <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">917 ms</span></div>
 </div>
 
+<p class="small" style="margin-top:18px">Cold starts, side by side (process launch → Home), clips aligned
+to the launch with a shared stopwatch in the middle. Watch when the list appears:</p>
+<figure style="margin:8px 0 6px">
+  <video controls muted playsinline loop preload="metadata"
+    style="width:100%;border:1px solid var(--line);border-radius:10px;background:#000;display:block">
+    <source src="cold-rnn-vs-expo-router.mp4" type="video/mp4" />
+    Your browser doesn’t support embedded video — see <code>docs/cold-rnn-vs-expo-router.mp4</code>.
+  </video>
+  <figcaption class="small" style="margin-top:8px">
+    The extremes: <b style="color:var(--rnn)">react-native-navigation</b> (~316 ms) is on Home and
+    interactive while <b style="color:var(--expo)">Expo Router</b> (~917 ms) is still holding its splash
+    — it lands roughly a second later.
+  </figcaption>
+</figure>
+<figure style="margin:14px 0 6px">
+  <video controls muted playsinline loop preload="metadata"
+    style="width:100%;border:1px solid var(--line);border-radius:10px;background:#000;display:block">
+    <source src="cold-react-navigation-vs-navigation.mp4" type="video/mp4" />
+    Your browser doesn’t support embedded video — see <code>docs/cold-react-navigation-vs-navigation.mp4</code>.
+  </video>
+  <figcaption class="small" style="margin-top:8px">
+    The middle of the pack: <b style="color:var(--rnav)">React Navigation v7</b> (~358 ms) and the
+    <b style="color:var(--nav)">navigation router</b> (~398 ms) land within a frame or two of each other.
+    (Recorded on the test device; clips loop. Builds are profileable, hence the brief profiler toast.)
+  </figcaption>
+</figure>
+
 <h2 id="q1">1 · Why does Expo Router add so much cold start and RAM?</h2>
 <p>Expo Router is ~2.6× the cold start and ~1.6× the peak RAM of the others. The traces point to
 <strong>three compounding causes</strong>, none of which is the file-based router’s routing logic

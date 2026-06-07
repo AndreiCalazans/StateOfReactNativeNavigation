@@ -106,6 +106,16 @@ hypothesis in two:
 - Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
   expo=3); removed that claim, rely on anon-RSS instead.
 
+## Cold-start side-by-side videos (docs/cold-*.mp4, in cold-start-findings.html)
+
+Recorded cold start (launcher -> Home) for all 4 apps via adb screenrecord with
+retries (screenrecord flakily stops early on native-surface apps rnn/navigation;
+retry until >=2.4s). Aligned each on the launcher->app scene-change anchor,
+normalized CFR 30, trimmed to a 2.0s launch-aligned window. Composed two pairs
+with ~/Movies/side-by-side.sh: cold-rnn-vs-expo-router.mp4 (extremes: rnn on Home
+while expo still on splash) and cold-react-navigation-vs-navigation.mp4 (middle).
+Embedded after the headline cold-start chart.
+
 ## Side-by-side video (docs/rnn-vs-react-navigation-heavy.mp4)
 
 Recorded heavy-screen transitions with `adb screenrecord` and composed via
