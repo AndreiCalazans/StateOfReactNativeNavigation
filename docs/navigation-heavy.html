@@ -67,10 +67,10 @@
   <h1>A busier JS thread: navigating to a heavy screen</h1>
   <p class="lede">The <a href="navigation-cost.html">navigation post</a> pushed a trivial Details screen
   (a title + a button). Here I replace the destination with a <strong>24-row FlatList rendered all at
-  once</strong> (~264 native nodes, ~11 per row) and re-run the exact same measurement. What happens to
+  once</strong> (~12 host components per row × 24 ≈ 290 nodes) and re-run the exact same measurement. What happens to
   press→paint when the JS thread actually has work to do?</p>
   <div class="tags">
-    <span class="tag">trivial (≈3 nodes) vs heavy (≈264 nodes)</span>
+    <span class="tag">trivial (≈3 nodes) vs heavy (≈290 nodes)</span>
     <span class="tag">Samsung Galaxy A16 · Android 14 · Hermes · New Arch</span>
     <span class="tag">Expo SDK 56 / RN 0.85</span>
   </div>
@@ -125,9 +125,15 @@ them one at a time.</p>
 </div>
 <p>Every library’s JS mount cost jumped, and the leaf eating the time is the same one everywhere —
 <code class="mono">[HostFunction] completeRoot</code>, the Fabric commit of the new view tree
-(~50–60 ms for 264 nodes vs ~12–24 ms trivial):</p>
+(~50–60 ms for the ~290-node tree vs ~12–24 ms trivial):</p>
 <pre><span class="m"># navigation router — heavy mount, blamed: react-native 64.8ms · Native 58.9ms</span>
-58.9ms  <span class="h">[HostFunction] completeRoot</span>   <span class="m">[Native] — commit the 264-node tree</span></pre>
+58.9ms  <span class="h">[HostFunction] completeRoot</span>   <span class="m">[Native] — commit the ~290-node tree</span></pre>
+<p class="small">Node counts here are <strong>counted from the component tree</strong> (24 rows × ~12 host
+<code>View</code>/<code>Text</code> components, plus list/screen chrome) — they are <em>not</em> read off
+the trace. Neither tool prints a node count: the Hermes profile is sampled (so
+<code class="mono">createNode</code> only appears when a sample lands there), and the Systrace shows the
+commit cost and per-view <em>draw</em> slices for the on-screen rows, not the full shadow tree. What the
+trace confirms is the <em>magnitude</em> — <code class="mono">completeRoot</code> scaling ~5×.</p>
 <div class="callout warn">
   <strong>The navigation router’s lean-JS advantage evaporates.</strong> On the trivial screen it mounted
   in 11.8 ms (it commits a native scene). With real content it’s 123.7 ms — because the <em>content</em>
@@ -149,7 +155,7 @@ That’s not magic; it’s two different strategies:</p>
 <ul>
   <li><strong>rn-navigation starts the transition immediately</strong>, presenting the new screen
   container before its content is ready. Its first frame stays fast — but right after it comes a
-  <strong>single 221 ms “App Deadline Missed” frame</strong> while the 264-node tree commits. The screen
+  <strong>single 221 ms “App Deadline Missed” frame</strong> while the ~290-node tree commits. The screen
   appears, then visibly stutters as it fills in.</li>
   <li><strong>React Navigation, Expo Router (native-stack) and the navigation router gate the transition
   on content</strong> — they keep the old screen until the new one has rendered, so first-frame scales
@@ -205,7 +211,8 @@ That’s not magic; it’s two different strategies:</p>
   <li><strong>n = 1 per library per screen.</strong> One captured tap each; first-frame ±~15 ms and the
   jank counts are single samples. The rn-navigation 221 ms stall and the ~240–320 ms gating delay are
   large and architectural, but treat exact numbers as indicative.</li>
-  <li><strong>“Heavy” here = 24 rows committed synchronously</strong> (~264 nodes). A virtualized list
+  <li><strong>“Heavy” here = 24 rows committed synchronously</strong> (~290 host nodes, counted from the
+  component tree — not measured in the trace). A virtualized list
   that renders a small initial batch would be cheaper; this deliberately stresses the mount.</li>
   <li><strong>Transition animation durations are library defaults</strong> and configurable.</li>
   <li><strong>One device.</strong> Samsung Galaxy A16, Android 14, Hermes, New Architecture, Expo SDK 56 / RN 0.85.</li>

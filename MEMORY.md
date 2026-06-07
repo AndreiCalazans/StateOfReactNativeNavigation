@@ -108,12 +108,13 @@ hypothesis in two:
 
 ## Heavy-screen navigation (docs/navigation-heavy.html, perf-results/_nav/*-heavy*)
 
-Added HeavyDetailsScreen (24-row FlatList, initialNumToRender=24, ~264 nodes,
-~11/row) + open-heavy button to shared-ui; wired a heavy route into all 4 apps;
+Added HeavyDetailsScreen (24-row FlatList, initialNumToRender=24, ~12 host
+components/row -> ~290 nodes ESTIMATED FROM THE COMPONENT TREE, not the trace;
+neither systrace nor sampled Hermes prints a node count) + open-heavy button; wired a heavy route into all 4 apps;
 rebuilt + reinstalled all 4; captured nav to heavy (navigate-profile.sh
 --button-id open-heavy). Data: perf-results/_nav/nav-heavy-analysis.json.
 Trivial -> heavy:
-- JS mount jumped for all (completeRoot / Fabric commit of 264 nodes ~50-60ms
+- JS mount jumped for all (completeRoot / Fabric commit of the ~290-node tree ~50-60ms
   dominates): rnn 19.5->86.7, react-navigation 79.8->113.6, navigation
   11.8->123.7 (lean-JS edge GONE), expo-router 47.8->134.2. Router overhead is a
   shrinking slice; content is React/Fabric regardless of router.
