@@ -1,0 +1,376 @@
+{
+  "rnn": {
+    "package": "com.rnperf.rnn",
+    "systrace": {
+      "app": "com.rnperf.rnn",
+      "pressOffsetMs": 8087.0,
+      "pressToFirstFrameMs": 44.1,
+      "pressToSettledMs": 335.3,
+      "transitionFrames": 26,
+      "transitionSpanMs": 291.2,
+      "jankyFrames": 2,
+      "coldStartFrames": 6
+    },
+    "hermesNav": {
+      "startOffsetMs": 5980.4,
+      "wallMs": 324.9,
+      "jsBusyMs": 19.5,
+      "blame": [
+        [
+          "react-native-navigation",
+          10118
+        ],
+        [
+          "shared-ui",
+          9377
+        ],
+        [
+          "react-native",
+          0
+        ],
+        [
+          "Native",
+          0
+        ]
+      ],
+      "top": [
+        [
+          "triggerOnAllListenersByComponentId",
+          10.1,
+          "react-native-navigation"
+        ],
+        [
+          "anonymous",
+          9.4,
+          "react-native"
+        ],
+        [
+          "performWorkOnRootViaSchedulerTask",
+          0.0,
+          "react-native"
+        ],
+        [
+          "performWorkOnRoot",
+          0.0,
+          "react-native"
+        ],
+        [
+          "renderRootSync",
+          0.0,
+          "react-native"
+        ],
+        [
+          "workLoopSync",
+          0.0,
+          "react-native"
+        ],
+        [
+          "beginWork",
+          0.0,
+          "react-native"
+        ],
+        [
+          "renderWithHooks",
+          0.0,
+          "react-native"
+        ],
+        [
+          "DetailsScreen",
+          0.0,
+          "shared-ui"
+        ],
+        [
+          "emit",
+          0.0,
+          "react-native"
+        ],
+        [
+          "[Native] functionPrototypeApply",
+          0.0,
+          "Native"
+        ],
+        [
+          "notifyComponentDidAppear",
+          0.0,
+          "react-native-navigation"
+        ]
+      ]
+    },
+    "numJsBursts": 3
+  },
+  "react-navigation": {
+    "package": "com.rnperf.reactnavigation",
+    "systrace": {
+      "app": "com.rnperf.reactnavigation",
+      "pressOffsetMs": 7690.2,
+      "pressToFirstFrameMs": 61.5,
+      "pressToSettledMs": 522.2,
+      "transitionFrames": 43,
+      "transitionSpanMs": 460.8,
+      "jankyFrames": 7,
+      "coldStartFrames": 7
+    },
+    "hermesNav": {
+      "startOffsetMs": 6024.5,
+      "wallMs": 484.6,
+      "jsBusyMs": 79.8,
+      "blame": [
+        [
+          "Native",
+          34626
+        ],
+        [
+          "react-native",
+          28602
+        ],
+        [
+          "@react-navigation",
+          10857
+        ],
+        [
+          "@expo",
+          5675
+        ]
+      ],
+      "top": [
+        [
+          "[HostFunction] completeRoot",
+          16.4,
+          "Native"
+        ],
+        [
+          "beginEvent",
+          11.9,
+          "react-native"
+        ],
+        [
+          "updateCallback",
+          10.9,
+          "react-native"
+        ],
+        [
+          "[HostFunction] appendChild",
+          10.7,
+          "Native"
+        ],
+        [
+          "[Native] functionPrototypeApply",
+          7.5,
+          "Native"
+        ],
+        [
+          "destructor",
+          6.7,
+          "react-native"
+        ],
+        [
+          "releasePooledEvent",
+          5.9,
+          "react-native"
+        ],
+        [
+          "[Native] mapPrototypeGet",
+          5.7,
+          "Native"
+        ],
+        [
+          "emit",
+          4.2,
+          "react-native"
+        ],
+        [
+          "anonymous",
+          0.0,
+          "react-native"
+        ],
+        [
+          "flushSyncWorkAcrossRoots_impl",
+          0.0,
+          "react-native"
+        ],
+        [
+          "performWorkOnRoot",
+          0.0,
+          "react-native"
+        ],
+        [
+          "renderRootSync",
+          0.0,
+          "react-native"
+        ],
+        [
+          "workLoopSync",
+          0.0,
+          "react-native"
+        ]
+      ]
+    },
+    "numJsBursts": 2
+  },
+  "navigation": {
+    "package": "com.rnperf.navigation",
+    "systrace": {
+      "app": "com.rnperf.navigation",
+      "pressOffsetMs": 7728.4,
+      "pressToFirstFrameMs": 50.9,
+      "pressToSettledMs": 329.9,
+      "transitionFrames": 25,
+      "transitionSpanMs": 278.9,
+      "jankyFrames": 15,
+      "coldStartFrames": 6
+    },
+    "hermesNav": {
+      "startOffsetMs": 5871.9,
+      "wallMs": 11.8,
+      "jsBusyMs": 11.8,
+      "blame": [
+        [
+          "Native",
+          11818
+        ],
+        [
+          "react-native",
+          0
+        ]
+      ],
+      "top": [
+        [
+          "[HostFunction] completeRoot",
+          11.8,
+          "Native"
+        ],
+        [
+          "performWorkOnRootViaSchedulerTask",
+          0.0,
+          "react-native"
+        ],
+        [
+          "performWorkOnRoot",
+          0.0,
+          "react-native"
+        ],
+        [
+          "commitRoot",
+          0.0,
+          "react-native"
+        ],
+        [
+          "flushMutationEffects",
+          0.0,
+          "react-native"
+        ],
+        [
+          "commitMutationEffectsOnFiber",
+          0.0,
+          "react-native"
+        ]
+      ]
+    },
+    "numJsBursts": 2
+  },
+  "expo-router": {
+    "package": "com.rnperf.exporouter",
+    "systrace": {
+      "app": "com.rnperf.exporouter",
+      "pressOffsetMs": 7696.6,
+      "pressToFirstFrameMs": 61.3,
+      "pressToSettledMs": 520.2,
+      "transitionFrames": 43,
+      "transitionSpanMs": 459.0,
+      "jankyFrames": 8,
+      "coldStartFrames": 39
+    },
+    "hermesNav": {
+      "startOffsetMs": 6022.8,
+      "wallMs": 52.0,
+      "jsBusyMs": 47.8,
+      "blame": [
+        [
+          "Native",
+          24139
+        ],
+        [
+          "react-native",
+          16586
+        ],
+        [
+          "expo-router",
+          7076
+        ]
+      ],
+      "top": [
+        [
+          "[HostFunction] completeRoot",
+          24.1,
+          "Native"
+        ],
+        [
+          "propagateParentContextChanges",
+          8.9,
+          "react-native"
+        ],
+        [
+          "markUpdateLaneFromFiberToRoot",
+          7.7,
+          "react-native"
+        ],
+        [
+          "latestCallback",
+          7.1,
+          "expo-router"
+        ],
+        [
+          "anonymous",
+          0.0,
+          "react-native"
+        ],
+        [
+          "flushSyncWorkAcrossRoots_impl",
+          0.0,
+          "react-native"
+        ],
+        [
+          "performWorkOnRoot",
+          0.0,
+          "react-native"
+        ],
+        [
+          "commitRoot",
+          0.0,
+          "react-native"
+        ],
+        [
+          "flushSpawnedWork",
+          0.0,
+          "react-native"
+        ],
+        [
+          "flushPendingEffects",
+          0.0,
+          "react-native"
+        ],
+        [
+          "flushPassiveEffects",
+          0.0,
+          "react-native"
+        ],
+        [
+          "commitPassiveMountOnFiber",
+          0.0,
+          "react-native"
+        ],
+        [
+          "recursivelyTraversePassiveMountEffects",
+          0.0,
+          "react-native"
+        ],
+        [
+          "commitHookEffectListMount",
+          0.0,
+          "react-native"
+        ]
+      ]
+    },
+    "numJsBursts": 2
+  }
+}

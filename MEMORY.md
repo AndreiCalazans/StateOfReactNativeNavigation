@@ -106,6 +106,29 @@ hypothesis in two:
 - Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
   expo=3); removed that claim, rely on anon-RSS instead.
 
+## Navigation cost study (docs/navigation-cost.html, perf-results/_nav/)
+
+Cold-start captures had no taps, so captured fresh per-app traces with
+navigate-profile.sh: cold-launch + Hermes sampler running, settle Home, input tap
+the shared open-details button, record Perfetto through the transition. Anchors:
+press = startDispatchCycleLocked(.../MainActivity) input dispatch; paint = app
+actual_frame_timeline frames (first frame = content, last of burst = settled).
+New analyzers: analyze-navigate.py (press->paint) + analyze-navigate-hermes.py
+(JS mount burst). Data: perf-results/_nav/nav-analysis.json.
+Findings:
+- press->first frame ~44-62ms for all (all feel instant to start).
+- press->fully painted splits: rnn 335 / navigation 330 vs react-navigation 522 /
+  expo-router 520. The gap = transition ANIMATION length (a library default).
+  expo-router == react-navigation (same native-stack slide, 43 frames).
+- JS mount cost mirrors how native each router is: navigation 11.8ms (commits a
+  native scene), rnn 19.5ms (render + RNN appear events), expo-router 47.8ms
+  (commit + router context propagation), react-navigation 79.8ms (full React
+  reconcile + appendChild + synthetic-event pool + nav state).
+- Distinct call stacks per lib documented in the HTML. For a trivial screen,
+  navigation cost is a native-pipeline cost, not JS.
+- Jank (n=1): navigation router janked 15/25 frames on its run; others 8-19%.
+- Caveat: n=1 per app, trivial screen, default transition durations.
+
 ## Expo cost study (docs/expo-cost.html, experiments/bare_min + expo_min)
 
 Control: 2 bare RN apps (no Expo) vs 3 Expo apps. Built minimal bare-min vs

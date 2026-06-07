@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The cost of navigating — press → painted, measured per library</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --ink:#e6edf3; --muted:#8b949e;
+    --line:#30363d; --accent:#58a6ff; --good:#3fb950; --warn:#d29922; --bad:#f85149;
+    --rnn:#3fb950; --rnav:#58a6ff; --nav:#bc8cff; --expo:#f0883e;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 22px 96px}
+  header.hero{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:36px}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12.5px}
+  h1{font-size:33px;line-height:1.2;margin:.35em 0 .25em}
+  h2{font-size:24px;margin:52px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:28px 0 6px;color:var(--ink)}
+  p{color:#d6dee6}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  code{background:#1f2630;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#e6edf3}
+  .lede{font-size:18.5px;color:#cdd6e0}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;margin:12px 0}
+  th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-weight:600}
+  tbody tr:hover{background:#1b2230}
+  .lib{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .d-rnn{background:var(--rnn)} .d-rnav{background:var(--rnav)} .d-nav{background:var(--nav)} .d-expo{background:var(--expo)}
+  .chart{margin:14px 0 6px}
+  .row{display:grid;grid-template-columns:150px 1fr 84px;align-items:center;gap:12px;margin:7px 0}
+  .row .name{font-size:13.5px;color:#cdd6e0}
+  .bar{height:18px;border-radius:5px;min-width:2px}
+  .row .val{font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+  .b-rnn{background:linear-gradient(90deg,#2ea043,#3fb950)}
+  .b-rnav{background:linear-gradient(90deg,#388bfd,#58a6ff)}
+  .b-nav{background:linear-gradient(90deg,#a371f7,#bc8cff)}
+  .b-expo{background:linear-gradient(90deg,#db6d28,#f0883e)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 2px;font-size:13px;color:var(--muted)}
+  .callout{border-left:3px solid var(--accent);background:#11212f;padding:12px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+  .callout.good{border-color:var(--good);background:#0f2417}
+  .callout.warn{border-color:var(--warn);background:#241f12}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}.row{grid-template-columns:118px 1fr 70px}}
+  .small{font-size:13px;color:var(--muted)}
+  .tt{font-variant-numeric:tabular-nums}
+  .foot{color:var(--muted);font-size:13px;margin-top:50px;border-top:1px solid var(--line);padding-top:18px}
+  .win{color:var(--good);font-weight:600}.lose{color:var(--bad);font-weight:600}.warn-c{color:var(--warn);font-weight:600}
+  ul{color:#d6dee6}
+  pre{background:#0b0f14;border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow:auto;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;color:#cdd6e0;line-height:1.5}
+  pre .h{color:var(--expo)} pre .n{color:var(--accent)} pre .m{color:var(--muted)}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">React Native · June 2026 · Android</div>
+  <h1>The cost of navigating: press → painted</h1>
+  <p class="lede">Part of the e2e flow pushes a Details screen. Here I capture a single real tap inside
+  a Perfetto trace + Hermes profile and ask two questions per library: <strong>how long from the user’s
+  press until the screen is painted</strong>, and <strong>what call stack mounted the screen</strong>.
+  Companion to the <a href="cold-start-findings.html">cold-start</a> and
+  <a href="expo-cost.html">Expo-cost</a> posts.</p>
+  <div class="tags">
+    <span class="tag">Home → Details push</span>
+    <span class="tag">Samsung Galaxy A16 · Android 14 · Hermes · New Arch</span>
+    <span class="tag">Expo SDK 56 / RN 0.85</span>
+  </div>
+</header>
+
+<p>The cold-start data had no taps, so I captured fresh traces: cold-launch each app with the Hermes
+sampler running, let Home settle, then <code>input tap</code> the shared <code>open-details</code>
+button while a Perfetto system trace records. Two anchors make the measurement objective:</p>
+<ul>
+  <li><strong>Press</strong> = the <code class="mono">startDispatchCycleLocked(&hellip;/MainActivity)</code>
+  input-dispatch slice on <code>system_server</code> — the moment Android hands the tap to the app.</li>
+  <li><strong>Paint</strong> = the app’s presented frames from SurfaceFlinger’s actual-frame timeline.
+  The push triggers a burst of frames (the transition); its first frame is “content on screen”, its
+  last frame is “transition settled / fully painted”.</li>
+</ul>
+<p>JS mount cost + call stacks come from the same run’s Hermes profile, isolating the busy burst that
+follows the tap.</p>
+
+<h2 id="press2paint">1 · Press → painted</h2>
+<div class="legend">
+  <span class="lib"><span class="dot d-rnn"></span>react-native-navigation</span>
+  <span class="lib"><span class="dot d-rnav"></span>React Navigation v7</span>
+  <span class="lib"><span class="dot d-nav"></span>navigation router</span>
+  <span class="lib"><span class="dot d-expo"></span>Expo Router</span>
+</div>
+<table>
+  <thead><tr><th>Library</th><th>Press → first frame</th><th>Press → fully painted</th><th>Transition frames</th><th>Janky frames</th></tr></thead>
+  <tbody>
+    <tr><td><span class="lib"><span class="dot d-rnn"></span>react-native-navigation</span></td><td class="tt win">44 ms</td><td class="tt win">335 ms</td><td class="tt">26</td><td class="tt">2</td></tr>
+    <tr><td><span class="lib"><span class="dot d-nav"></span>navigation router</span></td><td class="tt">51 ms</td><td class="tt">330 ms</td><td class="tt">25</td><td class="tt lose">15</td></tr>
+    <tr><td><span class="lib"><span class="dot d-rnav"></span>React Navigation v7</span></td><td class="tt">62 ms</td><td class="tt">522 ms</td><td class="tt">43</td><td class="tt">7</td></tr>
+    <tr><td><span class="lib"><span class="dot d-expo"></span>Expo Router</span></td><td class="tt">61 ms</td><td class="tt">520 ms</td><td class="tt">43</td><td class="tt">8</td></tr>
+  </tbody>
+</table>
+<div class="grid2">
+  <div class="chart">
+    <div class="small">Press → first frame (responsiveness) — lower better</div>
+    <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:72%"></div><span class="val">44 ms</span></div>
+    <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:83%"></div><span class="val">51 ms</span></div>
+    <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">61 ms</span></div>
+    <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:100%"></div><span class="val">62 ms</span></div>
+  </div>
+  <div class="chart">
+    <div class="small">Press → fully painted (transition settled) — lower better</div>
+    <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:63%"></div><span class="val">330 ms</span></div>
+    <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:64%"></div><span class="val">335 ms</span></div>
+    <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:100%"></div><span class="val">520 ms</span></div>
+    <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:100%"></div><span class="val">522 ms</span></div>
+  </div>
+</div>
+<div class="callout">
+  <strong>Two clusters emerge.</strong> The screen first appears in ~44–62 ms everywhere — all four are
+  “instant” to start responding. But <em>fully painted</em> splits in two: ~330 ms (rn-navigation,
+  navigation) vs ~520 ms (React Navigation, Expo Router). That gap is the <strong>transition animation
+  length</strong>, a library default — and Expo Router is identical to React Navigation because it
+  <em>is</em> React Navigation’s native-stack underneath (43 frames, same slide). rn-navigation and the
+  navigation router ship a snappier ~330 ms native transition (~25 frames).
+</div>
+
+<h2 id="jsmount">2 · What mounted the screen — JS cost &amp; call stacks</h2>
+<p>The Details screen itself is trivial (a title + a button), so the JS work to mount it is small — but
+the <em>shape</em> of that work is very different per library, which is the interesting part.</p>
+<div class="chart">
+  <div class="small">JS thread busy time to mount Details (ms) — from the Hermes profile</div>
+  <div class="row"><span class="name">navigation</span><div class="bar b-nav" style="width:15%"></div><span class="val">11.8</span></div>
+  <div class="row"><span class="name">rn-navigation</span><div class="bar b-rnn" style="width:24%"></div><span class="val">19.5</span></div>
+  <div class="row"><span class="name">Expo Router</span><div class="bar b-expo" style="width:60%"></div><span class="val">47.8</span></div>
+  <div class="row"><span class="name">React Navigation</span><div class="bar b-rnav" style="width:100%"></div><span class="val">79.8</span></div>
+</div>
+
+<h3><span class="lib"><span class="dot d-nav"></span>navigation router — 11.8 ms (leanest)</span></h3>
+<p>Pushes a <strong>native</strong> Scene; the JS thread does almost nothing but commit the scene’s
+content to Fabric.</p>
+<pre><span class="m"># self-time leaves</span>
+11.8ms  <span class="h">[HostFunction] completeRoot</span>      <span class="m">[Native]  — Fabric commit</span>
+ ~0ms  commitRoot / flushMutationEffects / commitMutationEffectsOnFiber  <span class="m">[react-native]</span></pre>
+
+<h3><span class="lib"><span class="dot d-rnn"></span>react-native-navigation — 19.5 ms</span></h3>
+<p>Native container, but the screen content is a React render, plus RNN’s native “did appear” events
+cross back into JS.</p>
+<pre><span class="m"># blame: react-native-navigation 10.1ms · shared-ui 9.4ms</span>
+beginWork → renderWithHooks → <span class="n">DetailsScreen</span>  <span class="m">[shared-ui]   — render the screen</span>
+<span class="h">triggerOnAllListenersByComponentId</span>            <span class="m">[react-native-navigation]</span>
+<span class="h">notifyComponentDidAppear</span>                      <span class="m">[react-native-navigation]</span></pre>
+
+<h3><span class="lib"><span class="dot d-expo"></span>Expo Router — 47.8 ms</span></h3>
+<p>React commit plus router-context propagation through the tree (the URL/route state updates).</p>
+<pre><span class="m"># blame: Native 24.1ms · react-native 16.6ms · expo-router 7.1ms</span>
+24.1ms  <span class="h">[HostFunction] completeRoot</span>          <span class="m">[Native]</span>
+ 8.9ms  propagateParentContextChanges        <span class="m">[react-native] — React Context fan-out</span>
+ 7.7ms  markUpdateLaneFromFiberToRoot        <span class="m">[react-native]</span>
+ 7.1ms  <span class="n">latestCallback</span>                       <span class="m">[expo-router]</span></pre>
+
+<h3><span class="lib"><span class="dot d-rnav"></span>React Navigation v7 — 79.8 ms (most JS)</span></h3>
+<p>Full React reconciliation of the navigator + new screen, the synthetic-event machinery for the
+press, and navigation-state updates.</p>
+<pre><span class="m"># blame: Native 34.6ms · react-native 28.6ms · @react-navigation 10.9ms · @expo 5.7ms</span>
+16.4ms  <span class="h">[HostFunction] completeRoot</span>          <span class="m">[Native]</span>
+10.7ms  <span class="h">[HostFunction] appendChild</span>          <span class="m">[Native] — build native view tree</span>
+11.9ms  beginEvent / 10.9ms updateCallback   <span class="m">[react-native] — event + render</span>
+ 6.7ms  destructor / 5.9ms releasePooledEvent <span class="m">[react-native] — synthetic-event pool</span>
+        + <span class="n">@react-navigation</span> navigation-state work</pre>
+
+<div class="callout good">
+  <strong>The JS mount cost mirrors how “native” each router is.</strong> The navigation router commits
+  a native scene (~12 ms); rn-navigation renders the screen + native appear events (~20 ms); the two
+  React-tree routers do real reconciliation — Expo Router ~48 ms (commit + context propagation) and
+  React Navigation ~80 ms (commit + view-tree build + event pooling + nav state). Yet none of this is
+  the bottleneck for a simple screen.
+</div>
+
+<h2 id="jank">3 · Frames &amp; jank</h2>
+<p>Number of frames in the transition and how many SurfaceFlinger flagged as janky:</p>
+<table>
+  <thead><tr><th>Library</th><th>Transition frames</th><th>Janky</th><th>Jank rate</th></tr></thead>
+  <tbody>
+    <tr><td><span class="lib"><span class="dot d-rnn"></span>rn-navigation</span></td><td class="tt">26</td><td class="tt">2</td><td class="tt win">8%</td></tr>
+    <tr><td><span class="lib"><span class="dot d-rnav"></span>React Navigation</span></td><td class="tt">43</td><td class="tt">7</td><td class="tt">16%</td></tr>
+    <tr><td><span class="lib"><span class="dot d-expo"></span>Expo Router</span></td><td class="tt">43</td><td class="tt">8</td><td class="tt">19%</td></tr>
+    <tr><td><span class="lib"><span class="dot d-nav"></span>navigation router</span></td><td class="tt">25</td><td class="tt lose">15</td><td class="tt lose">60%</td></tr>
+  </tbody>
+</table>
+<p class="small">The navigation router’s native Material transition janked on the majority of its frames
+on this device — worth noting even though its total duration is short. (n=1 capture; see caveats.)</p>
+
+<h2 id="synthesis">Synthesis</h2>
+<ul>
+  <li><strong>For a simple screen, navigation cost is a native-pipeline cost, not a JS cost.</strong>
+  Even React Navigation’s 80 ms of JS overlaps the input→frame pipeline; first paint is ~44–62 ms for
+  everyone.</li>
+  <li><strong>“Fully painted” is governed by the transition animation</strong> the library ships by
+  default: ~330 ms (rn-navigation, navigation router) vs ~520 ms (React Navigation / Expo Router’s
+  native-stack slide). This is tunable (animation duration / <code>animation: 'fade'</code> etc.), not a
+  fixed tax.</li>
+  <li><strong>Expo Router ≈ React Navigation</strong> on every navigation metric — same 43-frame slide,
+  same ballpark first frame — because it renders through React Navigation’s native-stack.</li>
+  <li><strong>The call stacks tell the architecture:</strong> native-scene routers (navigation, rnn)
+  barely touch JS to mount; React-tree routers (React Navigation, Expo Router) pay React
+  reconciliation, context propagation, and event-pool churn.</li>
+</ul>
+
+<h2 id="caveats">Caveats</h2>
+<ul>
+  <li><strong>n = 1 per library.</strong> One captured tap each; first-frame numbers carry ±~15 ms and
+  the jank counts especially are a single sample — treat the navigation router’s 60% as “janked badly
+  on this run”, not a precise rate.</li>
+  <li><strong>Trivial destination screen.</strong> Details is a title + button, so JS mount is a floor;
+  a data-heavy screen would grow the JS side and could change the ranking.</li>
+  <li><strong>Transition durations are defaults.</strong> The ~330 vs ~520 ms split reflects each
+  library’s out-of-the-box animation, which apps routinely change.</li>
+  <li><strong>Hermes sampling is coarse</strong> (~1 ms); sub-millisecond leaves show as 0. The
+  call-stack <em>shape</em> is reliable; tiny per-function ms are indicative.</li>
+  <li><strong>One device.</strong> Samsung Galaxy A16, Android 14, Hermes, New Architecture.</li>
+</ul>
+
+<div class="foot">
+  <p>Data: <code>perf-results/_nav/</code> (<code>nav-analysis.json</code> + per-app
+  <code>*-nav.perfetto-trace</code> / <code>*-nav-hermes.json</code>). Capture:
+  <code>perf-tooling/scripts/navigate-profile.sh</code>. Analyzers:
+  <code>analyze-navigate.py</code> (press→paint) and <code>analyze-navigate-hermes.py</code> (JS mount).
+  Open traces at <a href="https://ui.perfetto.dev">ui.perfetto.dev</a>. Companions:
+  <a href="cold-start-findings.html">cold start</a> · <a href="expo-cost.html">cost of Expo</a>.</p>
+</div>
+
+</div>
+</body>
+</html>
