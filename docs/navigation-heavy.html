@@ -161,6 +161,24 @@ That’s not magic; it’s two different strategies:</p>
   on content</strong> — they keep the old screen until the new one has rendered, so first-frame scales
   with mount cost (~240–320 ms) but the animation, once it starts, is smooth.</li>
 </ul>
+
+<figure style="margin:20px 0">
+  <video controls muted playsinline loop preload="metadata"
+    style="width:100%;border:1px solid var(--line);border-radius:10px;background:#000;display:block">
+    <source src="rnn-vs-react-navigation-heavy.mp4" type="video/mp4" />
+    Your browser doesn’t support embedded video — see
+    <code>docs/rnn-vs-react-navigation-heavy.mp4</code>.
+  </video>
+  <figcaption class="small" style="margin-top:8px">
+    Same tap to the heavy screen, clips aligned to the press (shared stopwatch in the middle).
+    <b style="color:var(--rnn)">react-native-navigation (left)</b> hard-cuts straight to the fully
+    rendered 24-row screen — it <strong>drops the transition frames</strong> (the slide animation never
+    really plays) — while <b style="color:var(--rnav)">React Navigation (right)</b> is still mid-slide at
+    the same instant and arrives a few hundred ms later, smoothly. The brief toast on the left is the
+    Hermes-profiler dump from the profiling build. Recorded on the test device; loops.
+  </figcaption>
+</figure>
+
 <div class="callout">
   <strong>“First frame” means different things under load.</strong> For rn-navigation it’s “the container
   is animating” (content not yet there); for the others it’s “the finished screen is about to slide in”.

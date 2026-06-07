@@ -106,6 +106,18 @@ hypothesis in two:
 - Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
   expo=3); removed that claim, rely on anon-RSS instead.
 
+## Side-by-side video (docs/rnn-vs-react-navigation-heavy.mp4)
+
+Recorded heavy-screen transitions with `adb screenrecord` and composed via
+~/Movies/side-by-side.sh (rnn left, react-navigation right, stopwatch middle).
+Embedded in navigation-heavy.html §2. Shows rnn hard-cutting to the rendered
+screen (drops transition frames) while react-navigation slides smoothly.
+Gotchas: RNN's surface push makes screenrecord stop early (~2.9s) regardless of
+--time-limit -> recorded both, normalized to CFR 30fps, trimmed to a tap-aligned
+1.47s window ([1.40,2.85], transition ~2.09s). Found tap moment via ffmpeg scene
+detection (rnn = 1 abrupt jump; rnav = continuous gradual = smooth slide).
+Minor artifact: Hermes-profiler dump Toast on the rnn clip (profiling build).
+
 ## Heavy-screen navigation (docs/navigation-heavy.html, perf-results/_nav/*-heavy*)
 
 Added HeavyDetailsScreen (24-row FlatList, initialNumToRender=24, ~12 host
