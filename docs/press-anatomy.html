@@ -149,130 +149,355 @@ engine thread. <span class="chip native">native</span> = <em>mqt_v_native</em> h
 
 <h2 id="timeline">The full timeline — measured from Systrace</h2>
 
-<p>The ruler below covers 130 ms relative to the press (the <code>startDispatchCycleLocked</code>
-input-dispatch slice). Data is from the React Navigation trace (press≈7690 ms into capture);
-every slice name is real atrace output.</p>
 
-<div class="flame-wrap">
-<div class="flame">
+<p>Every slice below is a real <code>atrace</code> / Choreographer name from the React Navigation
+cold-nav trace. The timeline starts when the finger touches the screen
+(<code>deliverInputEvent</code> DOWN) and ends after the third GPU frame of the slide animation.
+Hover any segment for the exact slice name and duration.</p>
 
-  <!-- ruler -->
-  <div class="ruler">
-    <div class="ruler-tick" style="left:0%">0</div>
-    <div class="ruler-line" style="left:0%"></div>
-    <div class="ruler-tick" style="left:15.4%">20ms</div>
-    <div class="ruler-line" style="left:15.4%"></div>
-    <div class="ruler-tick" style="left:30.8%">40ms</div>
-    <div class="ruler-line" style="left:30.8%"></div>
-    <div class="ruler-tick" style="left:46.2%">60ms</div>
-    <div class="ruler-line" style="left:46.2%"></div>
-    <div class="ruler-tick" style="left:61.5%">80ms</div>
-    <div class="ruler-line" style="left:61.5%"></div>
-    <div class="ruler-tick" style="left:76.9%">100ms</div>
-    <div class="ruler-line" style="left:76.9%"></div>
-    <div class="ruler-tick" style="left:92.3%">120ms</div>
-    <div class="ruler-line" style="left:92.3%"></div>
-  </div>
+<style>
+.fg-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 4px;
+  border:1px solid #30363d;border-radius:10px;background:#0b0f14;padding:12px 12px 8px}
+.fg-wrap svg{display:block;min-width:700px}
+.fg-wrap svg text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+</style>
 
-  <!-- UI thread -->
-  <div class="flame-row">
-    <div class="fl-label">UI thread</div>
-    <div class="fl-track">
-      <!-- deliverInputEvent 0..14ms -->
-      <div class="fl-seg s-input" style="left:0%;width:10.8%">
-        deliverInputEvent
-        <span class="tt"><b>deliverInputEvent</b><br>dur=14.1ms<br>Android hands the MotionEvent to the app's ViewRootImpl. The app is now running on its main thread.</span>
-      </div>
-      <!-- EarlyPostImeInputStage 0..9.4ms -->
-      <div class="fl-seg s-early" style="left:0%;width:7.2%;top:4px">
-        EarlyPostIme
-        <span class="tt"><b>EarlyPostImeInputStage</b><br>dur=9.4ms<br>Keyboard / IME pre-processing. Includes two binder round-trips to InputManagerService. Usually not in the critical path for non-text presses.</span>
-      </div>
-      <!-- NativePostIme -->
-      <div class="fl-seg s-view" style="left:10.2%;width:0.4%;top:4px;padding:0"></div>
-      <!-- ViewPostImeInputStage 13..17ms (rel=-13.2ms dur=4.3ms) -->
-      <div class="fl-seg s-view" style="left:10.2%;width:3.3%">
-        ViewPostIme
-        <span class="tt"><b>ViewPostImeInputStage</b><br>dur=4.3ms<br>The actual React hit-test. TouchTargetHelper walks the Fabric shadow tree to find which React view owns this touch coordinate.</span>
-      </div>
-      <!-- TouchesHelper / FabricEventEmitter 9ms window-->
-      <div class="fl-seg s-touch" style="left:13.5%;width:1.5%;top:6px">
-        <span class="tt"><b>TouchesHelper.sentTouchEventModern(topTouchStart)</b><br>dur=1.0ms<br>Marshals the touch into a RN TouchEvent and enqueues it onto the JS event queue via FabricEventEmitter.</span>
-      </div>
-      <!-- topTouchEnd 4ms later -->
-      <div class="fl-seg s-touch" style="left:18.5%;width:0.7%;background:#10b981">
-        <span class="tt"><b>topTouchEnd (finger lifted)</b><br>rel≈+18ms from deliverInputEvent<br>The UP motion event. JS will synthesize onPress from the start+end pair.</span>
-      </div>
-      <!-- Choreographer doFrame with MountItemDispatcher (rel=+33ms) -->
-      <div class="fl-seg s-mount" style="left:25.4%;width:3.2%">
-        doFrame+MountItems
-        <span class="tt"><b>MountItemDispatcher::mountViews</b> inside Choreographer#doFrame<br>rel=+33ms dur≈2.6ms<br>UI thread applies the IntBufferBatch from Fabric: INSERT + UPDATE_STATE + UPDATE_LAYOUT + UPDATE_EVENTHANDLER. This is when the new view tree is applied to Android's View hierarchy.</span>
-      </div>
-      <!-- more doFrames -->
-      <div class="fl-seg s-idle" style="left:28.6%;width:10%">
-        <span class="tt">animation doFrames — slide transition running (Choreographer ~10ms cadence)</span>
-      </div>
-      <div class="fl-seg s-mount" style="left:38.6%;width:2%">
-        <span class="tt"><b>MountItemDispatcher::premountViews + mountViews</b><br>rel=+50ms<br>Second batch of mount items (screen header, React Navigation state).</span>
-      </div>
-    </div>
-  </div>
+<div class="fg-wrap">
+<svg viewBox="0 0 960 244" width="100%" aria-label="Press-to-paint flamegraph timeline">
+<defs>
+  <marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.5 L6,3.5 L0,6.5" fill="none" stroke="#6b7280" stroke-width="1.4"/>
+  </marker>
+  <marker id="arr-pink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.5 L6,3.5 L0,6.5" fill="none" stroke="#d946ef" stroke-width="1.4"/>
+  </marker>
+  <!-- Clip paths to keep labels inside segments -->
+  <clipPath id="c1"><rect x="112" y="56" width="112" height="32"/></clipPath>
+  <clipPath id="c2"><rect x="390" y="56" width="58" height="32"/></clipPath>
+  <clipPath id="c3"><rect x="500" y="56" width="40" height="32"/></clipPath>
+  <clipPath id="c4"><rect x="556" y="56" width="56" height="32"/></clipPath>
+  <clipPath id="c5"><rect x="112" y="90" width="76" height="26"/></clipPath>
+  <clipPath id="c6"><rect x="216" y="90" width="46" height="26"/></clipPath>
+  <clipPath id="c7"><rect x="396" y="90" width="34" height="26"/></clipPath>
+  <clipPath id="c8"><rect x="500" y="90" width="38" height="26"/></clipPath>
+  <clipPath id="c9"><rect x="556" y="90" width="52" height="26"/></clipPath>
+  <clipPath id="c10"><rect x="270" y="128" width="104" height="36"/></clipPath>
+  <clipPath id="c11"><rect x="362" y="128" width="148" height="36"/></clipPath>
+  <clipPath id="c12"><rect x="362" y="138" width="148" height="16"/></clipPath>
+  <clipPath id="c13"><rect x="530" y="172" width="52" height="36"/></clipPath>
+  <clipPath id="c14"><rect x="574" y="172" width="56" height="36"/></clipPath>
+  <clipPath id="c15"><rect x="650" y="172" width="76" height="36"/></clipPath>
+  <clipPath id="c16"><rect x="738" y="172" width="76" height="36"/></clipPath>
+</defs>
 
-  <!-- JS thread -->
-  <div class="flame-row">
-    <div class="fl-label">JS thread</div>
-    <div class="fl-track">
-      <!-- idle until FabricUIManager picks up the event -->
-      <div class="fl-seg s-idle" style="left:0%;width:14.5%">
-        <span class="tt">JS thread idle — waiting for topTouchStart to be dequeued from the event queue.</span>
-      </div>
-      <!-- onPress JS work: topTouchStart processed, then topTouchEnd + reconcile + navigate -->
-      <div class="fl-seg s-js" style="left:14.5%;width:5%">
-        onPress→navigate()
-        <span class="tt"><b>topTouchStart + topTouchEnd → onPress</b><br>beginEvent / updateCallback / releasePooledEvent<br>JS executes the onPress handler. navigation.navigate() is called, new state is enqueued into React. beginEvent/destructor/releasePooledEvent = synthetic-event pooling overhead (~12ms in react-navigation, ~0 in rnn).</span>
-      </div>
-      <!-- React reconcile + completeRoot -->
-      <div class="fl-seg s-commit" style="left:19.5%;width:5%">
-        reconcile+commit
-        <span class="tt"><b>React reconciliation + [HostFunction] completeRoot</b><br>dur≈16ms (completeRoot alone ≈16ms in this trace)<br>React diffs the fiber tree, produces a shadow-tree mutation list, and calls completeRoot() over JSI — a synchronous C++ call into Fabric that transfers the mutation batch to the native side. THIS is where a heavy render will block JS.</span>
-      </div>
-      <!-- idle after -->
-      <div class="fl-seg s-idle" style="left:24.5%;width:75.5%">
-        <span class="tt">JS thread returns to idle. All subsequent work is on the UI thread and RenderThread.</span>
-      </div>
-    </div>
-  </div>
+<!-- ░░ PHASE BANDS (y=40 → y=210) ░░ -->
+<!-- ① Input dispatch: 0–26ms → x=112, w=208 -->
+<rect x="112" y="40" width="208" height="170" rx="5" fill="#f0883e" fill-opacity=".07"/>
+<!-- ② JS execution: 20–50ms → x=272, w=248 -->
+<rect x="272" y="40" width="248" height="170" rx="5" fill="#58a6ff" fill-opacity=".07"/>
+<!-- ③ Native mount: 35–56ms → x=392, w=136 -->
+<rect x="392" y="40" width="136" height="170" rx="5" fill="#e3b341" fill-opacity=".07"/>
+<!-- ④ GPU draw: 50–100ms → x=512, w=296 -->
+<rect x="512" y="40" width="296" height="170" rx="5" fill="#3fb950" fill-opacity=".06"/>
 
-  <!-- RenderThread -->
-  <div class="flame-row">
-    <div class="fl-label">RenderThread</div>
-    <div class="fl-track">
-      <div class="fl-seg s-idle" style="left:0%;width:41.4%">
-        <span class="tt">RenderThread idle — no new content to draw yet.</span>
-      </div>
-      <!-- DrawFrames +54ms -->
-      <div class="fl-seg s-rt" style="left:41.4%;width:3.6%">
-        DrawFrame
-        <span class="tt"><b>DrawFrames 358665927</b><br>rel=+54ms dur=4.6ms<br>HWUI records the draw commands for the updated layer tree.</span>
-      </div>
-      <div class="fl-seg s-swap" style="left:45%;width:2%">
-        eglSwap
-        <span class="tt"><b>eglSwapBuffersWithDamageKHR</b><br>dur=2.6ms<br>Buffer swapped into SurfaceFlinger's queue. THIS is "first frame on screen".</span>
-      </div>
-      <!-- following frames -->
-      <div class="fl-seg s-rt" style="left:47%;width:3.6%"><span class="tt">DrawFrames +58ms</span></div>
-      <div class="fl-seg s-swap" style="left:50.6%;width:2.2%"><span class="tt">eglSwap +60ms</span></div>
-      <div class="fl-seg s-rt" style="left:52.8%;width:6.5%"><span class="tt">DrawFrames +70ms</span></div>
-      <div class="fl-seg s-swap" style="left:59.3%;width:2.7%"><span class="tt">eglSwap +74ms</span></div>
-    </div>
-  </div>
+<!-- Phase labels -->
+<text x="216" y="53" text-anchor="middle" fill="#f0883e" font-size="10.5" font-weight="700" letter-spacing=".05em">① INPUT DISPATCH</text>
+<text x="396" y="53" text-anchor="middle" fill="#58a6ff" font-size="10.5" font-weight="700" letter-spacing=".05em">② JS EXECUTION</text>
+<text x="460" y="53" text-anchor="middle" fill="#e3b341" font-size="10.5" font-weight="700" letter-spacing=".04em">③ NATIVE</text>
+<text x="654" y="53" text-anchor="middle" fill="#3fb950" font-size="10.5" font-weight="700" letter-spacing=".05em">④ GPU DRAW</text>
 
-</div><!-- /.flame -->
-</div><!-- /.flame-wrap -->
+<!-- ░░ RULER & GRID (1ms = 8px, x0 = 112) ░░ -->
+<line x1="112" y1="58" x2="920" y2="58" stroke="#30363d" stroke-width=".8"/>
+<!-- ticks every 10ms -->
+<line x1="112" y1="55" x2="112" y2="62" stroke="#4b5563" stroke-width="1"/>
+<text x="112" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">0</text>
+<line x1="192" y1="55" x2="192" y2="62" stroke="#374151" stroke-width=".8"/>
+<line x1="192" y1="62" x2="192" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="192" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">10</text>
+<line x1="272" y1="55" x2="272" y2="62" stroke="#4b5563" stroke-width="1"/>
+<line x1="272" y1="62" x2="272" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="272" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">20ms</text>
+<line x1="352" y1="55" x2="352" y2="62" stroke="#4b5563" stroke-width="1"/>
+<line x1="352" y1="62" x2="352" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="352" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">30</text>
+<line x1="432" y1="55" x2="432" y2="62" stroke="#374151" stroke-width=".8"/>
+<line x1="432" y1="62" x2="432" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="432" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">40</text>
+<line x1="512" y1="55" x2="512" y2="62" stroke="#4b5563" stroke-width="1"/>
+<line x1="512" y1="62" x2="512" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="512" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">50ms</text>
+<line x1="592" y1="55" x2="592" y2="62" stroke="#374151" stroke-width=".8"/>
+<line x1="592" y1="62" x2="592" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="592" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">60</text>
+<line x1="672" y1="55" x2="672" y2="62" stroke="#4b5563" stroke-width="1"/>
+<line x1="672" y1="62" x2="672" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="672" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">70</text>
+<line x1="752" y1="55" x2="752" y2="62" stroke="#374151" stroke-width=".8"/>
+<line x1="752" y1="62" x2="752" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="752" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">80ms</text>
+<line x1="832" y1="55" x2="832" y2="62" stroke="#374151" stroke-width=".8"/>
+<line x1="832" y1="62" x2="832" y2="212" stroke="#21262d" stroke-width=".6"/>
+<text x="832" y="54" text-anchor="middle" fill="#6b7280" font-size="9.5">90</text>
 
-<p class="small" style="margin-top:4px">All timestamps relative to the press (= <code>startDispatchCycleLocked(.../MainActivity)</code>
-input-dispatch slice on <code>system_server</code>). Data: React Navigation cold-nav trace, press @ 7690 ms.</p>
+<!-- ░░ THREAD LANE BACKGROUNDS ░░ -->
+<rect x="0" y="62"  width="960" height="30" fill="#0ea5e9" fill-opacity=".03"/><!-- UI outer -->
+<rect x="0" y="92"  width="960" height="26" fill="#0ea5e9" fill-opacity=".018"/><!-- UI inner -->
+<rect x="0" y="128" width="960" height="36" fill="#818cf8" fill-opacity=".04"/><!-- JS -->
+<rect x="0" y="172" width="960" height="36" fill="#22c55e" fill-opacity=".04"/><!-- RT -->
 
+<!-- Lane separator lines -->
+<line x1="0" y1="62"  x2="960" y2="62"  stroke="#30363d" stroke-width=".7"/>
+<line x1="0" y1="92"  x2="960" y2="92"  stroke="#1f2937" stroke-width=".6" stroke-dasharray="3,3"/>
+<line x1="0" y1="118" x2="960" y2="118" stroke="#30363d" stroke-width=".7"/>
+<line x1="0" y1="128" x2="960" y2="128" stroke="#30363d" stroke-width=".7"/>
+<line x1="0" y1="164" x2="960" y2="164" stroke="#30363d" stroke-width=".7"/>
+<line x1="0" y1="172" x2="960" y2="172" stroke="#30363d" stroke-width=".7"/>
+<line x1="0" y1="212" x2="960" y2="212" stroke="#30363d" stroke-width=".7"/>
+
+<!-- Thread row labels -->
+<text x="106" y="81"  text-anchor="end" fill="#8b949e" font-size="11.5" font-weight="600">UI thread</text>
+<text x="106" y="109" text-anchor="end" fill="#6b7280" font-size="10">↳ stages</text>
+<text x="106" y="149" text-anchor="end" fill="#8b949e" font-size="11.5" font-weight="600">JS thread</text>
+<text x="106" y="161" text-anchor="end" fill="#6b7280" font-size="9.5">mqt_v_js</text>
+<text x="106" y="191" text-anchor="end" fill="#8b949e" font-size="11.5" font-weight="600">RenderThread</text>
+
+<!-- ░░ UI THREAD — OUTER ROW (y=62, h=30) ░░  1ms=8px, x0=112 -->
+
+<!-- deliverInputEvent DOWN: 0–14ms → x=112, w=112 -->
+<g>
+  <title>deliverInputEvent (finger DOWN) — dur=14ms
+Android routes the MotionEvent from system_server to the app's ViewRootImpl.
+Contains EarlyPostIme and ViewPostIme as child stages below.</title>
+  <rect x="112" y="63" width="112" height="28" rx="5" fill="#0ea5e9"/>
+  <text clip-path="url(#c1)" x="117" y="81" fill="#082f49" font-size="11" font-weight="700">deliverInputEvent</text>
+</g>
+
+<!-- deliverInputEvent UP: ~22–24ms → x=288, w=16 -->
+<g>
+  <title>deliverInputEvent (finger UP) — dur=1.8ms
+The second MotionEvent: finger lifted. JS synthesizes onPress from the DOWN+UP pair.
+Much shorter — no EarlyPostIme needed for UP events.</title>
+  <rect x="288" y="63" width="16" height="28" rx="4" fill="#38bdf8"/>
+  <text x="296" y="81" text-anchor="middle" fill="#082f49" font-size="9" font-weight="700">↑UP</text>
+</g>
+
+<!-- Choreographer doFrame 1: 35–40ms → x=392, w=40 -->
+<g>
+  <title>Choreographer#doFrame — dur=4.5ms, rel=+33ms from press
+Vsync frame: MountItemDispatcher applies Fabric's mutation batch to the Android View hierarchy.
+INSERT + UPDATE_STATE + UPDATE_LAYOUT + UPDATE_EVENTHANDLER instructions.</title>
+  <rect x="392" y="63" width="40" height="28" rx="5" fill="#7c3aed"/>
+  <text clip-path="url(#c2)" x="396" y="81" fill="#f5f3ff" font-size="11" font-weight="700">doFrame</text>
+</g>
+
+<!-- Choreographer doFrame 2: 49–53ms -->
+<g>
+  <title>Choreographer#doFrame — dur=3.5ms, rel=+49ms
+Second vsync frame: premountViews for the incoming screen's header.</title>
+  <rect x="500" y="63" width="32" height="28" rx="4" fill="#6d28d9"/>
+  <text clip-path="url(#c3)" x="504" y="81" fill="#f5f3ff" font-size="10" font-weight="700">doFrame</text>
+</g>
+
+<!-- Choreographer doFrame 3: 56–63ms -->
+<g>
+  <title>Choreographer#doFrame — dur=5ms, rel=+56ms
+Third vsync frame: final mount batch (nav header, screen props, transition overlays).</title>
+  <rect x="556" y="63" width="48" height="28" rx="4" fill="#6d28d9"/>
+  <text clip-path="url(#c4)" x="560" y="81" fill="#f5f3ff" font-size="10" font-weight="700">doFrame</text>
+</g>
+
+<!-- Animation frame markers (thin ticks, not full blocks) -->
+<rect x="650" y="68" width="4" height="18" rx="2" fill="#4c1d95" fill-opacity=".7"/>
+<rect x="730" y="68" width="4" height="18" rx="2" fill="#4c1d95" fill-opacity=".6"/>
+<rect x="810" y="68" width="4" height="18" rx="2" fill="#4c1d95" fill-opacity=".5"/>
+<text x="820" y="81" fill="#374151" font-size="9.5" font-style="italic">animation doFrames…</text>
+
+<!-- ░░ UI THREAD — INNER STAGES ROW (y=92, h=26) ░░ -->
+
+<!-- EarlyPostImeInputStage: 0–9.4ms → x=112, w=75 -->
+<g>
+  <title>EarlyPostImeInputStage — dur=9.4ms
+IME/keyboard pre-processing stage. Contains TWO synchronous binder round-trips to
+InputManagerService. This is largely Samsung One UI overhead — stock Android/Pixel is &lt;2ms.
+React Native has no control over this cost.</title>
+  <rect x="112" y="93" width="75" height="24" rx="4" fill="#6366f1"/>
+  <text clip-path="url(#c5)" x="115" y="109" fill="#eef2ff" font-size="10.5" font-weight="700">EarlyPostIme</text>
+</g>
+
+<!-- ViewPostImeInputStage: 13.2–17.5ms → x=218, w=34 -->
+<g>
+  <title>ViewPostImeInputStage — dur=4.3ms
+React's hit-test: TouchTargetHelper walks the Fabric shadow tree to find which
+React view owns the touch coordinates. Cost grows with shadow-tree depth.</title>
+  <rect x="218" y="93" width="44" height="24" rx="4" fill="#8b5cf6"/>
+  <text clip-path="url(#c6)" x="221" y="109" fill="#f5f3ff" font-size="10.5" font-weight="700">ViewPostIme</text>
+</g>
+
+<!-- topTouchStart dispatch: green tick at ~14ms → x=224 -->
+<g>
+  <title>FabricEventEmitter.receiveEvent('topTouchStart') — dur=1ms
+Marshals the DOWN event into a React TouchEvent and enqueues it onto the JS event queue via JSI.
+JS will wake up on the next event-loop tick to process it.</title>
+  <rect x="224" y="95" width="7" height="20" rx="2" fill="#10b981"/>
+</g>
+
+<!-- topTouchEnd dispatch: green tick at ~23.5ms → x=300 -->
+<g>
+  <title>FabricEventEmitter.receiveEvent('topTouchEnd') — dur=0.8ms
+UP event enqueued for JS. JS now has both DOWN and UP → will synthesize onPress.</title>
+  <rect x="300" y="95" width="7" height="20" rx="2" fill="#10b981"/>
+</g>
+
+<!-- MountItemDispatcher 1: 35.6–38ms → x=397, w=24 -->
+<g>
+  <title>MountItemDispatcher::mountViews — dur=2.6ms, rel=+33ms
+Applies the Fabric mutation batch to Android's View hierarchy:
+• INSERT new screen views
+• UPDATE_STATE, UPDATE_LAYOUT
+• UPDATE_EVENTHANDLER (registers new onPress listeners)</title>
+  <rect x="397" y="93" width="30" height="24" rx="3" fill="#f59e0b"/>
+  <text clip-path="url(#c7)" x="400" y="109" fill="#431407" font-size="10" font-weight="700">MountItems</text>
+</g>
+
+<!-- MountItemDispatcher 2 (premount): ~49–53ms → x=500, w=28 -->
+<g>
+  <title>MountItemDispatcher::premountViews — dur=3.5ms, rel=+49ms
+Pre-calculates layout positions for the incoming screen's header and navigation chrome.</title>
+  <rect x="500" y="93" width="32" height="24" rx="3" fill="#fbbf24"/>
+  <text clip-path="url(#c8)" x="503" y="109" fill="#431407" font-size="10" font-weight="700">premount</text>
+</g>
+
+<!-- MountItemDispatcher 3: ~56–61ms → x=556, w=44 -->
+<g>
+  <title>MountItemDispatcher::mountViews (2nd batch) — dur=4ms, rel=+56ms
+Final mount batch: navigation header, screen transition overlay, route props.</title>
+  <rect x="556" y="93" width="44" height="24" rx="3" fill="#fbbf24"/>
+  <text clip-path="url(#c9)" x="559" y="109" fill="#431407" font-size="10" font-weight="700">mountViews</text>
+</g>
+
+<!-- Navigation events (topAttached etc) — small ticks -->
+<rect x="616" y="98" width="5" height="14" rx="2" fill="#10b981" fill-opacity=".7"/>
+<rect x="644" y="98" width="5" height="14" rx="2" fill="#10b981" fill-opacity=".5"/>
+<text x="652" y="109" fill="#374151" font-size="9">nav events…</text>
+
+<!-- ░░ JS THREAD ROW (y=128, h=36) ░░ -->
+
+<!-- JS event routing / onPress: 20–32ms → x=272, w=96 -->
+<g>
+  <title>JS event routing → onPress — dur≈12ms
+JS dequeues topTouchStart &amp; topTouchEnd, routes through Pressable's event system,
+synthesises onPress, fires the user handler + navigation.navigate().
+In React Navigation, synthetic-event pool churn (beginEvent / destructor /
+releasePooledEvent) accounts for ~12ms here.</title>
+  <rect x="272" y="130" width="96" height="32" rx="5" fill="#3b82f6"/>
+  <text clip-path="url(#c10)" x="276" y="148" fill="#eff6ff" font-size="11" font-weight="700">Event routing</text>
+  <text clip-path="url(#c10)" x="276" y="159" fill="#bfdbfe" font-size="9.5">→ onPress()</text>
+</g>
+
+<!-- completeRoot (Fabric commit): 32–50ms → x=368, w=144 -->
+<g>
+  <title>[HostFunction] completeRoot — dur=16ms ⚠️ JS fully blocked
+THE critical hop. A synchronous JSI call from JS into Fabric C++.
+React transfers the shadow-tree mutation list to the native side.
+JS cannot run anything else for the entire 16ms.
+Grows with node count: trivial screen ≈12ms, 24-row heavy screen ≈60ms.</title>
+  <rect x="368" y="130" width="144" height="32" rx="5" fill="#ec4899"/>
+  <text clip-path="url(#c11)" x="372" y="147" fill="#fff" font-size="11" font-weight="700">[HostFunction] completeRoot</text>
+  <text clip-path="url(#c12)" x="372" y="159" fill="#fce7f3" font-size="9.5">synchronous JSI · JS blocked · 16ms</text>
+</g>
+
+<!-- ░░ RENDERTHREAD ROW (y=172, h=36) ░░ -->
+
+<!-- DrawFrames 1: 54–58.6ms → x=544, w=37 -->
+<g>
+  <title>DrawFrames 358665927 — dur=4.6ms, rel=+54ms
+HWUI records draw commands for the new layer tree:
+syncFrameState → prepareTree → Drawing (GPU commands).</title>
+  <rect x="544" y="174" width="36" height="32" rx="5" fill="#22c55e"/>
+  <text clip-path="url(#c13)" x="548" y="193" fill="#052e16" font-size="10.5" font-weight="700">DrawFrame</text>
+</g>
+
+<!-- eglSwap 1: 55.7–58.3ms → x=557, w=22 -->
+<g>
+  <title>eglSwapBuffersWithDamageKHR ⭐ FIRST FRAME VISIBLE — dur=2.6ms, rel=+56ms
+Buffer queued to SurfaceFlinger. The user sees the new screen content.
+Total from finger touch: ~62ms. This is what "press → first frame" measures.</title>
+  <rect x="557" y="176" width="24" height="28" rx="3" fill="#16a34a"/>
+  <text x="569" y="194" text-anchor="middle" fill="#f0fdf4" font-size="9" font-weight="700">eglSwap</text>
+</g>
+
+<!-- DrawFrames 2: 58.4–63ms → x=579, w=37 -->
+<g>
+  <title>DrawFrames 358665934 — dur=4.7ms, rel=+58ms
+Second animation frame of the slide transition.</title>
+  <rect x="580" y="174" width="36" height="32" rx="4" fill="#22c55e"/>
+  <text clip-path="url(#c14)" x="584" y="193" fill="#052e16" font-size="10.5" font-weight="700">DrawFrame</text>
+</g>
+<g>
+  <title>eglSwapBuffersWithDamageKHR — dur=2.9ms, rel=+60ms  (2nd animation frame)</title>
+  <rect x="592" y="176" width="24" height="28" rx="3" fill="#16a34a" fill-opacity=".85"/>
+</g>
+
+<!-- DrawFrames 3: 70–78.4ms → x=672, w=67 -->
+<g>
+  <title>DrawFrames 358665942 — dur=8.4ms, rel=+70ms
+Third frame. Larger: UI thread was doing premountViews this frame, causing a longer syncFrameState.</title>
+  <rect x="672" y="174" width="67" height="32" rx="4" fill="#22c55e"/>
+  <text clip-path="url(#c15)" x="676" y="193" fill="#052e16" font-size="10.5" font-weight="700">DrawFrame</text>
+</g>
+<g>
+  <title>eglSwapBuffersWithDamageKHR — dur=3.6ms, rel=+74ms  (3rd animation frame)</title>
+  <rect x="690" y="176" width="30" height="28" rx="3" fill="#16a34a" fill-opacity=".85"/>
+</g>
+
+<!-- DrawFrames 4: ~80–86ms (animation continues) -->
+<g>
+  <title>DrawFrames 358665950 — dur=5.7ms, rel=+80ms  (slide animation continuing…)</title>
+  <rect x="752" y="174" width="46" height="32" rx="4" fill="#22c55e" fill-opacity=".65"/>
+  <text clip-path="url(#c16)" x="756" y="193" fill="#052e16" font-size="10" font-weight="700">DrawFrame…</text>
+</g>
+<rect x="832" y="182" width="6" height="16" rx="2" fill="#22c55e" fill-opacity=".5"/>
+<rect x="872" y="182" width="6" height="16" rx="2" fill="#22c55e" fill-opacity=".4"/>
+
+<!-- ░░ CAUSAL FLOW ARROWS ░░ -->
+
+<!-- ① FabricEventEmitter → JS thread wakes up -->
+<line x1="303" y1="116" x2="303" y2="128" stroke="#10b981" stroke-width="1.5"
+  stroke-dasharray="3,2" marker-end="url(#arr)"/>
+
+<!-- ② completeRoot ends → MountItems starts (JS→UI handoff) -->
+<path d="M 512,162 Q 512,168 456,168 Q 392,168 392,162"
+  fill="none" stroke="#d946ef" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-pink)"/>
+<text x="452" y="177" text-anchor="middle" fill="#d946ef" font-size="9" font-weight="600">mutations → UI thread</text>
+
+<!-- ░░ "FIRST FRAME" ANNOTATION ░░ -->
+<line x1="557" y1="130" x2="557" y2="172" stroke="#fbbf24" stroke-width="1.2"
+  stroke-dasharray="4,2"/>
+<text x="558" y="125" fill="#fbbf24" font-size="10" font-weight="700">⭐ first frame ~62ms</text>
+
+<!-- ░░ LEGEND ░░ -->
+<rect x="112" y="220" width="10" height="10" rx="2" fill="#0ea5e9"/>
+<text x="125" y="229" fill="#9ca3af" font-size="10">Input (Android)</text>
+<rect x="232" y="220" width="10" height="10" rx="2" fill="#6366f1"/>
+<text x="245" y="229" fill="#9ca3af" font-size="10">Input stages</text>
+<rect x="335" y="220" width="10" height="10" rx="2" fill="#10b981"/>
+<text x="348" y="229" fill="#9ca3af" font-size="10">Event dispatch</text>
+<rect x="440" y="220" width="10" height="10" rx="2" fill="#3b82f6"/>
+<text x="453" y="229" fill="#9ca3af" font-size="10">JS work</text>
+<rect x="500" y="220" width="10" height="10" rx="2" fill="#ec4899"/>
+<text x="513" y="229" fill="#9ca3af" font-size="10">completeRoot (⚠ blocks JS)</text>
+<rect x="676" y="220" width="10" height="10" rx="2" fill="#f59e0b"/>
+<text x="689" y="229" fill="#9ca3af" font-size="10">Native mount</text>
+<rect x="764" y="220" width="10" height="10" rx="2" fill="#22c55e"/>
+<text x="777" y="229" fill="#9ca3af" font-size="10">GPU draw</text>
+</svg>
+</div>
+
+<p class="small" style="margin-top:8px">Scale: 8 px / ms. All slice names are real <code>atrace</code>
+output from the React Navigation cold-nav trace (press @ 7690 ms into the capture). Hover any segment
+for the exact slice name and duration. Open the raw file at
+<a href="https://ui.perfetto.dev">ui.perfetto.dev</a>:
+<code>perf-results/_nav/react-navigation-nav.perfetto-trace</code>.</p>
 <h2 id="hops">Every hop, named and timed</h2>
 <table>
   <thead><tr><th>Stage</th><th>Thread</th><th>Slice name in Systrace</th><th class="r">Duration</th><th>Notes</th></tr></thead>
