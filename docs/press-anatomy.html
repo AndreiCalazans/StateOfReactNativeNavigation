@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Anatomy of a press in React Native — from touch to paint</title>
+<style>
+:root{
+  --bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--muted:#8b949e;
+  --line:#30363d;--accent:#58a6ff;--good:#3fb950;--warn:#d29922;--bad:#f85149;
+  --t-ui:#3fb950;--t-js:#58a6ff;--t-native:#bc8cff;--t-rt:#f0883e;--t-sf:#e3b341;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:940px;margin:0 auto;padding:48px 22px 96px}
+header.hero{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:36px}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12.5px}
+h1{font-size:34px;line-height:1.2;margin:.35em 0 .25em}
+h2{font-size:24px;margin:52px 0 8px;padding-top:10px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:28px 0 6px}
+p{color:#d6dee6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#1f2630;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:13.5px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#e6edf3}
+pre{background:#0b0f14;border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:#cdd6e0;line-height:1.6;
+  margin:12px 0}
+pre .hl{color:#f0883e;font-weight:600}
+pre .dim{color:#666}
+pre .ok{color:#3fb950}
+pre .warn{color:#e3b341}
+.lede{font-size:18.5px;color:#cdd6e0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.callout{border-left:3px solid var(--accent);background:#11212f;padding:12px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+.callout.good{border-color:var(--good);background:#0f2417}
+.callout.warn{border-color:var(--warn);background:#241f12}
+.callout.bad{border-color:var(--bad);background:#2d1214}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
+thead th{color:var(--muted);font-weight:600}
+tbody tr:hover{background:#1b2230}
+td.r{text-align:right;font-variant-numeric:tabular-nums}
+.small{font-size:13px;color:var(--muted)}
+ul,ol{color:#d6dee6}
+.foot{color:var(--muted);font-size:13px;margin-top:50px;border-top:1px solid var(--line);padding-top:18px}
+
+/* ── Thread legend chips ── */
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;color:#000;margin:1px}
+.ui{background:var(--t-ui)} .js{background:var(--t-js)} .native{background:var(--t-native)}
+.rt{background:var(--t-rt)} .sf{background:var(--t-sf)}
+
+/* ── Flamegraph / timeline ── */
+.flame-wrap{overflow-x:auto;margin:16px 0}
+.flame{position:relative;height:auto;font-size:11.5px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.flame-row{display:flex;align-items:stretch;height:22px;margin-bottom:2px;white-space:nowrap}
+.fl-label{width:160px;min-width:160px;color:var(--muted);font-size:11px;padding:4px 6px 0 0;text-align:right;overflow:hidden;text-overflow:ellipsis}
+.fl-track{flex:1;position:relative;background:#13191f;border-radius:3px;overflow:hidden}
+.fl-seg{position:absolute;top:1px;bottom:1px;border-radius:3px;display:flex;align-items:center;overflow:hidden;
+  padding:0 4px;cursor:default;font-size:11px;color:rgba(0,0,0,.85);font-weight:600;white-space:nowrap;
+  transition:filter .1s}
+.fl-seg:hover{filter:brightness(1.2);z-index:10}
+.fl-seg .tt{display:none}
+.fl-seg:hover .tt{display:block;position:absolute;left:0;top:24px;background:#1f2937;color:var(--ink);
+  padding:6px 10px;border-radius:6px;border:1px solid var(--line);z-index:20;width:260px;
+  font-size:11.5px;line-height:1.5;white-space:normal}
+.ruler{display:flex;margin-left:160px;margin-bottom:4px;position:relative;height:16px}
+.ruler-tick{position:absolute;font-size:10px;color:var(--muted);transform:translateX(-50%)}
+.ruler-line{position:absolute;top:12px;width:1px;background:var(--line);height:1000px;pointer-events:none}
+
+/* segment colours */
+.s-input{background:#38bdf8} .s-early{background:#818cf8} .s-view{background:#a78bfa}
+.s-touch{background:#34d399} .s-fabric{background:#fb923c} .s-js{background:#60a5fa}
+.s-commit{background:#f472b6} .s-mount{background:#facc15} .s-rt{background:#4ade80}
+.s-swap{background:#e879f9} .s-idle{background:#374151;opacity:.45}
+
+/* ── Pipeline step boxes ── */
+.pipeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0}
+.pstep{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.pstep .num{font-size:22px;font-weight:800;margin-bottom:2px}
+.pstep .name{font-size:12px;color:var(--muted);margin-bottom:6px}
+.pstep .time{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.arr{text-align:center;color:var(--muted);font-size:20px;line-height:42px;padding:0 4px}
+
+/* ── Risk table ── */
+.risk{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+.risk .rtitle{font-weight:700;margin-bottom:4px;font-size:14px}
+.risk .where{font-size:13px;color:var(--accent);margin-bottom:3px}
+.risk .why{font-size:13px;color:#d6dee6}
+.risk.bad .rtitle{color:var(--bad)}
+.risk.warn .rtitle{color:var(--warn)}
+.risk.good .rtitle{color:var(--good)}
+
+@media(max-width:700px){.fl-label{width:90px;min-width:90px}.pipeline{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">React Native · New Architecture · Android</div>
+  <h1>Anatomy of a press:<br>from touch to paint</h1>
+  <p class="lede">A press in React Native crosses four threads and three layer boundaries before a new
+  pixel appears on screen. This post traces every hop — with real Systrace and Hermes CPU-profile data
+  — and answers: <em>where can you accidentally block responsiveness, and how do you instrument it in
+  production?</em></p>
+  <div class="tags">
+    <span class="tag">New Architecture (Fabric + JSI)</span>
+    <span class="tag">Android · Samsung Galaxy A16</span>
+    <span class="tag">data from live Perfetto traces + Hermes profiles</span>
+  </div>
+</header>
+
+<p>The data below comes from the navigation performance repo. A tap on
+<code>open-details</code> was recorded inside a Perfetto system trace (atrace + scheduler) while a
+Hermes sampling profile ran in parallel. Everything is measured from the real device.</p>
+
+<h2 id="threads">The four threads a press touches</h2>
+
+<div class="pipeline">
+  <div class="pstep">
+    <div class="num" style="color:var(--t-ui)">①</div>
+    <div class="name"><span class="chip ui">UI thread</span></div>
+    <div class="time">Receives the raw MotionEvent, hit-tests the React tree, fires FabricEventEmitter</div>
+  </div>
+  <div class="pstep">
+    <div class="num" style="color:var(--t-js)">②</div>
+    <div class="name"><span class="chip js">mqt_v_js</span></div>
+    <div class="time">JS onPress handler executes, React reconciles the state update, shadow tree diff runs</div>
+  </div>
+  <div class="pstep">
+    <div class="num" style="color:var(--t-native)">③</div>
+    <div class="name"><span class="chip native">UI thread</span> again</div>
+    <div class="time">MountItemDispatcher applies IntBufferBatch mutations (CREATE / INSERT / UPDATE_*)</div>
+  </div>
+  <div class="pstep">
+    <div class="num" style="color:var(--t-rt)">④</div>
+    <div class="name"><span class="chip rt">RenderThread</span></div>
+    <div class="time">HWUI draws the frame, eglSwapBuffers queues it to SurfaceFlinger → pixel on screen</div>
+  </div>
+</div>
+
+<p class="small">Thread legend: <span class="chip ui">UI</span> = main Android UI thread (also called
+<em>com.rnperf.xxx</em> in the trace). <span class="chip js">JS</span> = <em>mqt_v_js</em>, the JS
+engine thread. <span class="chip native">native</span> = <em>mqt_v_native</em> helper.
+<span class="chip rt">RT</span> = HWUI RenderThread.
+<span class="chip sf">SF</span> = SurfaceFlinger (separate process, not shown here).</p>
+
+<h2 id="timeline">The full timeline — measured from Systrace</h2>
+
+<p>The ruler below covers 130 ms relative to the press (the <code>startDispatchCycleLocked</code>
+input-dispatch slice). Data is from the React Navigation trace (press≈7690 ms into capture);
+every slice name is real atrace output.</p>
+
+<div class="flame-wrap">
+<div class="flame">
+
+  <!-- ruler -->
+  <div class="ruler">
+    <div class="ruler-tick" style="left:0%">0</div>
+    <div class="ruler-line" style="left:0%"></div>
+    <div class="ruler-tick" style="left:15.4%">20ms</div>
+    <div class="ruler-line" style="left:15.4%"></div>
+    <div class="ruler-tick" style="left:30.8%">40ms</div>
+    <div class="ruler-line" style="left:30.8%"></div>
+    <div class="ruler-tick" style="left:46.2%">60ms</div>
+    <div class="ruler-line" style="left:46.2%"></div>
+    <div class="ruler-tick" style="left:61.5%">80ms</div>
+    <div class="ruler-line" style="left:61.5%"></div>
+    <div class="ruler-tick" style="left:76.9%">100ms</div>
+    <div class="ruler-line" style="left:76.9%"></div>
+    <div class="ruler-tick" style="left:92.3%">120ms</div>
+    <div class="ruler-line" style="left:92.3%"></div>
+  </div>
+
+  <!-- UI thread -->
+  <div class="flame-row">
+    <div class="fl-label">UI thread</div>
+    <div class="fl-track">
+      <!-- deliverInputEvent 0..14ms -->
+      <div class="fl-seg s-input" style="left:0%;width:10.8%">
+        deliverInputEvent
+        <span class="tt"><b>deliverInputEvent</b><br>dur=14.1ms<br>Android hands the MotionEvent to the app's ViewRootImpl. The app is now running on its main thread.</span>
+      </div>
+      <!-- EarlyPostImeInputStage 0..9.4ms -->
+      <div class="fl-seg s-early" style="left:0%;width:7.2%;top:4px">
+        EarlyPostIme
+        <span class="tt"><b>EarlyPostImeInputStage</b><br>dur=9.4ms<br>Keyboard / IME pre-processing. Includes two binder round-trips to InputManagerService. Usually not in the critical path for non-text presses.</span>
+      </div>
+      <!-- NativePostIme -->
+      <div class="fl-seg s-view" style="left:10.2%;width:0.4%;top:4px;padding:0"></div>
+      <!-- ViewPostImeInputStage 13..17ms (rel=-13.2ms dur=4.3ms) -->
+      <div class="fl-seg s-view" style="left:10.2%;width:3.3%">
+        ViewPostIme
+        <span class="tt"><b>ViewPostImeInputStage</b><br>dur=4.3ms<br>The actual React hit-test. TouchTargetHelper walks the Fabric shadow tree to find which React view owns this touch coordinate.</span>
+      </div>
+      <!-- TouchesHelper / FabricEventEmitter 9ms window-->
+      <div class="fl-seg s-touch" style="left:13.5%;width:1.5%;top:6px">
+        <span class="tt"><b>TouchesHelper.sentTouchEventModern(topTouchStart)</b><br>dur=1.0ms<br>Marshals the touch into a RN TouchEvent and enqueues it onto the JS event queue via FabricEventEmitter.</span>
+      </div>
+      <!-- topTouchEnd 4ms later -->
+      <div class="fl-seg s-touch" style="left:18.5%;width:0.7%;background:#10b981">
+        <span class="tt"><b>topTouchEnd (finger lifted)</b><br>rel≈+18ms from deliverInputEvent<br>The UP motion event. JS will synthesize onPress from the start+end pair.</span>
+      </div>
+      <!-- Choreographer doFrame with MountItemDispatcher (rel=+33ms) -->
+      <div class="fl-seg s-mount" style="left:25.4%;width:3.2%">
+        doFrame+MountItems
+        <span class="tt"><b>MountItemDispatcher::mountViews</b> inside Choreographer#doFrame<br>rel=+33ms dur≈2.6ms<br>UI thread applies the IntBufferBatch from Fabric: INSERT + UPDATE_STATE + UPDATE_LAYOUT + UPDATE_EVENTHANDLER. This is when the new view tree is applied to Android's View hierarchy.</span>
+      </div>
+      <!-- more doFrames -->
+      <div class="fl-seg s-idle" style="left:28.6%;width:10%">
+        <span class="tt">animation doFrames — slide transition running (Choreographer ~10ms cadence)</span>
+      </div>
+      <div class="fl-seg s-mount" style="left:38.6%;width:2%">
+        <span class="tt"><b>MountItemDispatcher::premountViews + mountViews</b><br>rel=+50ms<br>Second batch of mount items (screen header, React Navigation state).</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS thread -->
+  <div class="flame-row">
+    <div class="fl-label">JS thread</div>
+    <div class="fl-track">
+      <!-- idle until FabricUIManager picks up the event -->
+      <div class="fl-seg s-idle" style="left:0%;width:14.5%">
+        <span class="tt">JS thread idle — waiting for topTouchStart to be dequeued from the event queue.</span>
+      </div>
+      <!-- onPress JS work: topTouchStart processed, then topTouchEnd + reconcile + navigate -->
+      <div class="fl-seg s-js" style="left:14.5%;width:5%">
+        onPress→navigate()
+        <span class="tt"><b>topTouchStart + topTouchEnd → onPress</b><br>beginEvent / updateCallback / releasePooledEvent<br>JS executes the onPress handler. navigation.navigate() is called, new state is enqueued into React. beginEvent/destructor/releasePooledEvent = synthetic-event pooling overhead (~12ms in react-navigation, ~0 in rnn).</span>
+      </div>
+      <!-- React reconcile + completeRoot -->
+      <div class="fl-seg s-commit" style="left:19.5%;width:5%">
+        reconcile+commit
+        <span class="tt"><b>React reconciliation + [HostFunction] completeRoot</b><br>dur≈16ms (completeRoot alone ≈16ms in this trace)<br>React diffs the fiber tree, produces a shadow-tree mutation list, and calls completeRoot() over JSI — a synchronous C++ call into Fabric that transfers the mutation batch to the native side. THIS is where a heavy render will block JS.</span>
+      </div>
+      <!-- idle after -->
+      <div class="fl-seg s-idle" style="left:24.5%;width:75.5%">
+        <span class="tt">JS thread returns to idle. All subsequent work is on the UI thread and RenderThread.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RenderThread -->
+  <div class="flame-row">
+    <div class="fl-label">RenderThread</div>
+    <div class="fl-track">
+      <div class="fl-seg s-idle" style="left:0%;width:41.4%">
+        <span class="tt">RenderThread idle — no new content to draw yet.</span>
+      </div>
+      <!-- DrawFrames +54ms -->
+      <div class="fl-seg s-rt" style="left:41.4%;width:3.6%">
+        DrawFrame
+        <span class="tt"><b>DrawFrames 358665927</b><br>rel=+54ms dur=4.6ms<br>HWUI records the draw commands for the updated layer tree.</span>
+      </div>
+      <div class="fl-seg s-swap" style="left:45%;width:2%">
+        eglSwap
+        <span class="tt"><b>eglSwapBuffersWithDamageKHR</b><br>dur=2.6ms<br>Buffer swapped into SurfaceFlinger's queue. THIS is "first frame on screen".</span>
+      </div>
+      <!-- following frames -->
+      <div class="fl-seg s-rt" style="left:47%;width:3.6%"><span class="tt">DrawFrames +58ms</span></div>
+      <div class="fl-seg s-swap" style="left:50.6%;width:2.2%"><span class="tt">eglSwap +60ms</span></div>
+      <div class="fl-seg s-rt" style="left:52.8%;width:6.5%"><span class="tt">DrawFrames +70ms</span></div>
+      <div class="fl-seg s-swap" style="left:59.3%;width:2.7%"><span class="tt">eglSwap +74ms</span></div>
+    </div>
+  </div>
+
+</div><!-- /.flame -->
+</div><!-- /.flame-wrap -->
+
+<p class="small" style="margin-top:4px">All timestamps relative to the press (= <code>startDispatchCycleLocked(.../MainActivity)</code>
+input-dispatch slice on <code>system_server</code>). Data: React Navigation cold-nav trace, press @ 7690 ms.</p>
+
+<h2 id="hops">Every hop, named and timed</h2>
+<table>
+  <thead><tr><th>Stage</th><th>Thread</th><th>Slice name in Systrace</th><th class="r">Duration</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><b>① Input dispatch</b></td><td><span class="chip ui">UI</span></td><td><code>deliverInputEvent</code></td><td class="r">14 ms</td><td>Android routes MotionEvent from <code>system_server</code>→app. Includes two binder round-trips for early processing.</td></tr>
+    <tr><td>① <em>EarlyPostImeInputStage</em></td><td><span class="chip ui">UI</span></td><td><code>EarlyPostImeInputStage id=0x…</code></td><td class="r">9.4 ms</td><td>IME / keyboard pre-processing. Two binder calls to InputManagerService. Large on Samsung One UI.</td></tr>
+    <tr><td>① <em>ViewPostImeInputStage</em></td><td><span class="chip ui">UI</span></td><td><code>ViewPostImeInputStage id=0x…</code></td><td class="r">4.3 ms</td><td>React's hit-test: <code>TouchTargetHelper</code> walks the Fabric shadow tree to find the touched view.</td></tr>
+    <tr><td>① <em>Marshal to JS</em></td><td><span class="chip ui">UI</span></td><td><code>TouchesHelper.sentTouchEventModern(topTouchStart)</code><br><code>FabricEventEmitter.receiveEvent('topTouchStart')</code></td><td class="r">1 ms</td><td>Wraps touch into a <code>TouchEvent</code> and enqueues on the JS event queue. Finger-down fires; finger-up fires ~4 ms later.</td></tr>
+    <tr><td><b>② JS event handling</b></td><td><span class="chip js">JS</span></td><td>(Hermes profile) <code>beginEvent</code>, <code>updateCallback</code>, <code>releasePooledEvent</code></td><td class="r">12 ms</td><td>JS dequeues <code>topTouchStart</code> + <code>topTouchEnd</code>, synthesises <code>onPress</code>, calls through <code>Pressable</code>'s event system. Synthetic-event pool churn visible as <code>destructor</code>/<code>releasePooledEvent</code>.</td></tr>
+    <tr><td>② <em>React reconcile</em></td><td><span class="chip js">JS</span></td><td>(Hermes) <code>workLoopSync</code>, <code>beginWork</code>, <code>renderWithHooks</code></td><td class="r">5–30 ms</td><td>React diffs the fiber tree for the state update triggered by onPress. Cost grows linearly with the size of the re-render subtree.</td></tr>
+    <tr><td>② <em>Fabric commit (JSI)</em></td><td><span class="chip js">JS</span></td><td>(Hermes) <code>[HostFunction] completeRoot</code></td><td class="r">12–60 ms</td><td>Synchronous JSI call into C++ Fabric. Transfers the shadow-tree mutation list. Holds JS blocked for its entire duration. The single biggest JS-side risk.</td></tr>
+    <tr><td>② <em>appendChild / createNode</em></td><td><span class="chip js">JS</span></td><td>(Hermes) <code>[HostFunction] appendChild</code>, <code>createNode</code></td><td class="r">1–11 ms</td><td>Each new native view costs a JSI call. On the trivial screen: ~3 calls; on the 24-row heavy screen: hundreds.</td></tr>
+    <tr><td><b>③ Native mount</b></td><td><span class="chip ui">UI</span></td><td><code>MountItemDispatcher::mountViews</code><br><code>IntBufferBatchMountItem::mountInstructions::*</code></td><td class="r">2–4 ms</td><td>UI thread applies the mutations: CREATE, INSERT, UPDATE_STATE, UPDATE_LAYOUT, UPDATE_EVENTHANDLER. Happens inside the next Choreographer frame.</td></tr>
+    <tr><td><b>④ GPU draw</b></td><td><span class="chip rt">RT</span></td><td><code>DrawFrames</code>, <code>eglSwapBuffersWithDamageKHR</code>, <code>queueBuffer</code></td><td class="r">4–8 ms</td><td>HWUI records + submits draw commands. <code>eglSwapBuffers</code> = frame queued to SurfaceFlinger = pixel visible.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="hermes">What the Hermes CPU profile shows inside JS</h2>
+<p>During the press, the JS thread is doing this work (from the source-mapped Hermes profile of the
+React Navigation app's navigate-to-Details capture). Self-time = time the function was the actual leaf
+executing, not including callees.</p>
+
+<pre>
+<span class="dim">── JS thread, press-handling burst (~80ms wall, ~80ms JS busy) ──</span>
+
+<span class="hl">16.4ms</span>  [HostFunction] completeRoot          <span class="dim">← Fabric commit: synchronous JSI call into C++</span>
+<span class="hl">11.9ms</span>  beginEvent                           <span class="dim">← synthetic event dispatch machinery</span>
+<span class="hl">10.9ms</span>  updateCallback                       <span class="dim">← React event handler invocation</span>
+<span class="hl">10.7ms</span>  [HostFunction] appendChild           <span class="dim">← per-view JSI call (x calls for new screen)</span>
+ <span class="warn"> 7.5ms</span>  [Native] functionPrototypeApply      <span class="dim">← JS engine intrinsic (spread/apply calls)</span>
+  6.7ms  destructor                           <span class="dim">← synthetic event pool cleanup</span>
+  5.9ms  releasePooledEvent                   <span class="dim">← synthetic event pool</span>
+  5.7ms  [Native] mapPrototypeGet             <span class="dim">← Map.get (navigation state lookups)</span>
+  4.2ms  emit                                 <span class="dim">← EventEmitter dispatch (navigation events)</span>
+
+<span class="dim">Blame by library:</span>
+<span class="hl"> 34.6ms</span>  Native                               <span class="dim">← JSI/C++ calls (completeRoot + appendChild)</span>
+<span class="hl"> 28.6ms</span>  react-native                         <span class="dim">← React reconciler + event system</span>
+ 10.9ms  @react-navigation                    <span class="dim">← navigation state updates</span>
+  5.7ms  @expo                                <span class="dim">← expo-modules-core routing</span>
+</pre>
+
+<div class="callout">
+  <strong>Key insight:</strong> <code>[HostFunction] completeRoot</code> is the dominant JS-side leaf.
+  It's a <em>synchronous</em> JSI call from JS into Fabric's C++ layer — JS is fully blocked for its
+  entire duration. On a trivial screen it's ~12 ms; on the 24-row heavy screen it grew to ~60 ms.
+  Everything inside Fabric (layout via Yoga, shadow tree diff, mutation-list serialization) happens
+  inside that call, invisible to the Hermes profiler.
+</div>
+
+<h2 id="compare">How the pipeline differs by navigation library</h2>
+<p>The press-handling journey is the same for every library up through
+<code>FabricEventEmitter.receiveEvent</code>. Differences emerge in steps ② and ③:</p>
+
+<table>
+  <thead><tr><th>Library</th><th>JS mount (step ②)</th><th>Native mount latency (step ③)</th><th>press → first frame</th></tr></thead>
+  <tbody>
+    <tr><td><b>react-native-navigation</b></td><td>~20 ms (render + RNN events)</td><td>~35 ms after press</td><td class="r"><b>44 ms</b></td></tr>
+    <tr><td><b>navigation router</b></td><td>~12 ms (completeRoot only)</td><td>~33 ms after press</td><td class="r">51 ms</td></tr>
+    <tr><td><b>React Navigation v7</b></td><td>~80 ms (full reconcile + event pool)</td><td>~54 ms after press</td><td class="r">62 ms</td></tr>
+    <tr><td><b>Expo Router</b></td><td>~48 ms (commit + context propagation)</td><td>~50 ms after press</td><td class="r">61 ms</td></tr>
+  </tbody>
+</table>
+
+<h2 id="blockers">Where you can accidentally block responsiveness</h2>
+<p>Every stage of the pipeline is an opportunity to add latency. Here are the real ones:</p>
+
+<div class="risk bad">
+  <div class="rtitle">🔴 Long synchronous work inside <code>onPress</code></div>
+  <div class="where">JS thread, step ②</div>
+  <div class="why">Your <code>onPress</code> handler runs <em>synchronously on the JS thread</em>
+  before any reconciliation. Expensive computation, large JSON.parse, synchronous storage reads, or
+  chained <code>.forEach</code> loops on large arrays here directly delay the commit.
+  <strong>Rule:</strong> keep onPress handlers under 5 ms. Move heavy work to
+  <code>setTimeout(fn, 0)</code> or a Worker.</div>
+</div>
+
+<div class="risk bad">
+  <div class="rtitle">🔴 Large re-render subtree from a state update</div>
+  <div class="where">JS thread, step ② — <code>workLoopSync</code> / <code>beginWork</code></div>
+  <div class="why">React reconciles the <em>entire subtree</em> rooted at the component whose state
+  changed. If your onPress calls <code>setState</code> high in the tree (e.g., a context that wraps
+  the whole app), thousands of components may run <code>render</code>. Use
+  <code>React.memo</code>, split context, or move state down.</div>
+</div>
+
+<div class="risk bad">
+  <div class="rtitle">🔴 Heavy destination screen (large Fabric commit)</div>
+  <div class="where">JS thread, step ② — <code>[HostFunction] completeRoot</code></div>
+  <div class="why">Measured: trivial screen = ~12 ms completeRoot; 24-row heavy screen = ~60 ms.
+  Every node is a synchronous JSI call into C++. Virtualize lists, lazy-render off-screen content,
+  and avoid mounting large trees synchronously on navigation. Consider
+  <code>startTransition</code> / deferred rendering for expensive screens.</div>
+</div>
+
+<div class="risk warn">
+  <div class="rtitle">🟡 Animation running while JS is reconciling</div>
+  <div class="where">UI thread (Choreographer) + JS thread contention</div>
+  <div class="why">If a CSS-style animation or Reanimated worklet needs to run on the JS thread
+  while your onPress reconciliation is happening, one of them will skip frames. Use Reanimated's
+  worklet thread (<code>useAnimatedStyle</code> with worklet functions) to keep animations
+  off the JS thread entirely.</div>
+</div>
+
+<div class="risk warn">
+  <div class="rtitle">🟡 Synchronous native module calls in onPress</div>
+  <div class="where">JS thread, step ② — <code>[HostFunction] getConstants</code></div>
+  <div class="why">Native modules that call <code>getConstants()</code> synchronously (the Expo
+  module proxy does this for every module's first access) block the JS thread. Cache constants
+  at module load time — they're already loaded during cold start.</div>
+</div>
+
+<div class="risk warn">
+  <div class="rtitle">🟡 Event pooling churn (legacy event system)</div>
+  <div class="where">JS thread — <code>destructor</code>, <code>releasePooledEvent</code></div>
+  <div class="why">The synthetic-event pool still churns in react-navigation builds (visible in the
+  profile as <code>beginEvent</code> + <code>releasePooledEvent</code> ≈ 12 ms). This is
+  framework overhead but is worth knowing: it means the JS thread is busy for a full frame after
+  the press before the reconcile even starts.</div>
+</div>
+
+<div class="risk good">
+  <div class="rtitle">🟢 EarlyPostImeInputStage delay (Android / OEM)</div>
+  <div class="where">UI thread — <em>before</em> React sees the event</div>
+  <div class="why">The 9 ms <code>EarlyPostImeInputStage</code> (two binder calls to
+  InputManagerService) is an Android / OEM tax — seen on Samsung One UI. There is nothing
+  React Native can do about it. It's real latency for the user but not attributable to your app
+  code. On stock Android / Pixel it is typically &lt;2 ms.</div>
+</div>
+
+<h2 id="instrument">How to instrument this in production</h2>
+
+<h3>Level 1 — JS-only instrumentation (zero native code)</h3>
+<p>Wrap every <code>onPress</code> handler to measure JS execution time. Pair
+<code>performance.now()</code> at press entry with a <code>requestAnimationFrame</code> callback
+for when the next frame is scheduled:</p>
+<pre>
+<span class="dim">// utils/pressTracing.ts</span>
+<span class="ok">import</span> { InteractionManager } from <span class="hl">'react-native'</span>;
+
+<span class="ok">export function</span> tracedPress(
+  label: string,
+  handler: () => void,
+  onMeasure?: (result: PressTimings) => void,
+) {
+  return () => {
+    <span class="dim">// ① time the JS handler + reconcile</span>
+    const t0 = performance.now();
+    handler();
+    const jsMs = performance.now() - t0;   <span class="dim">// everything up to completeRoot</span>
+
+    <span class="dim">// ② raf fires AFTER mount items are applied (next Choreographer frame)</span>
+    const t1 = performance.now();
+    requestAnimationFrame(() => {
+      const rafMs = performance.now() - t1; <span class="dim">// ≈ mount + vsync wait</span>
+      const totalMs = performance.now() - t0;
+      onMeasure?.({ label, jsMs, rafMs, totalMs });
+    });
+  };
+}
+
+<span class="dim">// ③ When the page is done with heavy async work:</span>
+<span class="ok">InteractionManager</span>.runAfterInteractions(() => {
+  <span class="dim">// fires after animations + interactions complete</span>
+  reportMetric('interaction_settled');
+});
+</pre>
+
+<p>Attach it to any <code>Pressable</code>:</p>
+<pre>
+&lt;Pressable
+  onPress={tracedPress('open-details', () => router.push('/details'), result => {
+    analytics.track('press_timing', result);
+  })}
+/&gt;
+</pre>
+
+<h3>Level 2 — React Profiler (dev / staging builds)</h3>
+<p>The React Profiler API wraps a subtree and gives you render/commit timing with no native
+instrumentation required:</p>
+<pre>
+<span class="ok">import</span> { Profiler } from <span class="hl">'react'</span>;
+
+<span class="ok">function</span> onRender(
+  id: string,
+  phase: <span class="hl">'mount' | 'update'</span>,
+  actualDuration: number,   <span class="dim">// time rendering committed subtree (ms)</span>
+  baseDuration: number,     <span class="dim">// estimated cost without memoization</span>
+  startTime: number,
+  commitTime: number,
+) {
+  if (actualDuration &gt; 16) {
+    console.warn(`[Profiler] ${id} ${phase} took ${actualDuration.toFixed(1)}ms`);
+  }
+}
+
+&lt;<span class="ok">Profiler</span> id="DetailsScreen" onRender={onRender}&gt;
+  &lt;DetailsScreen /&gt;
+&lt;/<span class="ok">Profiler</span>&gt;
+</pre>
+<p class="small">Note: <code>Profiler</code> has non-trivial overhead in DEV mode; disable in
+production unless the build is compiled with profiling enabled
+(<code>react-native --profile</code>). <code>actualDuration</code> covers JS reconcile but not
+the native mount (MountItemDispatcher) or the RenderThread frame.</p>
+
+<h3>Level 3 — atrace markers from JS (release builds)</h3>
+<p>The <code>@react-native-community/systrace</code> package (or the raw
+<code>Systrace</code> API from react-native) lets you emit custom slices visible in Perfetto:</p>
+<pre>
+<span class="ok">import</span> { Systrace } from <span class="hl">'react-native'</span>;
+
+onPress={() => {
+  Systrace.beginEvent(<span class="hl">'MyApp.openDetails'</span>);
+  navigation.navigate('Details');
+  Systrace.endEvent();
+  <span class="dim">// completeRoot fires *before* the endEvent in JS, so the</span>
+  <span class="dim">// Fabric commit is inside the slice. Visible in ui.perfetto.dev.</span>
+}}
+</pre>
+<p>To see this in Perfetto, your release build must be profileable
+(<code>&lt;profileable android:shell="true"/&gt;</code>) and you run a trace with
+<code>atrace_apps: "*"</code> — exactly what the <code>rn-perf-tooling</code> config plugin and
+<code>perfetto-trace.sh</code> script in this repo do.</p>
+
+<h3>Level 4 — Flashlight continuous monitoring</h3>
+<p>For production monitoring of <em>smoothness</em> across the full press interaction (not just the
+first frame), Flashlight's <code>measure</code> command (run via Maestro) gives you FPS and CPU
+across the entire flow. It won't break down the JS hop boundaries but gives aggregate responsiveness
+signal that's cheap enough to run in CI:</p>
+<pre>
+<span class="dim"># from perf-tooling:</span>
+perf-tooling/scripts/flashlight-measure.sh \
+  --app com.rnperf.reactnavigation \
+  --flow perf-tooling/maestro/navigate.yaml \
+  --label react-navigation
+</pre>
+
+<h3>Level 5 — Hermes sampling profiler in release</h3>
+<p>For a deep JS call-stack trace in a production build, use
+<code>react-native-release-profiler</code> (already set up in every app in this repo via the
+<code>rn-perf-tooling</code> plugin):</p>
+<pre>
+<span class="dim">// In your JS entry before anything else:</span>
+<span class="ok">import</span> { startProfiling, stopProfiling } from 'react-native-release-profiler';
+
+startProfiling();               <span class="dim">// begins Hermes sampling</span>
+
+<span class="dim">// … after the interaction you want to profile:</span>
+<span class="ok">const</span> path = await stopProfiling(true); <span class="dim">// dumps to /sdcard/Download/</span>
+
+<span class="dim">// pull + source-map on your machine:</span>
+<span class="dim">// node perf-tooling/scripts/convert-hermes-profile.js \</span>
+<span class="dim">//   --in raw.cpuprofile.txt --out profile.json --sourcemap index.map</span>
+</pre>
+<p>Open the converted JSON in Chrome DevTools → Performance → load profile for a full flame chart
+of every JS function called during the press.</p>
+
+<h2 id="summary">Summary — the press round-trip in numbers</h2>
+
+<table>
+  <thead><tr><th>Phase</th><th>Thread</th><th>Typical cost</th><th>Your code's contribution</th></tr></thead>
+  <tbody>
+    <tr><td>Input dispatch (Android)</td><td><span class="chip ui">UI</span></td><td>9–14 ms</td><td>None — OS + OEM code</td></tr>
+    <tr><td>React hit-test (<code>TouchTargetHelper</code>)</td><td><span class="chip ui">UI</span></td><td>1–4 ms</td><td>Proportional to shadow-tree depth</td></tr>
+    <tr><td>JS event routing (<code>topTouchStart/End</code>)</td><td><span class="chip js">JS</span></td><td>1–12 ms</td><td>Library overhead (synthetic events)</td></tr>
+    <tr><td>Your <code>onPress</code> handler</td><td><span class="chip js">JS</span></td><td>0–∞</td><td><b>100% your code</b></td></tr>
+    <tr><td>React reconciliation</td><td><span class="chip js">JS</span></td><td>1–30 ms</td><td>Proportional to re-render subtree size</td></tr>
+    <tr><td>Fabric commit (<code>completeRoot</code>)</td><td><span class="chip js">JS</span></td><td>5–60 ms</td><td>Proportional to new node count</td></tr>
+    <tr><td>Native mount (MountItemDispatcher)</td><td><span class="chip ui">UI</span></td><td>2–4 ms</td><td>Proportional to mutation list size</td></tr>
+    <tr><td>HWUI draw + eglSwap</td><td><span class="chip rt">RT</span></td><td>3–8 ms</td><td>Proportional to dirty layer count</td></tr>
+  </tbody>
+</table>
+
+<div class="callout good">
+  <strong>The rule of thumb:</strong> for a press to feel instant, the sum of all JS-thread phases
+  must complete within one vsync (~16.7 ms at 60 Hz, ~11 ms at 90 Hz). The OS input delay
+  (~9–14 ms) is already eating most of that budget before your code runs.
+  <em>Every millisecond you spend in <code>onPress</code>, reconciliation, or
+  <code>completeRoot</code> is a millisecond the user waits for a response.</em>
+</div>
+
+<div class="foot">
+  <p>Data: <code>perf-results/_nav/react-navigation-nav.perfetto-trace</code> (press pipeline) +
+  <code>perf-results/_nav/react-navigation-nav-hermes.json</code> (JS call stacks) + navigation heavy
+  traces. Open any <code>.perfetto-trace</code> file at
+  <a href="https://ui.perfetto.dev">ui.perfetto.dev</a> and search for
+  <code>deliverInputEvent</code> to find the same data interactively. Companions:
+  <a href="cold-start-findings.html">cold start</a> ·
+  <a href="navigation-cost.html">cost of navigating</a> ·
+  <a href="navigation-heavy.html">heavy screen</a> ·
+  <a href="expo-cost.html">cost of Expo</a>.</p>
+</div>
+
+</div>
+</body>
+</html>

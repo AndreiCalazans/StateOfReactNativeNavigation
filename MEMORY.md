@@ -106,6 +106,24 @@ hypothesis in two:
 - Also learned the hades-thread count is a NOISY proxy (rnn=2, rnn-reanimated=2,
   expo=3); removed that claim, rely on anon-RSS instead.
 
+## Press anatomy post (docs/press-anatomy.html)
+
+Used existing nav traces (react-navigation-nav.perfetto-trace + hermes.json).
+Extracted the full press pipeline with precise timing via trace_processor SQL:
+- deliverInputEvent 14ms -> EarlyPostImeInputStage 9.4ms (binder round-trips,
+  Samsung OEM tax) -> ViewPostImeInputStage 4.3ms (TouchTargetHelper hit-test)
+  -> FabricEventEmitter.receiveEvent('topTouchStart') 1ms -> JS thread wakes up.
+- JS: beginEvent/updateCallback (~12ms event routing) + workLoopSync/beginWork
+  (reconcile) + completeRoot 16ms (synchronous JSI Fabric commit, the main
+  risk) + appendChild calls -> MountItemDispatcher::mountViews on UI thread
+  (~33ms after press) -> RenderThread DrawFrames -> eglSwapBuffers = first pixel.
+- Hermes profile: top leaves are completeRoot 16.4ms, beginEvent 11.9ms,
+  updateCallback 10.9ms, appendChild 10.7ms.
+- Post answers: where can I block? (onPress handler, large render subtree,
+  heavy Fabric commit via completeRoot, sync native module calls, animation
+  contention on JS thread). How to instrument? (tracedPress util with RAF,
+  React Profiler, Systrace.beginEvent, Hermes release profiler, Flashlight).
+
 ## Cold-start side-by-side videos (docs/cold-*.mp4, in cold-start-findings.html)
 
 Recorded cold start (launcher -> Home) for all 4 apps via adb screenrecord with

@@ -42,6 +42,7 @@ docs/                     Write-ups (open in a browser):
                             expo-cost.html            the cost of Expo / expo-modules-core
                             navigation-cost.html      press -> painted, per library
                             navigation-heavy.html     busier JS thread (heavy screen)
+                            press-anatomy.html        anatomy of a press (native→JS→paint)
 ```
 
 Every app renders the **same** screens (from `shared-ui`) and exposes the same
